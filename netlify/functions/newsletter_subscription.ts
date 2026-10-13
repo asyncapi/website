@@ -1,50 +1,153 @@
-import mailchimp from '@mailchimp/mailchimp_marketing';
 import type { Handler, HandlerEvent } from '@netlify/functions';
-import md5 from 'md5';
 
-import config from '../../config/mailchimp-config.json';
+const KIT_BASE = 'https://api.kit.com/v4';
+const REQUEST_TIMEOUT_MS = 15_000;
+
+const INTEREST_TO_ENV = {
+  Newsletter: 'KIT_NEWSLETTER_TAG_ID',
+  Meetings: 'KIT_MEETINGS_TAG_ID',
+  'TSC Voting': 'KIT_TSC_TAG_ID'
+} as const;
+
+type ValidInterest = keyof typeof INTEREST_TO_ENV;
+
+function isValidInterest(s: string): s is ValidInterest {
+  return Object.hasOwn(INTEREST_TO_ENV, s);
+}
+
+function parseTagId(raw: string | undefined): number | null {
+  if (raw == null || raw.trim() === '') {
+    return null;
+  }
+  const n = Number(raw.trim());
+  if (!Number.isInteger(n) || n <= 0) {
+    return null;
+  }
+  return n;
+}
+
+function isAbortError(err: unknown): boolean {
+  return err instanceof Error && err.name === 'AbortError';
+}
+
+async function kitFetch(url: string, init: RequestInit): Promise<Response> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
 
 export const handler: Handler = async (event: HandlerEvent) => {
-  if (event.httpMethod === 'POST') {
-    const { listId } = config;
-    const { email, name, interest } = JSON.parse(event.body || '');
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: 'The specified HTTP method is not allowed.' })
+    };
+  }
 
-    const subscriberHash = md5(email.toLowerCase());
+  let body: unknown;
+  try {
+    body = JSON.parse(event.body ?? '{}');
+  } catch {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Invalid request body.' })
+    };
+  }
 
-    try {
-      mailchimp.setConfig({
-        apiKey: process.env.MAILCHIMP_API_KEY,
-        server: 'us12'
-      });
+  if (body === null || typeof body !== 'object' || Array.isArray(body)) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Invalid subscription request.' })
+    };
+  }
 
-      const response = await mailchimp.lists.setListMember(listId,
-        subscriberHash,
-        {
-          email_address: email,
-          merge_fields: {
-            FNAME: name
-          },
-          status: 'subscribed',
-          interests: {
-            [config.interests[interest]]: true
-          }
-        });
+  const { email, name, interest } = body as Partial<Record<'email' | 'name' | 'interest', unknown>>;
 
+  if (typeof email !== 'string' || typeof interest !== 'string' || !isValidInterest(interest)) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Invalid subscription request.' })
+    };
+  }
+
+  if (!process.env.KIT_API_KEY) {
+    return {
+      statusCode: 503,
+      body: JSON.stringify({ message: 'Subscription is temporarily unavailable. Please try again later.' })
+    };
+  }
+
+  const envVarName = INTEREST_TO_ENV[interest];
+  const tagId = parseTagId(process.env[envVarName]);
+
+  if (tagId == null) {
+    return {
+      statusCode: 503,
+      body: JSON.stringify({ message: 'Subscription is temporarily unavailable. Please try again later.' })
+    };
+  }
+
+  const firstName = typeof name === 'string' ? name : '';
+
+  const headers = {
+    'X-Kit-Api-Key': process.env.KIT_API_KEY,
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    const subRes = await kitFetch(`${KIT_BASE}/subscribers`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ email_address: email, first_name: firstName, state: 'active' })
+    });
+
+    if (!subRes.ok) {
+      await subRes.text().catch(() => undefined);
       return {
-        statusCode: 200,
-        body: JSON.stringify(response)
-      };
-    } catch (err) {
-      return {
-        statusCode: err.status,
-        body: JSON.stringify(err)
+        statusCode: 502,
+        body: JSON.stringify({
+          message: 'Subscription could not be completed. Please try again later.'
+        })
       };
     }
-  } else {
+
+    const tagRes = await kitFetch(`${KIT_BASE}/tags/${tagId}/subscribers`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ email_address: email })
+    });
+
+    if (!tagRes.ok) {
+      await tagRes.text().catch(() => undefined);
+      return {
+        statusCode: 502,
+        body: JSON.stringify({
+          message: 'Subscription could not be completed. Please try again later.'
+        })
+      };
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Subscribed successfully.' })
+    };
+  } catch (err) {
+    if (isAbortError(err)) {
+      return {
+        statusCode: 504,
+        body: JSON.stringify({
+          message: 'Subscription service timed out. Please try again later.'
+        })
+      };
+    }
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'The specified HTTP method is not allowed.'
+        message: 'An unexpected error occurred. Please try again later.'
       })
     };
   }

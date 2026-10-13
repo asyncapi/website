@@ -36,6 +36,6 @@ By sponsoring the AsyncAPI Maintainership Program, you’re investing in open-so
 
 - **Global & Inclusive Participation**: With your support, we can reach underrepresented and underserved contributors across the globe, breaking down financial and geographic barriers.
 
-Your sponsorship helps maintain a program that’s inclusive, sustainable, and high-impact—for contributors, mentors, and the broader open-source ecosystem.
+Your sponsorship helps maintain a program that’s inclusive, sustainable, and high-impact for contributors, mentors, and the broader open-source ecosystem.
 
 Let’s build the future of open-source together.

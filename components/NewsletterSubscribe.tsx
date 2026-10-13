@@ -41,7 +41,7 @@ interface NewsletterSubscribeProps {
  * @param {string} props.errorSubtitle - The error subtitle to be displayed.
  */
 export default function NewsletterSubscribe({
-  className = 'p-8 text-center text-black',
+  className = 'p-8 text-center',
   dark = false,
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
   subtitle = 'We respect your inbox. No spam, promise ✌️',
@@ -54,17 +54,22 @@ export default function NewsletterSubscribe({
 
   const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
-  const headTextColor = dark ? 'text-white' : '';
-  const paragraphTextColor = dark ? 'text-gray-300' : '';
+  const headTextColor = dark ? 'text-white' : 'text-darkGunMetal dark:text-white';
+  const paragraphTextColor = dark ? 'text-gray-300' : 'text-gray-700 dark:text-gray-300';
 
   const setFormStatus = (formResponse: FormStatus) => {
     setStatus(formResponse);
+    if (formResponse === FormStatus.SUCCESS) {
+      // Reset form fields on success
+      setName('');
+      setEmail('');
+    }
     setTimeout(() => {
       setStatus(FormStatus.NORMAL);
     }, 10000);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     setStatus(FormStatus.LOADING);
     event.preventDefault();
     const data = {
@@ -73,21 +78,25 @@ export default function NewsletterSubscribe({
       interest: type
     };
 
-    fetch('/.netlify/functions/newsletter_subscription', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => {
+    try {
+      const res = await fetch('/.netlify/functions/newsletter_subscription', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       if (res.status === 200) {
         setFormStatus(FormStatus.SUCCESS);
       } else {
         setFormStatus(FormStatus.ERROR);
       }
 
-      return res.json();
-    });
+      await res.json();
+    } catch (error) {
+      setFormStatus(FormStatus.ERROR);
+    }
   };
 
   if (status === FormStatus.SUCCESS) {

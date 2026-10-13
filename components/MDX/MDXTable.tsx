@@ -9,8 +9,8 @@ import React from 'react';
 export function Table({ className = '' }: { className?: string }) {
   return (
     <div className={`${className} flex flex-col`}>
-      <div className='my-2 overflow-x-auto py-2 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8'>
-        <div className='inline-block w-full overflow-auto border-b border-gray-200 align-middle shadow sm:rounded-lg'>
+      <div className='my-2 overflow-x-auto py-2'>
+        <div className='inline-block min-w-full border-b border-gray-200 dark:border-gray-800 align-middle shadow sm:rounded-lg'>
           <table className={`${className} w-full`} />
         </div>
       </div>
@@ -25,7 +25,7 @@ export function Table({ className = '' }: { className?: string }) {
  * @returns
  */
 export function TableRow({ className = '' }: { className?: string }) {
-  return <tr className={`${className} bg-white`} />;
+  return <tr className={`${className} bg-white dark:bg-transparent`} />;
 }
 
 /**
@@ -36,7 +36,9 @@ export function TableRow({ className = '' }: { className?: string }) {
  */
 export function TableCell({ className = '' }: { className?: string }) {
   return (
-    <td className={`${className} border-b border-gray-200 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700`} />
+    <td
+      className={`${className} border-b border-gray-200 dark:border-gray-800 px-6 py-4 text-sm leading-5 tracking-tight text-gray-700 dark:text-gray-300`}
+    />
   );
 }
 
@@ -49,7 +51,7 @@ export function TableCell({ className = '' }: { className?: string }) {
 export function TableHeader({ className = '' }: { className?: string }) {
   return (
     <th
-      className={`${className} border-b border-gray-200 bg-gray-100 px-6 py-3 text-left font-body text-xs font-medium uppercase leading-4 tracking-wider text-gray-900`}
+      className={`${className} border-b border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-dark-card px-6 py-3 text-left font-body text-xs font-medium uppercase leading-4 tracking-wider text-gray-900 dark:text-gray-200`}
     />
   );
 }

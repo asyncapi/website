@@ -28,7 +28,7 @@ The form takes roughly **10–15 minutes** to fill out and includes questions re
 - Passing or failing mentor or contributor
 - Quality of program organization
 
-After the evaluation window closes, you’ll receive an email from the organizers with your result — pass or fail.
+After the evaluation window closes, you’ll receive an email from the organizers with your result, pass or fail.
 
 >_Submitting your evaluation is **mandatory**. Failure to complete it during any phase will result in immediate removal from the program and loss of stipend eligibility._
 
@@ -51,4 +51,4 @@ _Note: If one or more contributors do not pass, their portion is redistributed a
 
 Once your evaluation is marked as “pass,” you will be eligible to request your stipend via the [AsyncAPI Mentorship Open Collective](https://opencollective.com/asyncapi/projects/asyncapi-mentorship) page.
 
-Please allow **a few business days** for your payment to be processed after submission. If you’re unsure how to submit your expense, [refer to this guide](../stipend-and-payments/disbursement).
+Please allow **a few business days** for your payment to be processed after submission. If you’re unsure how to submit your expense, [refer to this guide](https://www.asyncapi.com/docs/community/maintainership-guide/amp-payments-disbursement).

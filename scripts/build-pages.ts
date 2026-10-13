@@ -5,7 +5,7 @@ import path from 'path';
 const SRC_DIR = 'markdown';
 const TARGET_DIR = 'pages';
 
-const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody'];
+const capitalizeTags = ['table', 'tr', 'td', 'th', 'thead', 'tbody', 'dl', 'dt', 'dd'];
 
 /**
  * Ensures that the specified directory exists. If it doesn't, creates it.

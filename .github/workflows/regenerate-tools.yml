@@ -42,6 +42,11 @@ jobs:
             committer: asyncapi-bot <info@asyncapi.io>
             author: asyncapi-bot <info@asyncapi.io>
             title: 'chore: update tools.json'
+            body: |
+              Hey, @asyncapi/website-maintainers, please review this updated tools list.
+
+              Check the workflow run logs for any ignored tools summary and verify new entries before merging.
+            labels: do-not-merge
             branch: update-tools/${{ github.job }}
             
         - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel

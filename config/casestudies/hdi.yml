@@ -206,7 +206,7 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
   versions:
     - '3.0.0'
   storage: |
-    A seperate Git repository functions as a "customer Wiki", serving as a central location for all relevant documents about the existing infrastructure. 
+    A separate Git repository functions as a "customer Wiki", serving as a central location for all relevant documents about the existing infrastructure.
     This includes the AsyncAPI document, which provides a comprehensive overview of the asynchronous communication in our system.
   editing: |
     If changes for any topic are applied by a customer, the documentation pipeline is triggered. 

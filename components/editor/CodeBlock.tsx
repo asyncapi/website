@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 

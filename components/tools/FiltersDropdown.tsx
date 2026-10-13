@@ -26,7 +26,7 @@ export default function FiltersDropdown({
   setCheckedOptions,
   className = ''
 }: FiltersDropdownProps) {
-  const handleClickOption = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, option: string) => {
+  const handleClickOption = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, option: string) => {
     const isChecked = checkedOptions.includes(option);
     const updatedOptions = isChecked ? checkedOptions.filter((item) => item !== option) : [...checkedOptions, option];
 
@@ -36,7 +36,7 @@ export default function FiltersDropdown({
   return (
     <div
       className={twMerge(
-        `max-w-lg flex flex-col max-h-[20vh] gap-1 overflow-y-auto p-2 px-0 duration-200 delay-150 bg-gray-200 ${className}`
+        `max-w-lg flex flex-col max-h-[20vh] gap-1 overflow-y-auto p-2 px-0 duration-200 delay-150 bg-white text-gray-700 dark:bg-dark-card dark:text-gray-200 ${className}`
       )}
       data-testid='FiltersDropdown-div'
     >
@@ -44,20 +44,28 @@ export default function FiltersDropdown({
         const checked = checkedOptions.includes(data.name);
 
         return (
-          <div
+          <button
             key={index}
+            type='button'
             className={twMerge(
-              `hover:bg-gray-300 text-black p-1 py-2 gap-1 flex cursor-pointer items-start ${checked ? 'bg-gray-400' : ''}`
+              `group flex w-full cursor-pointer items-start gap-2 p-2 text-left text-gray-700
+              transition-colors hover:bg-gray-100
+              dark:text-gray-200 dark:hover:bg-gray-100 dark:hover:text-gray-900
+              ${checked ? 'bg-secondary-100 text-gray-900 dark:!bg-gray-100 dark:!text-gray-900' : ''}`
             )}
             onClick={(event) => handleClickOption(event, data.name)}
           >
             {checked ? (
-              <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' />
+              <img src='/img/illustrations/icons/CheckedIcon.svg' alt='checked' className='mt-0.5 size-3' />
             ) : (
-              <img src='/img/illustrations/icons/UncheckedIcon.svg' alt='unchecked' />
+              <img
+                src='/img/illustrations/icons/UncheckedIcon.svg'
+                alt='unchecked'
+                className='mt-0.5 size-3 dark:invert group-hover:dark:invert-0'
+              />
             )}
-            <div className='-mt-px mb-px text-xs'>{data.name}</div>
-          </div>
+            <div className='mb-px text-xs'>{data.name}</div>
+          </button>
         );
       })}
     </div>

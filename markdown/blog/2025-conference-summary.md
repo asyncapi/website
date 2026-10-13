@@ -11,8 +11,8 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI Conference Report for 2025'
-featured: true
 ---
+
 Celebrating the third year of planning the in-person conferences brought growth this year. We rebranded to AsyncAPI Conference, doing away with the `On Tour` branding for a more unified brand while still keeping the same vision we had from the beginning. 
 
 We expanded to six venues plus the online conference, and some worked better than others, but each taught us something valuable. We gained better knowledge, new case studies, stronger community bonds, and people connecting in person to share ideas.

@@ -18,7 +18,7 @@ export default function AsyncAPISummary() {
           <Heading level={HeadingLevel.h2} className='m-3 text-center text-5xl'>
             AsyncAPI Financial Summary
           </Heading>
-          <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-1 max-w-4xl text-darkGunMetal'>
+          <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-1 max-w-4xl text-darkGunMetal dark:text-dark-text'>
             To help improve the current state of Event-Driven Architectures and their tooling, you can show your support
             for the AsyncAPI Initiative by making a financial contribution. We offer three donation options:{' '}
             <strong>Open Collective, GitHub Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are
@@ -39,7 +39,7 @@ export default function AsyncAPISummary() {
           Ways to Support Us?
         </Heading>
       </div>
-      <div className='max-width my-4 text-center text-base text-darkGunMetal'>
+      <div className='max-width my-4 text-center text-base text-darkGunMetal dark:text-dark-text'>
         <Paragraph typeStyle={ParagraphTypeStyle.sm} className='my-4'>
           The easiest way to support AsyncAPI is by becoming a financial sponsor. While{' '}
           <br className='hidden lg:inline-block' />
@@ -69,7 +69,7 @@ export default function AsyncAPISummary() {
         </a>
         <a href='https://github.com/sponsors/asyncapi' target='_blank'>
           <img
-            className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90'
+            className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90 dark:invert'
             src='/img/logos/github-black.svg'
             alt='Github'
           />

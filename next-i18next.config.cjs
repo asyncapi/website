@@ -4,7 +4,7 @@ process.env.I18NEXT_DEFAULT_CONFIG_PATH = './next-i18next.config.cjs';
 
 module.exports = {
   i18n: {
-    locales: ['en', 'de', 'zh_cn'],
+    locales: ['en', 'de'],
     defaultLocale: 'en',
     namespaces: ['landing-page', 'common', 'tools'],
     defaultNamespace: 'landing-page',
@@ -12,7 +12,6 @@ module.exports = {
   },
   langMap: {
     en: 'English',
-    de: 'Deutsch',
-    zh_cn: '简体中文'
+    de: 'Deutsch'
   }
 };

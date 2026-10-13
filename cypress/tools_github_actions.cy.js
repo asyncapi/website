@@ -5,7 +5,6 @@ describe('Tools - GitHub Actions', () => {
   const page = new BasePage();
 
   beforeEach(() => {
-    cy.viewport(1280, 720);
     page.visit(toolsData.githubActions.path);
   });
 

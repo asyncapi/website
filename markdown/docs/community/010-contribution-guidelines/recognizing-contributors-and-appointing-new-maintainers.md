@@ -1,6 +1,6 @@
 ---
 title: 'Recognizing Contributors & Appointing New Maintainers'
-weight: 170
+weight: 160
 ---
 
 AsyncAPI thrives on the passion, ideas, and time of its contributors. From reviewing PRs to improving documentation and hosting community calls, every contribution boosts our growth. This document outlines our process for recognizing contributors and appointing new maintainers across AsyncAPI projects.

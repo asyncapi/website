@@ -34,4 +34,4 @@ This section covers everything you need to know about contributing to AsyncAPI:
 
 - How to mentor other maintainers
 - Path to becoming a maintainer in existing projects
-- Information about the AsyncAPI Bounty Program
+- Information about the AsyncAPI Microgrant Program

@@ -73,7 +73,7 @@ describe('Tools Object', () => {
       additionalLinks: { docsUrl: 'https://docs.example.com' }
     });
 
-    // @ts-ignore, ignore the error for wrong data type
+    // @ts-expect-error - Intentionally testing with missing optional parameters
 
     expected.filters.isAsyncAPIOwner = false;
     const result = await createToolObject(toolFile);
@@ -95,7 +95,7 @@ describe('Tools Object', () => {
   });
 
   it('should assign tool to Others category if no matching category is found', async () => {
-    // @ts-ignore, ignore the error for unknown category
+    // @ts-expect-error - Intentionally passing unknown category to test fallback behavior
     const toolContent = createToolFileContent({ title: 'Unknown Category Tool', categories: ['UnknownCategory'] });
     const mockData = mockToolData(toolContent);
 
@@ -144,7 +144,7 @@ describe('Tools Object', () => {
   it('should add tool to Others category only once', async () => {
     const toolContent = createToolFileContent({
       title: 'Duplicate Tool in Others',
-      // @ts-ignore, ignore the error for unknown category
+      // @ts-expect-error - Intentionally passing unknown category to test Others category assignment
       categories: ['UnknownCategory']
     });
 
@@ -172,7 +172,7 @@ describe('Tools Object', () => {
   it('should handle malformed JSON in tool file', async () => {
     const malformedContent = createMalformedYAML();
 
-    // @ts-ignore, ignore the error for wrong data type
+    // @ts-expect-error - Intentionally passing malformed content to test error handling
 
     await expect(convertTools(malformedContent)).rejects.toThrow();
   });
@@ -210,6 +210,63 @@ describe('Tools Object', () => {
     // Check that no tools were added to any category
     expect(result.Category1.toolsList).toHaveLength(0);
     expect(result.Others.toolsList).toHaveLength(0);
+  });
+
+  it('produces a deterministic toolsList order regardless of axios.get resolution order', async () => {
+    const toolZ = createToolFileContent({
+      title: 'Zeta Tool',
+      repoUrl: 'https://github.com/example/zeta',
+      categories: ['Category1' as unknown as Category]
+    });
+    const toolA = createToolFileContent({
+      title: 'Alpha Tool',
+      repoUrl: 'https://github.com/example/alpha',
+      categories: ['Category1' as unknown as Category]
+    });
+    const toolM = createToolFileContent({
+      title: 'Middle Tool',
+      repoUrl: 'https://github.com/example/middle',
+      categories: ['Category1' as unknown as Category]
+    });
+
+    const mockData = createMockData([
+      { name: '.asyncapi-tool-z', repoName: 'zeta' },
+      { name: '.asyncapi-tool-a', repoName: 'alpha' },
+      { name: '.asyncapi-tool-m', repoName: 'middle' }
+    ]);
+
+    const responsesByUrl: Record<string, unknown> = {
+      [`https://raw.githubusercontent.com/asyncapi/zeta/${mockData[0].url.split('=')[1]}/.asyncapi-tool`]: toolZ,
+      [`https://raw.githubusercontent.com/asyncapi/alpha/${mockData[1].url.split('=')[1]}/.asyncapi-tool`]: toolA,
+      [`https://raw.githubusercontent.com/asyncapi/middle/${mockData[2].url.split('=')[1]}/.asyncapi-tool`]: toolM
+    };
+
+    const runWithDelays = async (delays: Record<string, number>) => {
+      axiosMock.get.mockReset();
+      axiosMock.get.mockImplementation((url: string) => {
+        const data = responsesByUrl[url];
+
+        return new Promise((resolve) => {
+          setTimeout(() => resolve({ data }), delays[url] ?? 0);
+        });
+      });
+
+      return convertTools(mockData);
+    };
+
+    const resultRun1 = await runWithDelays({
+      [Object.keys(responsesByUrl)[0]]: 5,
+      [Object.keys(responsesByUrl)[1]]: 1,
+      [Object.keys(responsesByUrl)[2]]: 3
+    });
+    const resultRun2 = await runWithDelays({
+      [Object.keys(responsesByUrl)[0]]: 1,
+      [Object.keys(responsesByUrl)[1]]: 5,
+      [Object.keys(responsesByUrl)[2]]: 3
+    });
+
+    expect(resultRun1.Category1.toolsList.map((t) => t.title)).toEqual(['Alpha Tool', 'Middle Tool', 'Zeta Tool']);
+    expect(JSON.stringify(resultRun1)).toBe(JSON.stringify(resultRun2));
   });
 
   it('should not add the same tool object to the same category twice when a tool lists the same category multiple times', async () => {

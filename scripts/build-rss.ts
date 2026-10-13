@@ -69,7 +69,7 @@ export async function rssFeed(type: BlogPostTypes, rssTitle: string, desc: strin
     rss.channel.description = desc;
     rss.channel.language = 'en-gb';
     rss.channel.copyright = 'Made with :love: by the AsyncAPI Initiative.';
-    rss.channel.webMaster = 'info@asyncapi.io (AsyncAPI Initiative)';
+    rss.channel.webMaster = 'info@asyncapi.com (AsyncAPI Initiative)';
     rss.channel.pubDate = new Date().toUTCString();
     rss.channel.generator = 'next.js';
     rss.channel.item = [];

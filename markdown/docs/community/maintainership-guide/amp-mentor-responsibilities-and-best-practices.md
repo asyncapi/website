@@ -45,4 +45,4 @@ Effective mentorship is a two-way street. Feedback helps contributors grow, but 
 - Nominate exceptional contributors for community shout-outs and potential future roles, such as triagers and maintainers. 
 
 
-> **Note:** If AsyncAPI reasonably believes that a Mentor still needs to meet the primary responsibilities, AsyncAPI may require the Program Administrators to designate a replacement Mentor and remove the former Mentor from the Program.
+> **Note**: If AsyncAPI reasonably believes that a Mentor still needs to meet the primary responsibilities, AsyncAPI may require the Program Administrators to designate a replacement Mentor and remove the former Mentor from the Program.

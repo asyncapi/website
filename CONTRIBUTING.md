@@ -84,7 +84,7 @@ When you submit changes, your submissions are understood to be under the same [A
 
 ## Contribution recognition
 
-We use the [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. Read the [`recognize contributors` document](https://www.asyncapi.com/docs/community/010-contribution-guidelines/recognize-contributors).
+We use the [All Contributors](https://allcontributors.org/en/reference/specification/) specification to handle recognitions. Read the [`recognize contributors` document](https://www.asyncapi.com/docs/community/010-contribution-guidelines/recognize-contributors).
 
 ## Maintainers setup
 

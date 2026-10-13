@@ -1,14 +1,16 @@
 import fs from 'fs';
 
-import { buildUsecasesList } from '../scripts/usecases/index';
+import { generateLlmsFiles } from '../scripts/build-llms';
 import { buildPostList } from '../scripts/build-post-list';
 import { rssFeed } from '../scripts/build-rss';
 import { buildCaseStudiesList } from '../scripts/casestudies/index';
 import { buildFinanceInfoList } from '../scripts/finance/index';
 import { start } from '../scripts/index';
+import { buildUsecasesList } from '../scripts/usecases/index';
 
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');
+jest.mock('../scripts/build-llms');
 jest.mock('../scripts/casestudies');
 jest.mock('../scripts/usecases');
 jest.mock('../scripts/finance');
@@ -22,6 +24,7 @@ describe('start function', () => {
     await start();
 
     expect(buildPostList).toHaveBeenCalled();
+    expect(generateLlmsFiles).toHaveBeenCalled();
 
     expect(rssFeed).toHaveBeenCalledWith(
       'blog',
@@ -41,6 +44,7 @@ describe('start function', () => {
       if (typeof path === 'string' && path.includes('finance')) {
         return [] as any;
       }
+
       return originalReaddirSync(path as any);
     });
 

@@ -17,8 +17,8 @@ export default function Hero({ className = '' }: HeroProps) {
     <div className={`orbits overflow-hidden ${className}`}>
       <div className='orbit-container' data-testid='orbit-div'>
         <div id='first-orbit' className='orbit' data-testid='Hero-first'>
-          {orbitData[0].map((orbit) => (
-            <div key={orbit.id} className={orbit.id}>
+          {orbitData[0].map((orbit, index) => (
+            <div key={`${orbit.id}-${index}`} className={orbit.id}>
               <img src={orbit.img} alt={orbit.alt} className='orbit-img' data-testid='Hero-firstimg' />
             </div>
           ))}
@@ -27,15 +27,15 @@ export default function Hero({ className = '' }: HeroProps) {
           </div>
         </div>
         <div id='second-orbit' className='orbit' data-testid='Hero-second'>
-          {orbitData[1].map((orbit) => (
-            <div key={orbit.id} className={orbit.id}>
+          {orbitData[1].map((orbit, index) => (
+            <div key={`${orbit.id}-${index}`} className={orbit.id}>
               <img src={orbit.img} alt={orbit.alt} data-testid='Hero-secondimg' />
             </div>
           ))}
         </div>
         <div id='third-orbit' className='orbit' data-testid='Hero-third'>
-          {orbitData[2].map((orbit) => (
-            <div key={orbit.id} className={orbit.id}>
+          {orbitData[2].map((orbit, index) => (
+            <div key={`${orbit.id}-${index}`} className={orbit.id}>
               <img src={orbit.img} alt={orbit.alt} data-testid='Hero-thirdimg' />
             </div>
           ))}

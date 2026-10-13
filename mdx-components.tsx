@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
+import { useId } from 'react';
 
 import { mdxComponents } from '@/components/MDX/MDX';
 
@@ -8,9 +9,11 @@ import { mdxComponents } from '@/components/MDX/MDX';
 // components from other libraries, and more.
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
+  const reactId = useId();
+
   return {
     // Allows customizing built-in components, e.g. to add styling.
-    ...mdxComponents,
+    ...mdxComponents(reactId),
     ...components
   };
 }

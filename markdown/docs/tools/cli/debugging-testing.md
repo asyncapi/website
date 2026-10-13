@@ -424,6 +424,15 @@ describe('MyTest', () => {
 npm test
 ```
 
+This runs optimizer Jest (`optimizer:test`), then CLI Mocha (`cli:test`), then the GitHub Action tests.
+PR CI (`.github/workflows/if-nodejs-pr-testing.yml`) and the Changesets release workflow both call `npm test`.
+
+### Run Only Optimizer Tests
+
+```bash
+npm run optimizer:test
+```
+
 ### Run Only CLI Tests
 
 ```bash
@@ -613,6 +622,7 @@ npm run build && ./bin/run validate ./test/fixtures/specification.yml
 |------|---------|
 | Build project | `npm run build` |
 | Run all tests | `npm test` |
+| Run optimizer tests | `npm run optimizer:test` |
 | Run CLI tests | `npm run cli:test` |
 | Run unit tests | `npm run unit:test` |
 | Run single test | `npm run test:one -- <path>` |

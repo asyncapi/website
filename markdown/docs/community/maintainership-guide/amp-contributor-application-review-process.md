@@ -16,10 +16,10 @@ During this phase, contributor applications are reviewed collaboratively by prog
   - Applicants with **no prior** open-source contribution history
   - Proposals that are **misaligned** or **unrelated** to any project idea
 
-- **Mentor Review**: 
+- **Mentor Review**:
     Applications that pass the initial screening are forwarded to the appropriate mentors. Mentors assess each submission based on its alignment with the project’s scope, clarity, feasibility, and the applicant’s relevant experience.
 
-- **Shortlisting Candidates:** 
+- **Shortlisting Candidates**: 
     Based on their evaluations, mentors can submit a shortlist of up to **three preferred contributors** per project to the program organizers for final consideration in the next phase (contribution period).
 
 ## Final Application Phase
@@ -31,14 +31,14 @@ This phase serves as the final review stage, where mentors evaluate contributors
 
 Mentors will assess the following criteria during the final application review:
 
-- **Communication:**  
+- **Communication**:  
     Contributors are evaluated on their responsiveness, clarity, and professionalism in communication throughout the contribution phase.
 
-- **Project Understanding:**  
+- **Project Understanding**:  
     Mentors assess how well contributors understood the project’s goals and requirements, as demonstrated through their questions, discussions, and submitted work.
 
-- **Quality of Contributions:**  
+- **Quality of Contributions**:  
     The relevance, completeness, and quality of contributions such as **PRs**, **documentation**, or **research** will be closely reviewed to evaluate the contributor’s technical capability.
 
-- **Collaboration & Conduct:**  
+- **Collaboration & Conduct**:  
     Emphasis is placed on how well contributors interacted with mentors and the community, respecting collaboration norms and the Code of Conduct.

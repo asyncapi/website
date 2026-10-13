@@ -16,13 +16,13 @@ The AsyncAPI CLI offers the following key features:
 
 * Conversion: The AsyncAPI CLI can convert AsyncAPI documents from one version to another, which is helpful for migrating APIs to a newer version of the AsyncAPI specification.
 
-* Difference: The AsyncAPI CLI can be used to find the differences between two AsyncAPI documents, which helps compare different versions of an API or identify changes made to an API.
+* Difference: Using [Diff](https://github.com/asyncapi/cli/tree/master/packages/diff) (the `@asyncapi/diff` library, which lives in this monorepo under `packages/diff`), the AsyncAPI CLI can find the differences between two AsyncAPI documents, which helps compare different versions of an API or identify changes made to an API.
   
 * Generation: The AsyncAPI CLI leverages AsyncAPI libraries like [Generator](https://github.com/asyncapi/generator) and [Modelina](https://github.com/asyncapi/modelina), which allow you to generate various types of documentation, applications, and models in different programming languages. This feature can save significant time and effort when creating new APIs.
 
-* Optimize: Using [Optimizer](https://github.com/asyncapi/optimizer/), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
+* Optimize: Using [Optimizer](https://github.com/asyncapi/cli/tree/master/packages/optimizer) (the `@asyncapi/optimizer` library, which now lives in this monorepo under `packages/optimizer`), the AsyncAPI CLI can be used to optimize an AsyncAPI specification file which can optimize the structure of the AsyncAPI document to make it smaller and without repetition.
 
-* Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents.
+* Start: The AsyncAPI CLI can be used to start [AsyncAPI Studio](https://studio.asyncapi.com/) locally, which the user can use to view, edit, and test AsyncAPI documents. Studio is not bundled with the CLI; the first time you use it, the CLI installs it on-demand (~450MB).
   
 To summarize, the AsyncAPI CLI offers the following features and process flow, as shown in the diagram below:
 

@@ -67,9 +67,14 @@ export const CardData = ({
   // Decide whether the user click outside this component (card description) or not.
   useEffect(() => {
     const maybeHandler = (event: MouseEvent) => {
-      setOutsideClick(true);
       if (domNode.current && !domNode.current.contains(event.target as Node)) {
+        // Clicked outside: hide tooltip and reset visibility so it won't
+        // reappear on the next arbitrary click (fixes #5098)
         setOutsideClick(false);
+        setVisible((prev) => ({ ...prev, [type]: false }));
+        setRead(false);
+      } else {
+        setOutsideClick(true);
       }
     };
 
@@ -78,18 +83,19 @@ export const CardData = ({
     return () => {
       document.removeEventListener('mousedown', maybeHandler);
     };
-  }, []);
+  }, [type, setVisible, setRead]);
 
   return (
-    <div className={twMerge('text-left text-sm text-gray-500', className)}>
+    <div className={twMerge('text-left text-sm text-gray-500 dark:text-gray-300', className)}>
       {heading}
-      <span className='group relative'>
+      <span className='group relative inline-flex'>
         {outsideClick && visible[type] && (
           <span
             ref={domNode}
             data-testid='Carddata-description'
-            className='absolute -left-2/3 -top-4 z-10 w-48 translate-x-1/3 rounded border border-gray-200
-              bg-white px-2 py-1 text-xs shadow-md'
+            className='absolute left-0 top-7 z-50 max-h-60 w-64 max-w-[calc(100vw-2rem)] overflow-y-auto
+              rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs text-gray-700 shadow-xl
+              dark:border-gray-600 dark:bg-dark-card dark:text-gray-300 dark:shadow-2xl'
           >
             {read ? (
               data
@@ -100,7 +106,7 @@ export const CardData = ({
             )}
             {description && (
               <button
-                className='cursor-pointer text-cyan-600'
+                className='cursor-pointer text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300'
                 onClick={() => {
                   setOutsideClick(true);
                   setRead(!read);
@@ -116,7 +122,7 @@ export const CardData = ({
             setRead(false);
             setVisible({ ...initial, [type]: !visible[type] });
           }}
-          className='mx-1'
+          className='mx-1 text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'
           data-testid='Carddata-button'
         >
           <InfoIcon />

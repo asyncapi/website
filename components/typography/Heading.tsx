@@ -30,7 +30,7 @@ export interface HeadingProps {
 export default function Heading({
   typeStyle = HeadingTypeStyle.lg,
   level = HeadingLevel.h2,
-  textColor = 'text-primary-800',
+  textColor = 'text-primary-800 dark:text-white',
   className = '',
   children,
   id
@@ -40,6 +40,9 @@ export default function Heading({
   let classNames = '';
 
   switch (typeStyle) {
+    case HeadingTypeStyle.xxl:
+      classNames = `font-heading text-heading-lg md:text-heading-xxl font-bold tracking-heading  ${className || ''}`;
+      break;
     case HeadingTypeStyle.xl:
       classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-xl ${className || ''}`;
       break;
@@ -63,6 +66,9 @@ export default function Heading({
       break;
     case HeadingTypeStyle.xsSemibold:
       classNames = `font-heading text-heading-xs font-semibold tracking-heading ${className || ''}`;
+      break;
+    case HeadingTypeStyle.bodyLlg:
+      classNames = `font-heading text-body-llg tracking-body font-regular ${className || ''}`;
       break;
     case HeadingTypeStyle.bodyLg:
       classNames = `font-heading text-body-lg tracking-body font-regular ${className || ''}`;

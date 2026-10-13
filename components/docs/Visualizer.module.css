@@ -1,0 +1,131 @@
+/* stylelint-disable selector-pseudo-class-no-unknown, selector-type-no-unknown */
+/* Dark theme overrides for third-party classes from schyma and react-flow.
+   Uses :global() to prevent CSS Modules from hashing external class names. */
+
+.schemaVisualizer {
+  overflow: hidden;
+}
+
+:global(.dark) .schemaVisualizer :global(.body-wrapper) {
+  background: #121825;
+  color: #b8b9c0;
+}
+
+:global(.dark) .schemaVisualizer :global(.panel),
+:global(.dark) .schemaVisualizer :global(.panel-toggle-btn),
+:global(.dark) .schemaVisualizer :global(.custom-node),
+:global(.dark) .schemaVisualizer :global(.react-flow__node-default),
+:global(.dark) .schemaVisualizer :global(.react-flow__node-input),
+:global(.dark) .schemaVisualizer :global(.react-flow__node-output),
+:global(.dark) .schemaVisualizer :global(.react-flow__node-group) {
+  background: #131e35;
+  border-color: #1e293b;
+  color: #b8b9c0;
+}
+
+:global(.dark) .schemaVisualizer :global(.panel-content > h1),
+:global(.dark) .schemaVisualizer :global(.custom-node-label) {
+  color: #ffffff;
+}
+
+:global(.dark) .schemaVisualizer :global(.panel_table-wrapper > table > thead),
+:global(.dark) .schemaVisualizer :global(.panel_table-wrapper_tbody_active),
+:global(.dark) .schemaVisualizer :global(.examples-tab-active),
+:global(.dark) .schemaVisualizer :global(.examples-tab-active:hover) {
+  background: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff;
+}
+
+:global(.dark) .schemaVisualizer :global(.panel_table-wrapper_tbody) {
+  border-color: #1e293b;
+}
+
+:global(.dark) .schemaVisualizer :global(.main-tabs),
+:global(.dark) .schemaVisualizer :global(.example-header) {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+:global(.dark) .schemaVisualizer :global(.main-tab-active),
+:global(.dark) .schemaVisualizer :global(.examples-tab) {
+  background: #131e35;
+  border-color: #1e293b;
+  color: #b8b9c0;
+}
+
+:global(.dark) .schemaVisualizer :global(.main-tab),
+:global(.dark) .schemaVisualizer :global(.required-sentence) {
+  color: #94a3b8;
+}
+
+:global(.dark) .schemaVisualizer :global(.main-tab-active) {
+  color: #47bcee;
+}
+
+:global(.dark) .schemaVisualizer :global(.react-flow__controls-button),
+:global(.dark) .schemaVisualizer :global(.react-flow__attribution),
+:global(.dark) .schemaVisualizer :global(.composition-symbol) {
+  background: #131e35;
+  color: #b8b9c0;
+}
+
+:global(.dark) .schemaVisualizer :global(.react-flow__controls-button) {
+  border-color: #1e293b;
+}
+
+:global(.dark) .schemaVisualizer :global(.react-flow__controls-button svg) {
+  fill: #b8b9c0;
+}
+
+:global(.dark) .schemaVisualizer :global(.react-flow__controls-button:hover) {
+  background: #1e293b;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container) {
+  background: #131e35;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container pre),
+:global(.dark) .schemaVisualizer :global(.examples-code-container code) {
+  background: #131e35 !important;
+  color: #d1d5db !important;
+  font-family: 'Fira Code VF', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-shadow: none !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token) {
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.property) {
+  color: #7edcda !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container span[style*='color: rgb(153, 0, 85)']) {
+  color: #7edcda !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.string) {
+  color: #c0e2a3 !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container span[style*='color: rgb(102, 153, 0)']) {
+  color: #c0e2a3 !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.punctuation) {
+  color: #d1d5db !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.operator),
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.number),
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.boolean),
+:global(.dark) .schemaVisualizer :global(.examples-code-container .token.null) {
+  color: #80d9ff !important;
+}
+
+:global(.dark) .schemaVisualizer :global(.rules-block) {
+  color: #ffd166;
+}

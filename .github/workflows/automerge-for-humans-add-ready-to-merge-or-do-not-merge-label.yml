@@ -12,12 +12,19 @@ on:
     types:
       - created
 
+permissions: {}
+
 jobs:
   add-ready-to-merge-label:
+    name: Add ready-to-merge label
+    permissions:
+      issues: write # required to add labels and post comments on PR issues
+      pull-requests: write # required to read PR metadata from the issue pull_request URL
+      contents: read # required to compare PR branch commits against base
     if: >
       github.event.issue.pull_request && 
       github.event.issue.state != 'closed' && 
-      github.actor != 'asyncapi-bot' && 
+      github.event.comment.user.login != 'asyncapi-bot' && 
       (
         contains(github.event.comment.body, '/ready-to-merge') || 
         contains(github.event.comment.body, '/rtm' )
@@ -26,10 +33,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add ready-to-merge label
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           GITHUB_ACTOR: ${{ github.actor }}
         with:
+          # Use bot PAT, not the default GITHUB_TOKEN: events created by
+          # GITHUB_TOKEN do not trigger other workflows, so `Automerge For
+          # Humans` would never see the `labeled` event.
           github-token: ${{ secrets.GH_TOKEN }}
           script: |
             const prDetailsUrl = context.payload.issue.pull_request.url;
@@ -69,10 +79,14 @@ jobs:
             }
 
   add-do-not-merge-label:
+    name: Add do-not-merge label
+    permissions:
+      issues: write # required to add labels on PR issues
+      pull-requests: write # required to read PR metadata from the issue pull_request URL
     if: >
       github.event.issue.pull_request &&
       github.event.issue.state != 'closed' &&
-      github.actor != 'asyncapi-bot' &&
+      github.event.comment.user.login != 'asyncapi-bot' &&
       (
         contains(github.event.comment.body, '/do-not-merge') ||
         contains(github.event.comment.body, '/dnm' )
@@ -80,8 +94,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add do-not-merge label
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
+          # Bot PAT so the `labeled` event can trigger downstream workflows.
           github-token: ${{ secrets.GH_TOKEN }}
           script: |
             github.rest.issues.addLabels({
@@ -91,10 +106,14 @@ jobs:
               labels: ['do-not-merge']
             })
   add-autoupdate-label:
+    name: Add autoupdate label
+    permissions:
+      issues: write # required to add labels on PR issues
+      pull-requests: write # required to read PR metadata from the issue pull_request URL
     if: >
       github.event.issue.pull_request && 
       github.event.issue.state != 'closed' && 
-      github.actor != 'asyncapi-bot' &&
+      github.event.comment.user.login != 'asyncapi-bot' &&
       (
         contains(github.event.comment.body, '/autoupdate') ||
         contains(github.event.comment.body, '/au' )
@@ -102,8 +121,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add autoupdate label
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
+          # Bot PAT so the `labeled` event can trigger the autoupdate workflow.
           github-token: ${{ secrets.GH_TOKEN }}
           script: |
             github.rest.issues.addLabels({

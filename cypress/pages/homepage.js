@@ -1,10 +1,11 @@
 import BasePage from './BasePage';
 import CaseStudiesPage from './CaseStudiesPage';
 import DocsPage from './DocsPage';
-import RoadmapPage from './RoadmapPage';
 import CommunityPage from './CommunityPage';
 import ToolsPage from './ToolsPage';
 import BlogPage from './BlogPage';
+import AmbassadorsPage from './ambassadors';
+import TSCPage from './tscpage';
 
 import { features } from '../../components/features/FeatureList';
 import packageJson from '../../package.json';
@@ -63,7 +64,7 @@ class HomePage extends BasePage {
     return this.verifyElementIsVisible(selector).and('have.attr', 'href', link);
   }
 
-  verifyReadTheDocsButton(link = readDocsLink) {
+  verifySlackCTAButton(link = 'https://www.asyncapi.com/slack-invite') {
     return cy.get(`[data-testid="Button-link"][href="${link}"]`).should('be.visible');
   }
 
@@ -84,10 +85,8 @@ class HomePage extends BasePage {
       });
   }
 
-  verifyLetUsKnowLink(link = letUsKnowLink) {
-    cy.contains('a', 'Let us know here!')
-      .should('exist')
-      .and('have.attr', 'href', link);
+  verifyLetUsKnowLink() {
+    cy.get('a[href*="calendar.google.com"]').should('exist');
   }
 
   goToBlogPage() {
@@ -115,9 +114,15 @@ class HomePage extends BasePage {
     return new CommunityPage();
   }
 
-  goToRoadmapPage() {
-    cy.contains('a', 'Roadmap').click();
-    return new RoadmapPage();
+
+  goToTSCPage() {
+    cy.visit('/community/tsc');
+    return new TSCPage();
+  }
+
+  goToAmbassadorsPage() {
+    cy.visit('/community/ambassadors');
+    return new AmbassadorsPage();
   }
 }
 

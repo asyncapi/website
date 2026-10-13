@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Column, ComparisonBox, HoverBox } from '../ComparisonCommon';
+
 export interface HoverState {
   Paths: boolean;
   PathItem: boolean;
@@ -10,6 +12,18 @@ export interface HoverState {
 export interface AsyncAPI3ChannelComparisonProps {
   className?: string;
 }
+
+/**
+ * Static nested box showing the Message structure (Headers + Payload).
+ * Used identically in both the AsyncAPI 2.x and AsyncAPI 3.0 columns.
+ */
+const MessageDetails = () => (
+  <ComparisonBox className='mr-1 box-border flex-1'>
+    Message
+    <ComparisonBox className='mr-1 box-border flex-1'>Headers</ComparisonBox>
+    <ComparisonBox className='mr-1 box-border flex-1'>Payload</ComparisonBox>
+  </ComparisonBox>
+);
 
 /**
  * @description Component to compare AsyncAPI 2.x and AsyncAPI 3.0 channels.
@@ -23,114 +37,149 @@ export default function Asyncapi3ChannelComparison({ className = '' }: AsyncAPI3
     Message: false
   });
 
-  const handleMouseEnter = (key: keyof HoverState) => {
-    setHoverState((prevState) => ({ ...prevState, [key]: true }));
-  };
-
-  const handleMouseLeave = (key: keyof HoverState) => {
-    setHoverState((prevState) => ({ ...prevState, [key]: false }));
-  };
-
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
-        <div>
-          <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => handleMouseEnter('Paths')}
-            onMouseLeave={() => handleMouseLeave('Paths')}
-          >
-            Channels
-            <div className='flex flex-1 flex-wrap'>
-              <div
-                className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-                onMouseOver={() => handleMouseEnter('PathItem')}
-                onMouseLeave={() => handleMouseLeave('PathItem')}
-              >
-                Channel Item
-                <div className='flex flex-1 flex-wrap'>
-                  <div
-                    className={`${hoverState.Operation ? 'bg-orange-100' : 'bg-white '} m-2 flex-1 border border-orange-300 p-2`}
-                    onMouseOver={() => handleMouseEnter('Operation')}
-                    onMouseLeave={() => handleMouseLeave('Operation')}
-                  >
-                    Operation (Publish and Subscribe)
-                    <div className='flex flex-1 flex-col flex-wrap'>
-                      <div className='flex flex-1 flex-wrap'>
-                        <div
-                          className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
-                          onMouseEnter={() => handleMouseEnter('Message')}
-                          onMouseLeave={() => handleMouseLeave('Message')}
-                        >
-                          Messages
-                          <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                            Message
-                            <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Headers</div>
-                            <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Payload</div>
-                          </div>
-                        </div>
-                      </div>
+      <Column title='AsyncAPI 2.x'>
+        <HoverBox<HoverState>
+          label='Channels'
+          fieldKey='Paths'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=''
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
+          <div className='flex flex-1 flex-wrap'>
+            <HoverBox<HoverState>
+              label='Channel Item'
+              fieldKey='PathItem'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+              borderClass='border-yellow-600 dark:border-yellow-700'
+              useMouseOver
+            >
+              <div className='flex flex-1 flex-wrap'>
+                <HoverBox<HoverState>
+                  label='Operation (Publish and Subscribe)'
+                  fieldKey='Operation'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-orange-100 dark:bg-orange-900/40'
+                  borderClass='border-orange-300 dark:border-orange-700'
+                  className='flex-1'
+                  useMouseOver
+                >
+                  <div className='flex flex-1 flex-col flex-wrap'>
+                    <div className='flex flex-1 flex-wrap'>
+                      <HoverBox<HoverState>
+                        label='Messages'
+                        fieldKey='Message'
+                        hoverState={hoverState}
+                        setHoverState={setHoverState}
+                        activeClass='bg-red-400 dark:bg-red-900/60'
+                        borderClass='border-red-600 dark:border-red-700'
+                        className='flex-1'
+                      >
+                        <MessageDetails />
+                      </HoverBox>
                     </div>
                   </div>
-                </div>
+                </HoverBox>
               </div>
-            </div>
+            </HoverBox>
           </div>
-        </div>
-      </div>
-      <div className='ml-1 flex-1 border border-black p-2'>
-        <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-        <div>
-          <div
-            className={`${hoverState.Paths ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => handleMouseEnter('Paths')}
-            onMouseLeave={() => handleMouseLeave('Paths')}
+        </HoverBox>
+      </Column>
+
+      <Column title='AsyncAPI 3.0'>
+        <HoverBox<HoverState>
+          label='Channels'
+          fieldKey='Paths'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=''
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
+          <HoverBox<HoverState>
+            label='Channel'
+            fieldKey='PathItem'
+            hoverState={hoverState}
+            setHoverState={setHoverState}
+            activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+            borderClass='border-yellow-600 dark:border-yellow-700'
+            useMouseOver
           >
-            Channels
-            <div
-              className={`${hoverState.PathItem ? 'bg-yellow-300' : 'bg-white'} m-2 border border-yellow-600 p-2`}
-              onMouseOver={() => handleMouseEnter('PathItem')}
-              onMouseLeave={() => handleMouseLeave('PathItem')}
+            <div className='flex flex-1 flex-col flex-wrap'>
+              <HoverBox<HoverState>
+                label='Messages'
+                fieldKey='Message'
+                hoverState={hoverState}
+                setHoverState={setHoverState}
+                activeClass='bg-red-400 dark:bg-red-900/60'
+                borderClass='border-red-600 dark:border-red-700'
+                className='flex-1'
+              >
+                <MessageDetails />
+              </HoverBox>
+            </div>
+          </HoverBox>
+        </HoverBox>
+
+        <HoverBox<HoverState>
+          label='Operations'
+          fieldKey='Operation'
+          hoverState={hoverState}
+          setHoverState={setHoverState}
+          activeClass='bg-yellow-100 dark:bg-yellow-900/40'
+          defaultClass=''
+          borderClass='border-yellow-300 dark:border-yellow-700'
+        >
+          <div className='flex flex-1 flex-wrap'>
+            <HoverBox<HoverState>
+              label='Operation'
+              fieldKey='Operation'
+              hoverState={hoverState}
+              setHoverState={setHoverState}
+              activeClass='bg-orange-100 dark:bg-orange-900/40'
+              borderClass='border-orange-300 dark:border-orange-700'
+              className='flex-1'
+              useMouseOver
             >
-              Channel
               <div className='flex flex-1 flex-col flex-wrap'>
-                <div
-                  className={`${hoverState.Message ? 'bg-red-400' : 'bg-white'} m-2 flex-1 border border-red-600 p-2`}
-                  onMouseEnter={() => handleMouseEnter('Message')}
-                  onMouseLeave={() => handleMouseLeave('Message')}
-                >
-                  Messages
-                  <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>
-                    Message
-                    <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Headers</div>
-                    <div className='m-2 mr-1 box-border flex-1 border border-black p-2'>Payload</div>
-                  </div>
-                </div>
+                <HoverBox<HoverState>
+                  label='action (send or receive)'
+                  fieldKey='Operation'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-blue-200 dark:bg-blue-900/50'
+                  borderClass='border-blue-500 dark:border-blue-400'
+                  useMouseOver
+                />
+                <HoverBox<HoverState>
+                  label='channel'
+                  fieldKey='PathItem'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-yellow-300 dark:bg-yellow-800/60'
+                  borderClass='border-yellow-600 dark:border-yellow-700'
+                  useMouseOver
+                />
+                <HoverBox<HoverState>
+                  label='messages'
+                  fieldKey='Message'
+                  hoverState={hoverState}
+                  setHoverState={setHoverState}
+                  activeClass='bg-red-400 dark:bg-red-900/60'
+                  borderClass='border-red-600 dark:border-red-700'
+                  useMouseOver
+                />
               </div>
-            </div>
+            </HoverBox>
           </div>
-          <div
-            className={`${hoverState.Operation ? 'bg-yellow-100' : ' '} m-2 border border-yellow-300 p-2`}
-            onMouseEnter={() => handleMouseEnter('Operation')}
-            onMouseLeave={() => handleMouseLeave('Operation')}
-          >
-            Operations
-            <div className='flex flex-1 flex-wrap'>
-              <div className='m-2 flex-1 border border-orange-300 p-2'>
-                Operation
-                <div className='flex flex-1 flex-col flex-wrap'>
-                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>
-                    action (send or receive)
-                  </div>
-                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>channel</div>
-                  <div className='m-2 border border-blue-500 bg-white p-2 hover:bg-blue-200'>messages</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </HoverBox>
+      </Column>
     </div>
   );
 }

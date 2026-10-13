@@ -6639,7 +6639,7 @@
                     ],
                     "messages": [
                         {
-                            "$ref": "/components/messages/userSignedUp"
+                            "$ref": "#/components/messages/userSignedUp"
                         }
                     ],
                     "reply": {
@@ -6651,7 +6651,7 @@
                         },
                         "messages": [
                             {
-                                "$ref": "/components/messages/userSignedUpReply"
+                                "$ref": "#/components/messages/userSignedUpReply"
                             }
                         ]
                     }

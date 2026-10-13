@@ -32,7 +32,7 @@ AMP is a launchpad. Many alumni have gone on to secure internships, full-time ro
 
 - **Attend meetings**: Join scheduled calls on time and respect your mentor’s time.
 
-- **Ask questions**: Curiosity shows engagement — there are no “dumb” questions.
+- **Ask questions**: Curiosity shows engagement; there are no “dumb” questions.
 
 - **Give updates**: Share progress weekly or bi-weekly, even if it’s small.
 

@@ -64,6 +64,7 @@ const colorGray: Record<string, string> = {
 };
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -86,7 +87,6 @@ const config: Config = {
       eventCover: "url('/img/homepage/event-cover.webp')",
       channelCover: "url('/img/homepage/slack-cover.webp')",
       usecases: "url('/img/homepage/usecases.webp')",
-      roadmapCover: "url('/img/homepage/roadmap.webp')",
       confBg: "url('/img/homepage/confBlurBg.webp')",
       ambassadorCover: "url('/img/homepage/gathering.webp')",
       mapCover: "url('/img/homepage/mapbase.webp')"
@@ -124,7 +124,19 @@ const config: Config = {
         },
         violet: '#8054F2',
         darkGunMetal: '#212526',
-        linkedin: '#0077b5'
+        linkedin: '#0077b5',
+        'dark-background': '#121825',
+        'dark-card': '#131E35',
+        'dark-footer': '#090F1D',
+        'dark-text': '#B8B9C0',
+        'dark-heading': '#FFFFFF',
+        foreground: '#F8FAFC',
+        prim: '#00CFFF' /* Vibrant cyan */,
+        sec: '#D633FF' /* Electric purple */,
+        accent: '#FFD166' /* Warm amber */,
+        border: '#1E293B' /* Navy border */,
+        muted: '#0F172A' /* Dark navy muted */,
+        'muted-foreground': '#94A3B8' /* Gray-blue text */
       },
       scale: {
         25: '.25'
@@ -197,9 +209,11 @@ const config: Config = {
         'heading-md': ['24px', '1.375'],
         'heading-lg': ['36px', '1.375'],
         'heading-xl': ['64px', '1.375'],
+        'heading-xxl': ['88px', '1.375'],
         'body-sm': ['14px', '1.625'],
         'body-md': ['16px', '1.625'],
-        'body-lg': ['18px', '1.625']
+        'body-lg': ['18px', '1.625'],
+        'body-llg': ['22px', '1.625']
       },
       screens: {
         xs: '475px'

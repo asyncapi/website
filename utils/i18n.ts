@@ -14,15 +14,10 @@ export const i18nPaths: I18nPaths = {
     '', // Homepage Route
     '/tools/cli',
     '/newsletter'
-  ],
-  zh_cn: [
-    '', // Homepage Route
-    '/tools/cli',
-    '/newsletter'
   ]
 };
 
-export const languages = ['en', 'de', 'zh_cn'];
+export const languages = ['en', 'de'];
 export const defaultLanguage = 'en';
 
 export { useTranslation };

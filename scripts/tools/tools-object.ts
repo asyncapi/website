@@ -8,6 +8,7 @@ import type { AsyncAPITool, ToolsData, ToolsListObject } from '@/types/scripts/t
 import { logger } from '../helpers/logger';
 import { convertToJson } from '../helpers/utils';
 import { categoryList } from './categorylist';
+import { compareToolsDeterministic } from './compare-tools';
 import schema from './tools-schema.json';
 
 const ajv = new Ajv();
@@ -144,6 +145,12 @@ async function convertTools(data: ToolsData) {
         }
       })
     );
+
+    // Sort each category's list deterministically
+    // by (title, repoUrl) so that `tools-automated.json` is deterministic.
+    for (const category of Object.keys(finalToolsObject)) {
+      finalToolsObject[category].toolsList.sort(compareToolsDeterministic);
+    }
 
     return finalToolsObject;
   } catch (err: unknown) {

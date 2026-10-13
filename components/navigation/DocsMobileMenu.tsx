@@ -29,7 +29,7 @@ export default function DocsMobileMenu({ post, navigation, onClickClose = () => 
         <div className='fixed inset-0'>
           <div className='absolute inset-0 bg-gray-600 opacity-75' onClick={onClickClose}></div>
         </div>
-        <div className='relative flex w-full max-w-xs flex-1 flex-col bg-white'>
+        <div className='relative flex w-full max-w-xs flex-1 flex-col bg-white dark:bg-dark-background'>
           <div className='absolute right-0 top-0 -mr-14 p-1'>
             <button
               onClick={onClickClose}
@@ -47,7 +47,7 @@ export default function DocsMobileMenu({ post, navigation, onClickClose = () => 
             </div>
             <div className='mb-4 mt-10 w-full px-2'>
               <SearchButton
-                className='flex w-full items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500'
+                className='flex w-full items-center space-x-3 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-left text-sm text-gray-700 shadow-sm transition-all duration-500 ease-in-out hover:border-secondary-500 hover:bg-secondary-100 hover:text-secondary-500 dark:border-dark-text dark:bg-dark-card dark:text-dark-text dark:hover:border-secondary-500 dark:hover:bg-dark-background dark:hover:text-secondary-500'
                 indexName={DOCS_INDEX_NAME}
               >
                 <IconLoupe />

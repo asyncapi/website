@@ -16,15 +16,19 @@ const currentDirPath = dirname(currentFilePath);
  * @param manualTools - The manual tools data
  * @param toolsPath - The file path where the combined tools data will be written
  * @param tagsPath - The file path where the tags data will be written
+ * @param ignorePath - Path to the tools-ignore.json file
+ * @param ignoredOutputPath - Path to write the audit log of ignored tools
  */
 async function combineAutomatedAndManualTools(
   automatedTools: any,
   manualTools: any,
   toolsPath: string,
-  tagsPath: string
+  tagsPath: string,
+  ignorePath?: string,
+  ignoredOutputPath?: string
 ) {
   try {
-    await combineTools(automatedTools, manualTools, toolsPath, tagsPath);
+    await combineTools(automatedTools, manualTools, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
   } catch (err) {
     logger.error('Error while combining tools:', err);
     throw new Error(`An error occurred while combining tools: ${(err as Error).message}`);
@@ -43,9 +47,18 @@ async function combineAutomatedAndManualTools(
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
+ * @param ignorePath - Path to the tools-ignore.json file.
+ * @param ignoredOutputPath - Path to write the audit log of ignored tools.
  * @throws {Error} If an error occurs during the build process.
  */
-async function buildTools(automatedToolsPath: string, manualToolsPath: string, toolsPath: string, tagsPath: string) {
+async function buildTools(
+  automatedToolsPath: string,
+  manualToolsPath: string,
+  toolsPath: string,
+  tagsPath: string,
+  ignorePath?: string,
+  ignoredOutputPath?: string
+) {
   try {
     const githubExtractData = await getData();
     const automatedTools = await convertTools(githubExtractData);
@@ -53,7 +66,7 @@ async function buildTools(automatedToolsPath: string, manualToolsPath: string, t
     await fs.writeFile(automatedToolsPath, JSON.stringify(automatedTools, null, '  '));
 
     const manualTools = JSON.parse(await fs.readFile(manualToolsPath, 'utf-8'));
-    await combineAutomatedAndManualTools(automatedTools, manualTools, toolsPath, tagsPath);
+    await combineAutomatedAndManualTools(automatedTools, manualTools, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
   } catch (err) {
     throw new Error(`An error occurred while building tools: ${(err as Error).message}`);
   }
@@ -67,13 +80,17 @@ async function buildTools(automatedToolsPath: string, manualToolsPath: string, t
  * @param manualToolsPath - The file path from which the manual tools data is read.
  * @param toolsPath - The file path where the combined tools data will be written.
  * @param tagsPath - The file path where the tags data will be written.
+ * @param ignorePath - Path to the tools-ignore.json file.
+ * @param ignoredOutputPath - Path to write the audit log of ignored tools.
  * @throws {Error} If the automated or manual tools files are not found, or if an error occurs during the build process.
  */
 async function buildToolsManual(
   automatedToolsPath: string, 
   manualToolsPath: string, 
   toolsPath: string, 
-  tagsPath: string
+  tagsPath: string,
+  ignorePath?: string,
+  ignoredOutputPath?: string
 ) {
   try {
     if (!await fs.pathExists(automatedToolsPath)) {
@@ -87,7 +104,7 @@ async function buildToolsManual(
     
     const automatedTools = JSON.parse(await fs.readFile(automatedToolsPath, 'utf-8'));
     const manualTools = JSON.parse(await fs.readFile(manualToolsPath, 'utf-8'));
-    await combineAutomatedAndManualTools(automatedTools, manualTools, toolsPath, tagsPath);
+    await combineAutomatedAndManualTools(automatedTools, manualTools, toolsPath, tagsPath, ignorePath, ignoredOutputPath);
   } catch (err) {
     logger.error('Error in buildToolsManual:', err);
     throw new Error(`An error occurred while building tools manually: ${(err as Error).message}`);
@@ -100,8 +117,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const manualToolsPath = resolve(currentDirPath, '../config', 'tools-manual.json');
   const toolsPath = resolve(currentDirPath, '../config', 'tools.json');
   const tagsPath = resolve(currentDirPath, '../config', 'all-tags.json');
+  const ignorePath = resolve(currentDirPath, '../config', 'tools-ignore.json');
+  const ignoredOutputPath = resolve(currentDirPath, '../config', 'tools-ignored.json');
 
-  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath).catch((err) => {
+  buildTools(automatedToolsPath, manualToolsPath, toolsPath, tagsPath, ignorePath, ignoredOutputPath).catch((err) => {
     logger.error('Failed to build tools:', err);
     process.exit(1);
   });

@@ -25,6 +25,12 @@ After installing Node.js and NPM, run the following command to install the Async
 ```sh
 npm install -g @asyncapi/cli
 ```
+
+> [!NOTE]
+> AsyncAPI Studio is not bundled with the CLI to keep the install small. The first time you run `asyncapi start studio`, `asyncapi start preview`, or `asyncapi new --studio`, the CLI will ask to download Studio (~450MB) into its data directory. To download it ahead of time, run `asyncapi studio install` (or `asyncapi studio install --yes` without a prompt). In non-interactive environments (like CI), pass `--yes` or set `ASYNCAPI_STUDIO_AUTO_INSTALL=1`.
+
+> [!IMPORTANT]
+> Standalone `.exe`, `.pkg`, `.deb`, and archive installations do not bundle npm. All non-Studio CLI commands work without npm, but installing Studio on-demand requires npm on `PATH`. If the CLI reports that npm is unavailable, install Node.js and npm from [nodejs.org](https://nodejs.org/) and rerun `asyncapi studio install --yes`.
 To enable the autocomplete feature in the CLI for the shells **bash and zshrc**, there is a script that will run automatically and autocomplete is only support for **bash and zshrc** for the **powershell** refer to manually enabling  [autocomplete](https://www.asyncapi.com/docs/tools/cli/autocompleteEnabled) guide in ClI:
 
 After the ClI installation :
@@ -68,6 +74,9 @@ docker run --rm -it \
    asyncapi/cli generate fromTemplate -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
 ```
 Note: Use ``` ` ``` instead of `\` for Windows.
+
+> [!NOTE]
+> The Docker image keeps chromium (so PDF generation with `@asyncapi/html-template` works out of the box) but does not bundle AsyncAPI Studio. Running `asyncapi start studio`/`start preview` inside the container will offer to install Studio on-demand; pass `--yes` (or set `ASYNCAPI_STUDIO_AUTO_INSTALL=1`) to install it without a prompt. Note that Studio starts a local web server, so you also need to publish the port (e.g. `-p 3210:3210`) to reach it from your host.
 
 
 ## Mac

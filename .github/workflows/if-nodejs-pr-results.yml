@@ -1,0 +1,180 @@
+# Privileged follow-up for "PR testing - if Node project".
+# Downloads check/coverage artifacts and posts PR comments / Codecov uploads.
+# Never checks out or executes pull request code.
+name: PR testing results - if Node project
+
+on:
+  workflow_run:
+    workflows: ["PR testing - if Node project"]
+    types: [completed]
+
+permissions: {}
+
+jobs:
+  publish-pr-results:
+    name: Publish PR check results
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Resolve pull request number
+        id: pr
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const wr = context.payload.workflow_run;
+            const headSha = wr.head_sha;
+            const headBranch = wr.head_branch;
+            const headOwner =
+              wr.head_repository?.owner?.login ||
+              wr.head_repository?.full_name?.split('/')[0];
+
+            if (!headSha || !headBranch || !headOwner) {
+              core.setOutput('number', '');
+              core.info(
+                `Missing required workflow_run head fields (sha=${headSha}, branch=${headBranch}, owner=${headOwner})`
+              );
+              return;
+            }
+
+            const headRef = `${headOwner}:${headBranch}`;
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              head: headRef,
+              per_page: 100,
+            });
+
+            const matches = pulls.filter((p) => p.head.sha === headSha);
+            if (matches.length === 1) {
+              core.setOutput('number', String(matches[0].number));
+              core.info(`Resolved PR #${matches[0].number} for ${headRef} @ ${headSha}`);
+              return;
+            }
+
+            if (matches.length > 1) {
+              core.warning(
+                `Ambiguous PR match for ${headRef} @ ${headSha}: ${matches
+                  .map((p) => '#' + p.number)
+                  .join(', ')}`
+              );
+            } else {
+              core.info(`No open PR for head ref ${headRef} with SHA ${headSha}`);
+            }
+            core.setOutput('number', '');
+
+      - name: Download PR check results
+        id: download_checks
+        if: steps.pr.outputs.number != ''
+        continue-on-error: true
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: pr-check-results
+          path: pr-check-results
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Download coverage artifact
+        id: download_coverage
+        if: steps.pr.outputs.number != ''
+        continue-on-error: true
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: coverage-lcov
+          path: coverage
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Read markdown check output
+        id: markdown
+        if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success'
+        run: |
+          if [ -s pr-check-results/markdown_output.txt ]; then
+            DELIMITER="EOF_MARKDOWN_$(openssl rand -hex 8)"
+            echo "output<<${DELIMITER}" >> "$GITHUB_OUTPUT"
+            cat pr-check-results/markdown_output.txt >> "$GITHUB_OUTPUT"
+            echo >> "$GITHUB_OUTPUT"
+            echo "${DELIMITER}" >> "$GITHUB_OUTPUT"
+          else
+            echo "output=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Read locale check output
+        id: locale
+        if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success'
+        run: |
+          if [ -s pr-check-results/locale_output.txt ]; then
+            DELIMITER="EOF_LOCALE_$(openssl rand -hex 8)"
+            echo "output<<${DELIMITER}" >> "$GITHUB_OUTPUT"
+            cat pr-check-results/locale_output.txt >> "$GITHUB_OUTPUT"
+            echo >> "$GITHUB_OUTPUT"
+            echo "${DELIMITER}" >> "$GITHUB_OUTPUT"
+          else
+            echo "output=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment on PR with markdown issues
+        if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.markdown.outputs.output != ''
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: markdown-check-error
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          message: |
+            ### Markdown Check Results
+
+            We found issues in the following markdown files:
+
+            ```
+            ${{ steps.markdown.outputs.output }}
+            ```
+
+      - name: Delete markdown check comment
+        if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.markdown.outputs.output == ''
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: markdown-check-error
+          delete: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Comment on PR with locale issues
+        if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.locale.outputs.output != ''
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: locale-check-error
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          message: |
+            ### Locale Check Results
+            We found issues with locale keys:
+            ```
+            ${{ steps.locale.outputs.output }}
+            ```
+            Please make sure all locale files have the same translation keys.
+
+      - name: Delete locale check comment if no issues
+        if: steps.pr.outputs.number != '' && steps.download_checks.outcome == 'success' && steps.locale.outputs.output == ''
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          number: ${{ steps.pr.outputs.number }}
+          header: locale-check-error
+          delete: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Upload Coverage to Codecov
+        if: steps.pr.outputs.number != '' && steps.download_coverage.outcome == 'success' && hashFiles('coverage/lcov.info') != ''
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
+        with:
+          fail_ci_if_error: true
+          files: ./coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+          # workflow_run context points at the default branch; tell Codecov which PR/commit this coverage belongs to
+          override_commit: ${{ github.event.workflow_run.head_sha }}
+          override_pr: ${{ steps.pr.outputs.number }}
+          override_branch: ${{ github.event.workflow_run.head_branch }}

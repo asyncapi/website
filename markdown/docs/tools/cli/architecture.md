@@ -72,7 +72,7 @@ src/
 - **Core:** `validate`, `convert`, `format`, `optimize`, `diff`, `bundle`
 - **Generation:** `generate client`, `generate models`, `generate fromTemplate`
 - **Config:** `config context`, `config analytics`, `config versions`
-- **Utility:** `new file`, `new template`, `start api|studio|preview`, `pretty`
+- **Utility:** `new file`, `new template`, `start api|studio|preview`, `pretty` (Studio for `start studio`/`preview` is installed on-demand, not bundled)
 
 ### API Server
 
@@ -150,3 +150,19 @@ HTTP Request → Express → Controller → Domain Service → HTTP Response
 | **Core** | oclif, TypeScript, Express |
 | **AsyncAPI** | @asyncapi/parser, generator, converter, bundler, diff, optimizer |
 | **Supporting** | winston, ajv, chalk, @clack/prompts |
+
+## Workspace packages (monorepo)
+
+This repository is an npm-workspaces + [Turborepo](https://turbo.build/) monorepo. The root package is
+`@asyncapi/cli` (still published from the repo root). `workspaces` includes both `"."` and `packages/*`
+so Changesets versions the CLI the same way it does today (`npx changeset` → select `@asyncapi/cli`)
+and also versions workspace packages such as `@asyncapi/optimizer` and `@asyncapi/diff`. Additional publishable packages live under `packages/*`:
+
+| Package | Path | Notes |
+|---------|------|-------|
+| `@asyncapi/optimizer` | `packages/optimizer/` | The optimization library used by the `asyncapi optimize` command. Published independently to npm; the CLI depends on it via the workspace (`"@asyncapi/optimizer": "*"`). `@asyncapi/parser` is a `peerDependency` of this package. |
+| `@asyncapi/diff` | `packages/diff/` | The diff library used by `asyncapi diff` and `POST /v1/diff`. Published independently to npm; the CLI depends on it via the workspace (`"@asyncapi/diff": "*"`). Callers pass already-parsed documents. `@asyncapi/parser` is a devDependency of this package. |
+
+Turbo orders builds so `@asyncapi/optimizer` and `@asyncapi/diff` are built before the root CLI (whose build compiles the
+commands that import them). Use `npm run optimizer:build` / `npm run optimizer:test` and `npm run diff:build` / `npm run diff:test` to work on them
+in isolation. Specs: [`docs/optimizer/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/optimizer/spec.md), [`docs/diff/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/diff/spec.md).

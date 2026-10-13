@@ -4,11 +4,10 @@ import IconAmbassador from '../icons/Ambassador';
 import IconContributing from '../icons/Contributing';
 import IconDashboard from '../icons/Dashboard';
 import IconGithubOrganization from '../icons/GithubOrganization';
-import IconMeetings from '../icons/Meetings';
-import IconModelina from '../icons/Modelina';
 import IconNewsroom from '../icons/Newsroom';
 import IconSlack from '../icons/Slack';
 import IconTSC from '../icons/TSC';
+import IconUsersGroup from '../icons/UsersGroup';
 
 interface CommunityItem {
   icon: React.ComponentType<any>;
@@ -36,7 +35,7 @@ const communityItems: CommunityItem[] = [
   {
     icon: IconContributing,
     title: 'Contributing',
-    href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi',
+    href: 'https://github.com/asyncapi/#%E2%80%8D-contribute-to-asyncapi',
     target: '_blank',
     description:
       'We are always welcoming and looking for contributions. If you are interested check out our contribution guide.'
@@ -54,7 +53,7 @@ const communityItems: CommunityItem[] = [
     description: 'Passionate about APIs? Become an AsyncAPI Ambassador and help shape the future of APIs.'
   },
   {
-    icon: IconModelina,
+    icon: IconUsersGroup,
     title: 'Board Members',
     href: '/community/board',
     description: 'Get to know what is a Board member, how you can become one, and meet our current board members.'
@@ -67,16 +66,10 @@ const communityItems: CommunityItem[] = [
       'Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?'
   },
   {
-    icon: IconMeetings,
-    title: 'Events',
-    href: '/community/events',
-    description: 'See what events and meetings are organized under AsyncAPI umbrella and join one of them.'
-  },
-  {
     icon: IconNewsroom,
-    title: 'Newsroom',
-    href: '/community/newsroom',
-    description: 'Get upto date with the recent activity in the initiative.'
+    title: 'Events & Updates',
+    href: '/community/events-and-updates',
+    description: 'Stay updated with AsyncAPI events, blogs, videos, and community news.'
   }
 ];
 

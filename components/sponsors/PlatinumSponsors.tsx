@@ -16,10 +16,10 @@ interface SponsorsProps {
  */
 export default function PlatinumSponsors({ className = '', showSupportBanner = true }: SponsorsProps): React.ReactNode {
   return (
-    <div className={`text-center ${className}`}>
-      <ul className='mb-4 flex flex-wrap items-center justify-center md:px-4'>
+    <div className={`text-center  ${className} `}>
+      <ul className='mb-4 flex flex-wrap  items-center justify-center md:px-4'>
         {platinumSponsors.map((sponsor, index) => (
-          <li key={index} className='w-2/3 sm:w-1/4 md:w-1/3 lg:w-1/5' data-testid='Sponsors-list'>
+          <li key={index} className='w-2/3 sm:w-1/4  md:w-1/3 lg:w-1/5' data-testid='Sponsors-list'>
             <a
               href={sponsor.website}
               target='_blank'
@@ -28,7 +28,7 @@ export default function PlatinumSponsors({ className = '', showSupportBanner = t
               data-testid='Sponsors-link'
             >
               <SponsorImage
-                className={sponsor?.imageClass}
+                className={`${sponsor?.imageClass} rounded-lg p-2  dark:bg-dark-text bg-white`}
                 src={sponsor.imageSrc}
                 alt={sponsor.altText}
                 data-testid='Sponsors-img'

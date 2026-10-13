@@ -36,11 +36,11 @@ export default function GenericLayout({
   }
 
   return (
-    <div data-testid='GenericLayout'>
+    <div className='bg-white dark:bg-dark-background min-h-screen' data-testid='GenericLayout'>
       <Head title={title} description={description} image={image} />
       <Container wide={wide}>
         <div data-testid='GenericLayout-banner'>
-          <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} small={true} />
+          <AnnouncementHero className={`m-4 text-center ${hideBanner && 'hidden'}`} />
         </div>
         <div id='main-content' data-testid='Generic-main'>
           {children}

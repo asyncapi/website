@@ -17,13 +17,85 @@ export default function BarChartComponent() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
-  // Extracting unique categories and months from the data
+  /*
+    TODO: Uncomment the block below to enable previous-years data (2023) and "All Years" selection.
+    Uncomment this code to implement data of previous years in finance chart.
+    When enabled, this replaces direct usage of `ExpensesData`/`ExpensesLinkData` with `currentExpensesData`
+    and `currentExpensesLinkData` so the chart can show 2023, 2024, or All Years combined.
+  */
+
+  // // import Expenses2023Data from '../../config/finance/json-data/Expenses2023.json';
+  // // import ExpensesLink2023Data from '../../config/finance/json-data/ExpensesLink2023.json';
+  // //
+  // // // Selected year state
+  // // const [selectedYear, setSelectedYear] = useState<string>('2024');
+  // //
+  // // // Available years for the dropdown
+  // // const availableYears = ['2024', '2023', 'All Years'];
+  // //
+  // // // Function to get the appropriate data based on selected year
+  // // const getExpensesData = () => {
+  // //   switch (selectedYear) {
+  // //     case '2023':
+  // //       return Expenses2023Data;
+  // //     case 'All Years': {
+  // //       // Combine all years data with year-prefixed keys
+  // //       const combined: Record<string, ExpenseItem[]> = {};
+  // //
+  // //       Object.entries(Expenses2023Data).forEach(([month, data]) => {
+  // //         combined[`${month} 2023`] = data as ExpenseItem[];
+  // //       });
+  // //
+  // //       Object.entries(ExpensesData).forEach(([month, data]) => {
+  // //         combined[`${month} 2024`] = data as ExpenseItem[];
+  // //       });
+  // //
+  // //       return combined;
+  // //     }
+  // //     case '2024':
+  // //     default:
+  // //       return ExpensesData;
+  // //   }
+  // // };
+  // //
+  // // // Function to get the appropriate link data based on selected year
+  // // const getExpensesLinkData = () => {
+  // //   switch (selectedYear) {
+  // //     case '2023':
+  // //       return ExpensesLink2023Data;
+  // //     case 'All Years': {
+  // //       // Merge links from both years, with 2023 taking precedence for duplicates
+  // //       const allLinks = [...ExpensesLink2023Data];
+  // //
+  // //       ExpensesLinkData.forEach((link) => {
+  // //         if (!allLinks.find((l) => l.category === link.category)) {
+  // //           allLinks.push(link);
+  // //         }
+  // //       });
+  // //
+  // //       return allLinks;
+  // //     }
+  // //     case '2024':
+  // //     default:
+  // //       return ExpensesLinkData;
+  // //   }
+  // // };
+  // //
+  // // // Get current data based on selected year
+  // // const currentExpensesData = getExpensesData();
+  // // const currentExpensesLinkData = getExpensesLinkData();
+
+  // (If you enable the block above, replace categories and months with following block of code:
+  // const categories: string[] = getUniqueCategories(currentExpensesData as Record<string, Array<{ Category: string }>>);
+  // const months: string[] = Object.keys(currentExpensesData);)
   const categories: string[] = getUniqueCategories();
   const months: string[] = Object.keys(ExpensesData);
 
   // Effect hook to update windowWidth state on resize
   useEffect(() => {
+    setIsMounted(true);
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -38,12 +110,21 @@ export default function BarChartComponent() {
     };
   }, []);
 
-  // Filtering data based on selected month and category
+  // Filtering data based on selected month and category (code 2 - active)
   const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
     selectedMonth === 'All Months' || selectedMonth === month
       ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
       : []
   );
+
+  // // --- if previous-years support is enabled: Uncomment code block given below
+  // // const filteredData: ExpenseItem[] = Object.entries(currentExpensesData).flatMap(([month, entries]) =>
+  // //   selectedMonth === 'All Months' || selectedMonth === month
+  // //     ? (entries as ExpenseItem[]).filter(
+  // //         (entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory
+  // //       )
+  // //     : []
+  // // );
 
   // Calculating total amount of filtered data
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
@@ -70,21 +151,23 @@ export default function BarChartComponent() {
 
   return (
     <div className='mt-8 flex items-center justify-center sm:px-6 lg:px-8'>
-      <div className='w-full px-4 text-center lg:w-2/3'>
+      <div className='w-full px-4 text-center lg:w-2/3 dark:text-dark-text'>
         <div className='mb-5'>
-          <h1 id='budget-analysis' className='my-2 mb-4 text-3xl font-semibold'>
+          <h1 id='budget-analysis' className='my-2 mb-4 text-3xl font-semibold dark:text-white'>
             Budget Analysis
           </h1>
           <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
           <div className='my-4 flex flex-col justify-between md:m-8 md:flex-row md:items-center md:justify-between'>
             <div className='my-2'>
               <p className='text-center sm:text-left'>Expenses</p>
-              <p className='mt-1 text-center text-xl font-semibold sm:text-left'>${totalAmount.toFixed(2)}</p>
+              <p className='mt-1 text-center text-xl font-semibold sm:text-left dark:text-white'>
+                ${totalAmount.toFixed(2)}
+              </p>
             </div>
             <div className='space-x-4 md:flex'>
               <div className='mx-auto'>
                 <select
-                  className='m-1 w-full rounded-md border border-gray-600 bg-white p-2 text-xs font-semibold text-violet sm:w-auto md:w-48'
+                  className='m-1 w-full rounded-md border border-gray-600 bg-white dark:bg-dark-card dark:text-white p-2 text-xs font-semibold text-violet sm:w-auto md:w-48'
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
@@ -95,6 +178,7 @@ export default function BarChartComponent() {
                     </option>
                   ))}
                 </select>
+
                 <select
                   className='m-1 w-full rounded-md border border-gray-600 bg-violet p-2 pr-8 text-xs font-semibold text-white sm:w-auto md:w-48'
                   value={selectedMonth}
@@ -107,33 +191,63 @@ export default function BarChartComponent() {
                     </option>
                   ))}
                 </select>
+
+                {/*
+                  If you enable the previous-years block above, add the year selector here:
+                  <select
+                    className='m-1 w-full rounded-md border border-gray-600 bg-violet p-2 pr-8 text-xs font-semibold text-white sm:w-auto md:w-48'
+                    value={selectedYear}
+                    onChange={(e) => setSelectedYear(e.target.value)}
+                  >
+                    {availableYears.map((year) => (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
+                    ))}
+                  </select>
+                */}
               </div>
             </div>
           </div>
         </div>
-        <div className='flex justify-center'>
-          <BarChart width={barWidth} height={barHeight} data={chartData}>
-            <CartesianGrid strokeDasharray='3 3' />
-            <YAxis tickFormatter={(value) => `$${value}`} />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Bar
-              dataKey='Amount'
-              fill='#7B5DD3FF'
-              onClick={(data) => {
-                const category = data.payload.Category;
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
-                  (obj) => obj.category === category
-                );
+        <div className='finance-chart flex justify-center dark:text-dark-text'>
+          {isMounted && windowWidth >= 900 && (
+            <BarChart width={barWidth} height={barHeight} data={chartData}>
+              <CartesianGrid strokeDasharray='3 3' stroke='currentColor' className='opacity-30' />
+              <YAxis tickFormatter={(value) => `$${value}`} stroke='currentColor' />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend wrapperStyle={{ color: 'inherit' }} />
+              <Bar
+                dataKey='Amount'
+                fill='#7B5DD3FF'
+                onClick={(data) => {
+                  const category = data.payload.Category;
 
-                if (matchedLinkObject) {
-                  window.open(matchedLinkObject.link, '_blank');
-                }
-              }}
-            />
-          </BarChart>
+                  // Active behavior: use the static 2024 ExpensesLinkData (code 2)
+                  const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
+                    (obj) => obj.category === category
+                  );
+
+                  if (matchedLinkObject) {
+                    window.open(matchedLinkObject.link, '_blank', 'noopener,noreferrer');
+                  }
+
+                  // // --- if previous-years support is enabled: Uncomment code given below
+                  // // const matchedLinkObject: ExpensesLinkItem | undefined = currentExpensesLinkData.find(
+                  // //   (obj: ExpensesLinkItem) => obj.category === category
+                  // // );
+                  // //
+                  // // if (matchedLinkObject) {
+                  // //   window.open(matchedLinkObject.link, '_blank');
+                  // // }
+                }}
+              />
+            </BarChart>
+          )}
         </div>
-        {windowWidth && windowWidth < 900 ? <ExpensesCard /> : null}
+        {isMounted && windowWidth < 900 ? (
+          <ExpensesCard selectedCategory={selectedCategory} selectedMonth={selectedMonth} />
+        ) : null}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { TerminalIcon } from '@heroicons/react/outline';
+import { CommandLineIcon } from '@heroicons/react/24/outline';
 import type React from 'react';
 
 import IconGenerator from '../icons/Generator';
@@ -31,7 +31,7 @@ const toolingItems: ToolingItem[] = [
   },
   {
     href: '/tools/cli',
-    icon: TerminalIcon,
+    icon: CommandLineIcon,
     title: 'CLI',
     description: 'Interact with AsyncAPI from the comfort of your CLI.'
   },

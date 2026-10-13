@@ -9,7 +9,7 @@ Suppose you can only sleep when the AC in your bedroom is set to 22 °C, and you
 
 In this tutorial:
 
-- You'll use the [Eclipse Mosquito](https://test.mosquitto.org) **MQTT broker**, which you'll connect to subscribe and publish messages using an MQTT client.
+- You'll use the [Eclipse Mosquitto](https://test.mosquitto.org) **MQTT broker**, which you'll connect to subscribe and publish messages using an MQTT client.
 - You'll use [Python Paho-MQTT](https://pypi.org/project/paho-mqtt/) as the **MQTT client** in this project.
 - You'll create a React template that will use the MQTT broker to allow you to monitor your bedroom's temperature and notify you when the temperature drops or rises above 22 °C.
 - Lastly, create a reusable component for the output code's `sendTemperatureDrop` and `sendTemperatureRise` functions.
@@ -44,7 +44,7 @@ Before you create the template, you'll need to have an [AsyncAPI document](https
 
 ``` yml
 
-asyncapi: 2.6.0
+asyncapi: 3.0.1
 
 info:
   title: Temperature Service
@@ -53,22 +53,26 @@ info:
 
 servers:
   dev:
-    url: test.mosquitto.org #in case you're using local mosquitto instance, change this value to localhost.
+    host: test.mosquitto.org #in case you're using local mosquitto instance, change this value to localhost.
     protocol: mqtt
 
 channels:
-  temperature/changed:
-    description: Updates the bedroom temperature in the database when the temperatures drops or goes up.
-    publish:
-      operationId: temperatureChange
-      message:
+  temperatureChanged:
+    address: temperature/changed
+    messages:
+      temperatureChange:
         description: Message that is being sent when the temperature in the bedroom changes.
         payload:
-          type: object
-          additionalProperties: false
-          properties:
-            temperatureId:
-              type: string
+          $ref: '#/components/schemas/temperatureId'
+    description: Updates the bedroom temperature in the database when the temperatures drops or goes up.
+
+operations:
+  temperatureChange:
+    action: receive
+    summary: Message sent to the broker when the temperature is changed.
+    channel:
+      $ref: '#/channels/temperatureChanged'
+
 components:
   schemas:
     temperatureId:
@@ -84,14 +88,16 @@ components:
 1. Create a new directory for your template named **python-mqtt-client-template**.
 2. Install the AsyncAPI CLI using the command `npm install -g @asyncapi/cli`.
 3. Create a new folder **test/fixtures** with a file named **asyncapi.yml** in your fixtures directory. This file is used to define the **structure** of your template. You can copy the above example and paste it in your **asyncapi.yml** document.
-4. Create a new file named **package.json** in your **python-mqtt-client-template** directory. This file is used to define the **dependencies** for your template.
+4. Create a new file named **package.json** in your **python-mqtt-client-template** directory. This file is used to define the **dependencies** for your template. Make sure to include `@asyncapi/generator` alongside your other dependencies here.
 5. Create a new folder **python-mqtt-client-template/template**. Create a new file named **index.js** in your **template** directory. This file is used to define the **logic** for your template.
-6. Create a **test.py** file to validate the logic of your application. Don't worry about this file for now. The tutorial will tell you how to create it later.
-
+6. Navigate into your template directory and run a single installation command to install all defined dependencies locally (this is required for the CLI to execute template commands):
+   ```bash
+   cd python-mqtt-client-template
+   npm install
 Now your directory should look like this:
 
-```
-python-mqtt-client-template 
+```text
+python-mqtt-client-template
 ├── template
 │   └── index.js
 ├── test
@@ -112,8 +118,8 @@ The **package.json** file is used to define the dependencies for your template. 
   "version": "0.0.1",
   "description": "A template that generates a Python MQTT client using MQTT.",
   "generator": {
-    "apiVersion": "v1",
-    "generator": ">=1.10.0 <2.0.0",
+    "apiVersion": "v3",
+    "generator": ">=2.0.0 <4.0.0",
     "supportedProtocols": ["mqtt"]
   },
   "dependencies": {
@@ -282,6 +288,12 @@ New temperature detected 72955029 sent to temperature/changed
 
 To make sure your **test.py** and client code works check if the broker really receives temperature-related messages. You can do it using an [MQTT CLI](https://hivemq.github.io/mqtt-cli/) using docker. Run the command `docker run hivemq/mqtt-cli sub -t temperature/changed -h test.mosquitto.org` in your terminal. It will download the image if you don't have it locally, then the CLI will connect to the broker, subscribe to the `temperature/changed` topic and then output the temperature ids on the terminal.
 
+> For testing against a local Docker broker, route to the host machine:
+
+```bash
+docker run hivemq/mqtt-cli sub -t temperature/changed -h host.docker.internal
+```
+
 ### 3. Update the template with client code
 
 Open [**index.js**](#indexjs-file) and copy the content of [**client.py**](#1-create-the-client) and replace `{asyncapi.info().title()}` with it. It should look like the code snippet below now:
@@ -326,8 +338,8 @@ In **package.json** you can have the scripts property that you invoke by calling
         "test": "npm run test:clean && npm run test:generate && npm run test:start"
       },
       "generator": {
-        "apiVersion": "v1",
-        "generator": ">=1.10.0 <2.0.0",
+        "apiVersion": "v3",
+        "generator": ">=2.0.0 <4.0.0",
         "supportedProtocols": ["mqtt"]
       },
       "dependencies": {
@@ -357,7 +369,7 @@ You often have different runtime environments in programming, e.g., development 
 ```yml
 servers:
   dev:
-    url: test.mosquitto.org
+    host: test.mosquitto.org
     protocol: mqtt
 ```
 
@@ -391,7 +403,7 @@ Update your `test:generate` script in **package.json** to include the server par
 "test:generate": "asyncapi generate fromTemplate test/fixtures/asyncapi.yml ./ --output test/project --force-write --param server=dev"
 ```
 
-You can now replace the static broker from `mqttBroker = 'test.mosquitto.org'` to `mqttBroker = "${asyncapi.servers().get(params.server).url()}"` in **index.js**.
+You can now replace the static broker from `mqttBroker = 'test.mosquitto.org'` to `mqttBroker = "${asyncapi.servers().get(params.server).host()}"` in **index.js**.
 
 Now the template code looks like this:
 
@@ -405,7 +417,7 @@ export default function ({ asyncapi, params }) {
     <File name="client.py">
       {`import paho.mqtt.client as mqtt
 
-mqttBroker = "${asyncapi.servers().get(params.server).url()}"
+mqttBroker = "${asyncapi.servers().get(params.server).host()}"
 
 class TemperatureServiceClient:
     def __init__(self):
@@ -436,7 +448,7 @@ export default function ({ asyncapi, params }) {
     // 2
       <Text newLines={2}>import paho.mqtt.client as mqtt</Text>
     // 3
-      <Text newLines={2}>mqttBroker = "{asyncapi.servers().get(params.server).url()}"</Text>
+      <Text newLines={2}>mqttBroker = "{asyncapi.servers().get(params.server).host()}"</Text>
     // 4
       <Text newLines={2}>class {asyncapi.info().title().replaceAll(' ', '')}Client:</Text>
     // 5
@@ -483,23 +495,23 @@ class TemperatureServiceClient:
 
 ```
 
-You'll then need to template to dynamically generate `sendTemperatureDrop` and `sendTemperatureRise` functions in the generated code based off the AsyncAPI document content. The goal is to write template code that returns functions for channels that the Temperature Service application is subscribed to. The template code to generate these functions will look like this:
+You'll then need a template to dynamically generate `sendTemperatureDrop` and `sendTemperatureRise` functions in the generated code based off the AsyncAPI document content. The goal is to write template code that returns functions for operations marked with `action: receive`, using their associated channels. The template code to generate these functions will look like this:
 
 ```js
 <Text indent={2} newLines={2}>
-  <TopicFunction channels={asyncapi.channels().filterByReceive()} />
+  <TopicFunction operations={asyncapi.operations().filterByReceive()} />
 </Text>
 ```
 
-It's recommended to put reusable components outside the template directory in a new directory called components. You'll create a component that will dynamically generate functions in the output for as many channels as there are in your AsyncAPI document that contains a `publish` operation. Add the following code in the **python-mqtt-client-template/components/TopicFunction.js** file, after creating the **python-mqtt-client-template/components/** directory:
+It's recommended to put reusable components outside the template directory in a new directory called components. You'll create a component that will dynamically generate functions in the output for as many operations as there are in your AsyncAPI document that are marked with `action: receive`. Add the following code in the **python-mqtt-client-template/components/TopicFunction.js** file, after creating the **python-mqtt-client-template/components/** directory:
 
 ```js
 /*
  * This component returns a block of functions that user can use to send messages to specific topic.
- * As input it requires a list of Channel models from the parsed AsyncAPI document
+ * As input it requires a list of Operation models from the parsed AsyncAPI document marked with `action: receive`.
  */
-export function TopicFunction({ channels }) {
-  const topicsDetails = getTopics(channels);
+export function TopicFunction({ operations }) {
+  const topicsDetails = getTopics(operations);
   let functions = '';
 
   topicsDetails.forEach((t) => {
@@ -518,25 +530,28 @@ export function TopicFunction({ channels }) {
  *
  * As input it requires a list of Channel models from the parsed AsyncAPI document
  */
-function getTopics(channels) {
-  const channelsCanSendTo = channels;
+function getTopics(operations) {
   let topicsDetails = [];
 
-  channelsCanSendTo.forEach((ch) => {
-    const topic = {};
-    const operationId = ch.operations().filterByReceive()[0].id();
-    topic.name = operationId.charAt(0).toUpperCase() + operationId.slice(1);
-    topic.topic = ch.address();
+  operations.forEach((op) => {
+    const channels = op.channels().all();
+    if (!channels.length) return;
 
-    topicsDetails.push(topic);
-  })
-
+    const channel = channels[0];
+    const operationId = op.operationId() || op.id();
+    
+    topicsDetails.push({
+      name: operationId.charAt(0).toUpperCase() + operationId.slice(1),
+      topic: channel.address()
+    });
+  });
+  
   return topicsDetails;
 }
 ```
 
-`{ channels }`: the `TopicFunction` component accepts a custom prop called channels and in your template code
-`getTopics(channels)`: Returns a list of objects, one for each channel with two properties; name and topic. The **name** holds information about the `operationId` provided in the AsyncAPI document while the **topic** holds information about the address of the topic.
+`{ operations }`: the `TopicFunction` component accepts a custom prop called operations and in your template code 
+`getTopics(operations)`: Returns a list of objects, one for each operation with two properties; name and topic. The **name** holds information about the `operationId` provided in the AsyncAPI document (or a generated ID if operationId is not set) while the **topic** holds information about the address of the topic from the operation's associated channel.
 
 Import the `TopicFunction` component in your template code in **index.js** and add the template code to generate the functions to topics that the `Temperature Service` application is subscribed to. In your case, the final version of your template code should look like this:
 
@@ -549,7 +564,7 @@ export default function ({ asyncapi, params }) {
     <File name="client.py">
       <Text newLines={2}>import paho.mqtt.client as mqtt</Text>
 
-      <Text newLines={2}>mqttBroker = "{asyncapi.servers().get(params.server).url()}"</Text>
+      <Text newLines={2}>mqttBroker = "{asyncapi.servers().get(params.server).host()}"</Text>
 
       <Text newLines={2}>class {asyncapi.info().title().replaceAll(' ', '')}Client:</Text>
 
@@ -560,7 +575,7 @@ export default function ({ asyncapi, params }) {
       </Text>
 
       <Text indent={2} newLines={2}>
-        <TopicFunction channels={asyncapi.channels().filterByReceive()} />
+        <TopicFunction operations={asyncapi.operations().filterByReceive()} />
       </Text>
     </File>
   )
@@ -587,7 +602,7 @@ python-mqtt-client-template
 
 Run `npm test` on your terminal to ensure everything works as expected.
 
-In the next section, you'll add another channel to **asyncapi.yml** file called `temperature/dropped` and `temperature/risen` then run the template again to make sure it still works as expected.
+In the next section, you'll add another channel to **asyncapi.yml** file called `temperatureDropped` and `temperatureRisen` then run the template again to make sure it still works as expected.
 
 #### 5d. Update AsyncAPI document
 
@@ -595,31 +610,34 @@ Update the AsyncAPI document to use two channels:
 
 ```yml
 channels:
-  temperature/dropped:
-    description:  Notifies the user when the temperature drops past a certain point.
-    publish:
-      operationId: temperatureDrop
-      message:
+  temperatureDropped:
+    address: temperature/dropped
+    messages:
+      temperatureDrop:
         description: Message that is being sent when the temperature drops past a certain point.
         payload:
-          type: object
-          additionalProperties: false
-          properties:
-            temperatureId:
-              type: string
-
-  temperature/risen:
-    description: Notifies the user when the temperature rises past a certain point.
-    publish:
-      operationId: temperatureRise
-      message:
+          $ref: '#/components/schemas/temperatureId'
+    description: Notifies the user when the temperature drops past a certain point.
+  temperatureRisen:
+    address: temperature/risen
+    messages:
+      temperatureRise:
         description: Message that is being sent when the temperature rises past a certain point.
         payload:
-          type: object
-          additionalProperties: false
-          properties:
-            temperatureId:
-              type: string
+          $ref: '#/components/schemas/temperatureId'
+    description: Notifies the user when the temperature rises past a certain point.
+
+operations:
+  temperatureDrop:
+    action: receive
+    summary: Message sent to the broker when the temperature is dropped.
+    channel:
+      $ref: '#/channels/temperatureDropped'
+  temperatureRise:
+    action: receive
+    summary: Message sent to the broker when the temperature is risen.
+    channel:
+      $ref: '#/channels/temperatureRisen'
 ```
 
 And update your test script in test.py to test the two functions as below:
@@ -644,6 +662,6 @@ Temperature rise detected 66943992 sent to temperature/risen
 
 Great job completing this tutorial! You have learnt how to use an AsyncAPI file to create a Python MQTT template and used it with the Paho-MQTT library in Python to connect to an MQTT broker and publish messages.😃
 
-If you want to tinker with a completed template and see what it would look like in production, check out the [Paho-MQTT template](https://github.com/derberg/python-mqtt-client-template/tree/v1.0.0). You can also check out the accompanying [article about creating MQTT client code](https://www.brainfart.dev/blog/asyncapi-codegen-python).
+If you want to tinker with a completed template and see what it would look like in production, check out the [Paho-MQTT template](https://github.com/Harsh16gupta/asyncapi-v3-template-final).
 
 You can also check out the [MQTT beginners guide](https://medium.com/python-point/mqtt-basics-with-python-examples-7c758e605d4) tutorial to learn more about asynchronous messaging using MQTT.

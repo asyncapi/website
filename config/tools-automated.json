@@ -14,7 +14,8 @@
           "language": "Python",
           "technology": [
             "Socket.IO",
-            "Flask"
+            "Flask",
+            "asyncio"
           ],
           "categories": [
             "code-first",
@@ -30,8 +31,30 @@
     "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
     "toolsList": [
       {
+        "title": "AsyncAPI.Net",
+        "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
+        "links": {
+          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET"
+          ],
+          "categories": [
+            "converters",
+            "code-first",
+            "validator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
         "links": {
           "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
           "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
@@ -52,22 +75,43 @@
         }
       },
       {
-        "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "title": "asyncapi3 (Go)",
+        "description": "Code-first AsyncAPI 3.0 document generation for Go: declare channels and operations as Go values, reflect payload schemas from your wire structs, validate against the embedded official meta-schema, and gate the committed document in CI.",
         "links": {
-          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
-          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+          "repoUrl": "https://github.com/mitresthen/asyncapi3",
+          "docsUrl": "https://pkg.go.dev/github.com/mitresthen/asyncapi3"
         },
         "filters": {
-          "language": "TypeScript",
+          "language": "Go",
           "technology": [
-            "Node.js",
-            "TypeScript"
+            "Go"
+          ],
+          "categories": [
+            "code-first"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            "ASP.NET",
+            ".NET"
           ],
           "categories": [
             "code-first",
-            "dsl",
-            "framework"
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -114,22 +158,20 @@
         }
       },
       {
-        "title": "AsyncAPI.Net",
-        "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
+        "title": "Pydantic-SocketIO",
+        "description": "Python-first Socket.IO runtime validation with Pydantic and code-first AsyncAPI contracts.",
         "links": {
-          "websiteUrl": "https://github.com/LEGO/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/LEGO/AsyncAPI.NET"
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO"
         },
         "filters": {
-          "language": "C#",
+          "language": "Python",
           "technology": [
-            ".NET",
-            "ASP.NET"
+            "Socket.IO",
+            "FastAPI",
+            "asyncio"
           ],
           "categories": [
-            "converters",
-            "code-first",
-            "validator"
+            "code-first"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -147,7 +189,8 @@
           "language": "Python",
           "technology": [
             "Socket.IO",
-            "Flask"
+            "Flask",
+            "asyncio"
           ],
           "categories": [
             "code-first",
@@ -158,20 +201,22 @@
         }
       },
       {
-        "title": "Bielu.AspNetCore.AsyncApi",
-        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation that generates AsyncAPI specs and consumer contracts.",
         "links": {
-          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
         },
         "filters": {
-          "language": "csharp",
+          "language": "TypeScript",
           "technology": [
-            "ASP.NET Core",
-            ".NET"
+            "Node.js",
+            "TypeScript"
           ],
           "categories": [
             "code-first",
-            "documentation-generator"
+            "dsl",
+            "framework"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -182,68 +227,6 @@
   "Code Generators": {
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
     "toolsList": [
-      {
-        "title": "Golang AsyncAPI Code Generator",
-        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
-        "links": {
-          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
-        },
-        "filters": {
-          "language": "golang",
-          "categories": [
-            "code-generator"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "ZenWave SDK",
-        "description": "DDD and API-First for Event-Driven Microservices",
-        "links": {
-          "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
-        },
-        "filters": {
-          "language": "Java",
-          "technology": [
-            "Maven",
-            "CLI",
-            "Spring Cloud Streams",
-            "JHipster JDL"
-          ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "ChanX",
-        "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
-        "links": {
-          "docsUrl": "https://chanx.readthedocs.io/",
-          "repoUrl": "https://github.com/huynguyengl99/chanx"
-        },
-        "filters": {
-          "language": "python",
-          "technology": [
-            "Django",
-            "FastAPI"
-          ],
-          "categories": [
-            "code-first",
-            "code-generator"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
       {
         "title": "AsyncAPI Modelina",
         "description": "Generate payload models into Java, TypeScript, Go, etc, you name it, from AsyncAPI documents. This tool gives you full control over the models through high customization",
@@ -283,34 +266,132 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "ChanX",
+        "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
+        "links": {
+          "docsUrl": "https://chanx.readthedocs.io/",
+          "repoUrl": "https://github.com/huynguyengl99/chanx"
+        },
+        "filters": {
+          "language": "python",
+          "technology": [
+            "Django",
+            "FastAPI"
+          ],
+          "categories": [
+            "code-first",
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/dimonoff/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "PHP AsyncAPI Annotations",
+        "description": "A comprehensive PHP library providing annotations/attributes for the AsyncAPI 3.0.0 specification. This library enables you to define AsyncAPI specifications using modern PHP 8.3+ attributes with strict typing, PSR compliance, and support for all protocol bindings.",
+        "links": {
+          "websiteUrl": "https://github.com/drmmr763/php-asyncapi-annotations",
+          "docsUrl": "https://github.com/drmmr763/php-asyncapi-annotations#readme",
+          "repoUrl": "https://github.com/drmmr763/php-asyncapi-annotations"
+        },
+        "filters": {
+          "language": "php",
+          "technology": [
+            "php",
+            "laravel",
+            "symfony"
+          ],
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Pydantic-SocketIO Codegen",
+        "description": "Generate Socket.IO TypeScript event interfaces from Pydantic-SocketIO AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO/tree/main/packages/codegen"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript",
+            "Socket.IO"
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
+        "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+          ],
+          "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
   "Converters": {
     "description": "The following is a list of tools that do not yet belong to any specific category but are also useful for the community.",
     "toolsList": [
-      {
-        "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
-        "links": {
-          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
-        },
-        "filters": {
-          "language": "C#",
-          "technology": [
-            ".NET",
-            "ASP.NET"
-          ],
-          "categories": [
-            "converters",
-            "code-first",
-            "validator"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
       {
         "title": "AsyncAPI.Net",
         "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.",
@@ -332,6 +413,51 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "AsyncAPI.NET",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
+        "links": {
+          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET"
+          ],
+          "categories": [
+            "converters",
+            "code-first",
+            "validator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Scalar AsyncAPI Upgrader",
+        "description": "Upgrade AsyncAPI documents to the latest version. Converts AsyncAPI 1.2 to 2.6, 2.6 to 3.0, and 3.0 to 3.1.",
+        "links": {
+          "websiteUrl": "https://scalar.com",
+          "docsUrl": "https://scalar.com/tools/asyncapi-upgrader/getting-started",
+          "repoUrl": "https://github.com/scalar/scalar/tree/main/packages/asyncapi-upgrader"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "JavaScript"
+          ],
+          "technology": [
+            "Node js"
+          ],
+          "categories": [
+            "converter"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -342,6 +468,30 @@
   "Documentation Generators": {
     "description": "The following is a list of tools that generate human-readable documentation from an AsyncAPI document.",
     "toolsList": [
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            "ASP.NET",
+            ".NET"
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
       {
         "title": "MessageFlow",
         "description": "Generate system-architecture documentation and diagrams from AsyncAPI specifications.",
@@ -360,51 +510,12 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
-      },
-      {
-        "title": "Bielu.AspNetCore.AsyncApi",
-        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
-        "links": {
-          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
-        },
-        "filters": {
-          "language": "csharp",
-          "technology": [
-            "ASP.NET Core",
-            ".NET"
-          ],
-          "categories": [
-            "code-first",
-            "documentation-generator"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
       }
     ]
   },
   "Editors": {
     "description": "The following is a list of editors or related tools that allow editing of AsyncAPI document.",
     "toolsList": [
-      {
-        "title": "AsyncAPI Studio",
-        "description": "Visually design your AsyncAPI files and event-driven architecture.",
-        "links": {
-          "websiteUrl": "https://studio.asyncapi.com",
-          "repoUrl": "https://github.com/asyncapi/studio"
-        },
-        "filters": {
-          "technology": [
-            "React JS",
-            "TypeScript"
-          ],
-          "categories": [
-            "editor"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
       {
         "title": "AsyncAPI Studio",
         "description": null,
@@ -442,6 +553,25 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "AsyncAPI Studio",
+        "description": "Visually design your AsyncAPI files and event-driven architecture.",
+        "links": {
+          "websiteUrl": "https://studio.asyncapi.com",
+          "repoUrl": "https://github.com/asyncapi/studio"
+        },
+        "filters": {
+          "technology": [
+            "React JS",
+            "TypeScript"
+          ],
+          "categories": [
+            "editor"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
       }
     ]
   },
@@ -466,6 +596,60 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            "ASP.NET",
+            ".NET"
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Scalar",
+        "description": "Interactive API reference documentation from OpenAPI and AsyncAPI documents. Open-source, embeddable in any web page or framework, with built-in API client capabilities.",
+        "links": {
+          "websiteUrl": "https://scalar.com",
+          "docsUrl": "https://guides.scalar.com",
+          "repoUrl": "https://github.com/scalar/scalar"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "C#"
+          ],
+          "technology": [
+            "Vue.js",
+            "React JS",
+            "Node js",
+            ".NET",
+            "ASP.NET",
+            "Docker"
+          ],
+          "categories": [
+            "ui-component"
+          ],
+          "hasCommercial": true,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -473,22 +657,21 @@
     "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
     "toolsList": [
       {
-        "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "title": "tsp-asyncapi",
+        "description": "A TypeSpec emitter that generates AsyncAPI 3.1 specifications. It supports multiple protocol bindings (Kafka, MQTT, AMQP, SQS, etc.) and comprehensive schema generation.",
         "links": {
-          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
-          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+          "websiteUrl": "https://www.npmjs.com/package/tsp-asyncapi",
+          "docsUrl": "https://tsp-asyncapi.marvinhsu.dev/",
+          "repoUrl": "https://github.com/marvin-hsu/tsp-asyncapi"
         },
         "filters": {
           "language": "TypeScript",
           "technology": [
-            "Node.js",
-            "TypeScript"
+            "typespec",
+            "nodejs"
           ],
           "categories": [
-            "code-first",
-            "dsl",
-            "framework"
+            "dsl"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -519,6 +702,28 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "Zod Sockets",
+        "description": "Socket.IO solution with I/O validation that generates AsyncAPI specs and consumer contracts.",
+        "links": {
+          "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
+          "repoUrl": "https://github.com/RobinTail/zod-sockets"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript"
+          ],
+          "categories": [
+            "code-first",
+            "dsl",
+            "framework"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -526,8 +731,32 @@
     "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
     "toolsList": [
       {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            "ASP.NET",
+            ".NET"
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "Zod Sockets",
-        "description": "Socket.IO solution with I/O validation and the ability to generate AsyncAPI specification and a contract for consumers.",
+        "description": "Socket.IO solution with I/O validation that generates AsyncAPI specs and consumer contracts.",
         "links": {
           "websiteUrl": "https://www.npmjs.com/package/zod-sockets",
           "repoUrl": "https://github.com/RobinTail/zod-sockets"
@@ -592,24 +821,43 @@
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
       {
-        "title": "ZenWave SDK",
-        "description": "DDD and API-First for Event-Driven Microservices",
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
         "links": {
-          "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
         },
         "filters": {
-          "language": "Java",
+          "language": "Python",
           "technology": [
-            "Maven",
-            "CLI",
-            "Spring Cloud Streams",
-            "JHipster JDL"
+            "asyncapi-spec"
           ],
           "categories": [
-            "code-generator",
-            "dsl",
+            "validator",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Mokapi",
+        "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
+        "links": {
+          "websiteUrl": "https://mokapi.io",
+          "docsUrl": "https://mokapi.io/docs/welcome",
+          "repoUrl": "https://github.com/marle3003/mokapi"
+        },
+        "filters": {
+          "language": "Go/Golang",
+          "technology": [
+            "JavaScript",
+            "TypeScript",
+            "Docker"
+          ],
+          "categories": [
             "mocking-and-testing",
             "cli"
           ],
@@ -640,21 +888,24 @@
         }
       },
       {
-        "title": "Mokapi",
-        "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
-          "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
-          "repoUrl": "https://github.com/marle3003/mokapi"
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
-          "language": "Go/Golang",
+          "language": "Java",
           "technology": [
-            "JavaScript",
-            "TypeScript",
-            "Docker"
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
+            "code-generator",
+            "dsl",
             "mocking-and-testing",
             "cli"
           ],
@@ -668,22 +919,22 @@
     "description": "The following is a list of tools that validate AsyncAPI documents.",
     "toolsList": [
       {
-        "title": "AsyncAPI.NET",
-        "description": "The officially maintained fork of the AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET along with common (de)serializers to extract raw AsyncApi JSON and YAML documents from the model.",
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
         "links": {
-          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
-          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
         },
         "filters": {
-          "language": "C#",
+          "language": "Python",
           "technology": [
-            ".NET",
-            "ASP.NET"
+            "asyncapi-spec"
           ],
           "categories": [
-            "converters",
-            "code-first",
-            "validator"
+            "validator",
+            "mocking-and-testing",
+            "cli"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -728,12 +979,52 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "AsyncAPI.NET",
+        "description": "The official continuation of LEGO.AsyncAPI.NET from the original author and maintainer. The SDK contains a useful object model for AsyncAPI 3.0 documents in .NET. Full JsonSchema and Avro support",
+        "links": {
+          "websiteUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET/",
+          "repoUrl": "https://github.com/ByteBardOrg/AsyncAPI.NET"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET"
+          ],
+          "categories": [
+            "converters",
+            "code-first",
+            "validator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
   "Compare tools": {
     "description": "The following is a list of tools that compare AsyncAPI documents.",
     "toolsList": [
+      {
+        "title": "AsyncAPI Diff",
+        "description": "Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/diff"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "compare-tool"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
       {
         "title": "jasyncapicmp",
         "description": "Tool for comparing two AsyncAPI versions and evaluating compatibility.",
@@ -753,56 +1044,12 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
-      },
-      {
-        "title": "AsyncAPI Diff",
-        "description": "Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/diff"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "compare-tool"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
       }
     ]
   },
   "CLIs": {
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
     "toolsList": [
-      {
-        "title": "ZenWave SDK",
-        "description": "DDD and API-First for Event-Driven Microservices",
-        "links": {
-          "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
-        },
-        "filters": {
-          "language": "Java",
-          "technology": [
-            "Maven",
-            "CLI",
-            "Spring Cloud Streams",
-            "JHipster JDL"
-          ],
-          "categories": [
-            "code-generator",
-            "dsl",
-            "mocking-and-testing",
-            "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
       {
         "title": "AsyncAPI CLI",
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
@@ -820,6 +1067,115 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "AsyncAPI Payload Validator",
+        "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
+        "links": {
+          "websiteUrl": "https://pypi.org/project/asyncapi-payload-validator/",
+          "docsUrl": "https://github.com/ingka-group/asyncapi-payload-validator#readme",
+          "repoUrl": "https://github.com/ingka-group/asyncapi-payload-validator"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "asyncapi-spec"
+          ],
+          "categories": [
+            "validator",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            "ASP.NET",
+            ".NET"
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Mokapi",
+        "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
+        "links": {
+          "websiteUrl": "https://mokapi.io",
+          "docsUrl": "https://mokapi.io/docs/welcome",
+          "repoUrl": "https://github.com/marle3003/mokapi"
+        },
+        "filters": {
+          "language": "Go/Golang",
+          "technology": [
+            "JavaScript",
+            "TypeScript",
+            "Docker"
+          ],
+          "categories": [
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Pydantic-SocketIO Codegen",
+        "description": "Generate Socket.IO TypeScript event interfaces from Pydantic-SocketIO AsyncAPI contracts.",
+        "links": {
+          "repoUrl": "https://github.com/atomiechen/Pydantic-SocketIO/tree/main/packages/codegen"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js",
+            "TypeScript",
+            "Socket.IO"
+          ],
+          "categories": [
+            "code-generator",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -845,40 +1201,24 @@
         }
       },
       {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/hkirat/asyncapi-fork"
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
+          "language": "Java",
           "technology": [
-            "TypeScript"
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "Mokapi",
-        "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
-        "links": {
-          "websiteUrl": "https://mokapi.io",
-          "docsUrl": "https://mokapi.io/docs/guides/welcome",
-          "repoUrl": "https://github.com/marle3003/mokapi"
-        },
-        "filters": {
-          "language": "Go/Golang",
-          "technology": [
-            "JavaScript",
-            "TypeScript",
-            "Docker"
-          ],
-          "categories": [
+            "code-generator",
+            "dsl",
             "mocking-and-testing",
             "cli"
           ],
@@ -908,30 +1248,36 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
+      },
+      {
+        "title": "Bielu.AspNetCore.AsyncApi",
+        "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
+        "links": {
+          "repoUrl": "https://github.com/bielu/Bielu.AspNetCore.AsyncApi"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            "ASP.NET",
+            ".NET"
+          ],
+          "categories": [
+            "code-first",
+            "documentation-generator",
+            "cli",
+            "framework",
+            "ui-component",
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
   "IDE Extensions": {
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
     "toolsList": [
-      {
-        "title": "asyncapi-preview",
-        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
-        },
-        "filters": {
-          "technology": [
-            "VSCode",
-            "SmartPaste"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
       {
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
@@ -948,6 +1294,24 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+        },
+        "filters": {
+          "technology": [
+            "VSCode",
+            "SmartPaste"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -977,24 +1341,21 @@
     "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
     "toolsList": [
       {
-        "title": "Java Spring Cloud Stream Template",
-        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
+        "title": "HTML Template",
+        "description": null,
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
+          "repoUrl": "https://github.com/WSOL12/html-template"
         },
         "filters": {
-          "language": [
-            "javascript"
-          ],
+          "language": "javascript",
           "technology": [
-            "Spring Cloud Streams",
-            "Maven"
+            "HTML"
           ],
           "categories": [
             "generator-template"
           ],
           "hasCommercial": false,
-          "isAsyncAPIOwner": true
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1016,37 +1377,36 @@
         }
       },
       {
-        "title": "Java Spring Template",
-        "description": "Java Spring template for the AsyncAPI Generator",
+        "title": "HTML Template",
+        "description": null,
         "links": {
-          "repoUrl": "https://github.com/asyncapi/java-spring-template"
+          "repoUrl": "https://github.com/dipaksodani/async-gen"
+        },
+        "filters": {
+          "language": "javascript",
+          "technology": [
+            "HTML"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Java Spring Cloud Stream Template",
+        "description": "Java Spring Cloud Stream template for the AsyncAPI Generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
         },
         "filters": {
           "language": [
             "javascript"
           ],
           "technology": [
-            "Springboot",
-            "Maven",
-            "Gradle"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Node.js Websockets Template",
-        "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "Node.js"
+            "Spring Cloud Streams",
+            "Maven"
           ],
           "categories": [
             "generator-template"
@@ -1073,60 +1433,6 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "Node.js Multiprotocol Template",
-        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-template"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "Node.js"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "HTML Template",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/WSOL12/html-template"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "HTML"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "HTML Template",
-        "description": null,
-        "links": {
-          "repoUrl": "https://github.com/dipaksodani/async-gen"
-        },
-        "filters": {
-          "language": "javascript",
-          "technology": [
-            "HTML"
-          ],
-          "categories": [
-            "generator-template"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
         }
       }
     ]

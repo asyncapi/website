@@ -1,0 +1,12 @@
+name: "📑 Docs Feedback"
+description: "Share feedback about a specific AsyncAPI docs page"
+title: "Docs Feedback: "
+labels: ["📑 docs"]
+body:
+  - type: textarea
+    id: feedback
+    attributes:
+      label: "What's your feedback?"
+      placeholder: "Write your feedback here..."
+    validations:
+      required: true

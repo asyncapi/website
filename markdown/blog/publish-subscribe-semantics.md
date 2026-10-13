@@ -54,7 +54,7 @@ If you were implementing an application to honour the contract described in an O
 
 # What about AsyncAPI?
 
-In an event driven architecture there is no client/server paradigm. Applications do not directly communicate with one another - instead, each application sends and receives events via communication channels provided by s messaging infrastructure such as a broker. The broker ensures that events sent to a channel are delivered to interested applications. It can be considered *fire and forget* - an application sends an event, but does not have any interest in whether other applications receive or make use of the event.
+In an event driven architecture there is no client/server paradigm. Applications do not directly communicate with one another - instead, each application sends and receives events via communication channels provided by a messaging infrastructure such as a broker. The broker ensures that events sent to a channel are delivered to interested applications. It can be considered *fire and forget* - an application sends an event, but does not have any interest in whether other applications receive or make use of the event.
 
 AsyncAPI approaches this by describing an application as having two potential roles:
 
