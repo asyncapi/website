@@ -23,7 +23,7 @@
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
       "isPR": true,
-      "isAssigned": false,
+      "isAssigned": true,
       "title": "chore: define permissions in workflows  and pin actions to SHA",
       "author": "Florence-Njeri",
       "resourcePath": "/asyncapi/generator/pull/2211",
