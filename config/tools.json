@@ -16,7 +16,8 @@
             "api",
             "directory"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -50,7 +51,8 @@
             "api",
             "directory"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -90,7 +92,8 @@
             "code-first",
             "api"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -130,7 +133,8 @@
             "code-first",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -165,7 +169,8 @@
             "code-first",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -197,7 +202,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -225,7 +231,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -262,7 +269,8 @@
             "ui-component",
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -296,7 +304,8 @@
             "code-first",
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -318,7 +327,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -341,7 +351,8 @@
             "code-first",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -362,7 +373,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -394,7 +406,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -427,7 +440,8 @@
             "code-first",
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -459,7 +473,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -491,7 +506,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -518,7 +534,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -578,7 +595,8 @@
             "code-first",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -610,7 +628,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -650,7 +669,8 @@
             "code-first",
             "api"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -684,7 +704,8 @@
             "code-first",
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -706,7 +727,8 @@
           "categories": [
             "code-first"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -741,7 +763,8 @@
             "dsl",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -775,7 +798,8 @@
             "code-generator",
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -809,7 +833,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -837,7 +862,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -871,7 +897,8 @@
             "code-first",
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -892,7 +919,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -913,7 +941,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -945,7 +974,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -966,7 +996,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1005,7 +1036,8 @@
           "categories": [
             "code-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1073,7 +1105,8 @@
             "code-generator",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1120,7 +1153,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -1153,7 +1187,8 @@
             "converter",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1188,7 +1223,8 @@
             "code-first",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1223,7 +1259,8 @@
             "code-first",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1250,7 +1287,8 @@
           "categories": [
             "converter"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -1271,7 +1309,8 @@
           "categories": [
             "converter"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -1305,7 +1344,8 @@
           "categories": [
             "converter"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -1327,7 +1367,8 @@
             "api",
             "directory"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1361,7 +1402,8 @@
             "api",
             "directory"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -1400,7 +1442,8 @@
             "code-generator",
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -1428,7 +1471,8 @@
             "documentation-generator",
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1465,7 +1509,8 @@
             "ui-component",
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1482,7 +1527,8 @@
           "categories": [
             "documentation-generator"
           ],
-          "hasCommercial": true
+          "hasCommercial": true,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1509,7 +1555,8 @@
           "categories": [
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -1542,7 +1589,8 @@
             "code-first",
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1574,7 +1622,8 @@
           "categories": [
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1608,7 +1657,8 @@
             "code-first",
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1641,7 +1691,8 @@
           "categories": [
             "documentation-generator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -1673,7 +1724,8 @@
           "categories": [
             "editor"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
@@ -1716,7 +1768,8 @@
           "categories": [
             "ui-component"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1748,7 +1801,8 @@
           "categories": [
             "ui-component"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -1785,7 +1839,8 @@
             "ui-component",
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1854,7 +1909,8 @@
           "categories": [
             "ui-component"
           ],
-          "hasCommercial": true
+          "hasCommercial": true,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -1886,7 +1942,8 @@
           "categories": [
             "dsl"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1920,7 +1977,8 @@
           "categories": [
             "dsl"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -1967,7 +2025,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2002,7 +2061,8 @@
             "dsl",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -2035,7 +2095,8 @@
           "categories": [
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2072,7 +2133,8 @@
             "ui-component",
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2095,7 +2157,8 @@
             "code-first",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2118,7 +2181,8 @@
             "code-first",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2153,7 +2217,8 @@
             "dsl",
             "framework"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -2180,7 +2245,8 @@
           "categories": [
             "github-action"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2209,7 +2275,8 @@
             "github-action",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2237,7 +2304,8 @@
           "categories": [
             "github-action"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2258,7 +2326,8 @@
           "categories": [
             "github-action"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2279,7 +2348,8 @@
           "categories": [
             "github-actions"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
@@ -2315,7 +2385,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2353,7 +2424,8 @@
           "categories": [
             "mocking-and-testing"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2393,7 +2465,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2420,7 +2493,8 @@
           "categories": [
             "mocking-and-testing"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2455,7 +2529,8 @@
             "mocking-and-testing",
             "CLIs"
           ],
-          "hasCommercial": true
+          "hasCommercial": true,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2477,7 +2552,8 @@
           "categories": [
             "mocking-and-testing"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2524,7 +2600,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -2551,7 +2628,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2580,7 +2658,8 @@
             "github-action",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2601,7 +2680,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -2628,7 +2708,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -2649,7 +2730,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2680,7 +2762,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2707,7 +2790,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2734,7 +2818,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2769,7 +2854,8 @@
             "code-first",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2804,7 +2890,8 @@
             "code-first",
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2831,7 +2918,8 @@
           "categories": [
             "validator"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -2857,7 +2945,8 @@
           "categories": [
             "compare-tool"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2884,7 +2973,8 @@
           "categories": [
             "compare-tool"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -2913,7 +3003,8 @@
           "categories": [
             "compare-tool"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -2941,7 +3032,8 @@
           "categories": [
             "compare-tool"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -2969,7 +3061,8 @@
             "others",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3000,7 +3093,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -3028,7 +3122,8 @@
             "converter",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3065,7 +3160,8 @@
             "ui-component",
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -3105,7 +3201,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -3178,7 +3275,8 @@
             "mocking-and-testing",
             "CLIs"
           ],
-          "hasCommercial": true
+          "hasCommercial": true,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -3225,7 +3323,8 @@
             "mocking-and-testing",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -3257,7 +3356,8 @@
           "categories": [
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       },
       {
@@ -3284,7 +3384,8 @@
           "categories": [
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3321,7 +3422,8 @@
             "ui-component",
             "bundler"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]
@@ -3352,7 +3454,8 @@
           "categories": [
             "ide-extension"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3386,7 +3489,8 @@
           "categories": [
             "ide-extension"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
@@ -3418,7 +3522,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3445,7 +3550,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3472,7 +3578,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3504,7 +3611,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3531,7 +3639,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3552,7 +3661,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3579,7 +3689,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3606,7 +3717,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -3633,7 +3745,8 @@
           "categories": [
             "generator-template"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
@@ -3661,7 +3774,8 @@
             "others",
             "cli"
           ],
-          "hasCommercial": false
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
