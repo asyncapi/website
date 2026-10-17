@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import React from 'react';
 
 import LinuxBanner from '@/components/campaigns/LinuxBanner';
+import communityLinks from '@/config/community-links.json';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { getStaticPaths, makeStaticProps } from '@/utils/getStatic';
 
@@ -54,7 +55,7 @@ export default function HomePage() {
             <Button
               className='w-full text-center sm:w-auto whitespace-nowrap'
               text={t('community.slackCTABtn')}
-              href='/slack-invite'
+              href={communityLinks.slack}
             />
           </div>
           <div className='mt-8'>
