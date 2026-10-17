@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "lib": ["deno.window"],
+    "types": ["https://edge-bootstrap.netlify.app/v1/index.ts"]
+  }
+}
