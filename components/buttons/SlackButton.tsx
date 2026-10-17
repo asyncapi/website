@@ -1,5 +1,6 @@
 import React from 'react';
 
+import communityLinks from '@/config/community-links.json';
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
 import type { IButtonDefaultProps } from '../../types/components/buttons/types';
@@ -18,7 +19,7 @@ interface ISlackButtonProps extends IButtonDefaultProps {}
  */
 export default function SlackButton({
   text = 'Join on Slack',
-  href = '/slack-invite',
+  href = communityLinks.slack,
   target = '_blank',
   iconPosition = ButtonIconPosition.LEFT,
   className = ''

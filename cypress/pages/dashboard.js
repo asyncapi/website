@@ -1,3 +1,4 @@
+import communityLinks from '../../config/community-links.json';
 import BasePage from './BasePageTools';
 
 class DashboardPage extends BasePage {
@@ -29,11 +30,10 @@ class DashboardPage extends BasePage {
       'github.com/asyncapi',
     );
 
-    this.verifyLinkWithText(
-      '[data-testid="Button-link"]',
-      'Join on Slack',
-      'slack-invite',
-    );
+    cy.contains('[data-testid="Button-link"]', 'Join on Slack')
+      .should('be.visible')
+      .and('have.attr', 'href', communityLinks.slack)
+      .and('have.attr', 'target', '_blank');
   }
 }
 

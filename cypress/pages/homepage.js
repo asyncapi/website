@@ -8,6 +8,7 @@ import AmbassadorsPage from './ambassadors';
 import TSCPage from './tscpage';
 
 import { features } from '../../components/features/FeatureList';
+import communityLinks from '../../config/community-links.json';
 import packageJson from '../../package.json';
 import landingPageTranslations from '../../public/locales/en/landing-page.json';
 
@@ -64,8 +65,10 @@ class HomePage extends BasePage {
     return this.verifyElementIsVisible(selector).and('have.attr', 'href', link);
   }
 
-  verifySlackCTAButton(link = 'https://www.asyncapi.com/slack-invite') {
-    return cy.get(`[data-testid="Button-link"][href="${link}"]`).should('be.visible');
+  verifySlackCTAButton(link = communityLinks.slack) {
+    return cy.contains('[data-testid="Button-link"]', 'Join us on Slack')
+      .should('be.visible')
+      .and('have.attr', 'href', link);
   }
 
   verifyHomepageCards(
