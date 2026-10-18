@@ -135,22 +135,6 @@
       "score": 10.625459783722574
     },
     {
-      "id": "I_kwDOCHlHJM61Y1X2",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "explore how to handle `reply` operation in code generation",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/generator/issues/1547",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 8.902412251227021
-    },
-    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -200,6 +184,34 @@
         }
       ],
       "score": 7.7537138962299865
+    },
+    {
+      "id": "I_kwDOBW5R_c6ovh9-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
+      "author": "cbum-dev",
+      "resourcePath": "/asyncapi/website/issues/3649",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
