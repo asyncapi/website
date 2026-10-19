@@ -1307,6 +1307,40 @@
           ],
           "hasCommercial": false
         }
+      },
+      {
+        "title": "Scalar AsyncAPI Upgrader",
+        "description": "Upgrade AsyncAPI documents to the latest version. Converts AsyncAPI 1.2 to 2.6, 2.6 to 3.0, and 3.0 to 3.1.",
+        "links": {
+          "websiteUrl": "https://scalar.com",
+          "docsUrl": "https://scalar.com/tools/asyncapi-upgrader/getting-started",
+          "repoUrl": "https://github.com/scalar/scalar/tree/main/packages/asyncapi-upgrader"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "JavaScript",
+              "color": "bg-[#F2F1C7]",
+              "borderColor": "border-[#BFBE86]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Node.js",
+              "color": "bg-[#BDFF67]",
+              "borderColor": "border-[#84CE24]"
+            }
+          ],
+          "categories": [
+            "converter"
+          ],
+          "hasCommercial": false
+        }
       }
     ]
   },
@@ -2319,6 +2353,46 @@
         }
       },
       {
+        "title": "Bowire",
+        "description": "The API workbench that embeds in your own service. Loads an AsyncAPI 2.x or 3.0 document and turns its channels into methods you can publish to and subscribe from, over MQTT, Kafka, WebSocket, AMQP and the other transports Bowire speaks - in a browser UI, from the CLI or through an AI agent over MCP.",
+        "links": {
+          "websiteUrl": "https://bowire.io",
+          "docsUrl": "https://bowire.io/docs/features/asyncapi.html",
+          "repoUrl": "https://github.com/Kuestenlogik/Bowire"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            },
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Microcks",
         "description": "Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements.",
         "links": {
@@ -3064,6 +3138,46 @@
             "framework",
             "ui-component",
             "bundler"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "Bowire",
+        "description": "The API workbench that embeds in your own service. Loads an AsyncAPI 2.x or 3.0 document and turns its channels into methods you can publish to and subscribe from, over MQTT, Kafka, WebSocket, AMQP and the other transports Bowire speaks - in a browser UI, from the CLI or through an AI agent over MCP.",
+        "links": {
+          "websiteUrl": "https://bowire.io",
+          "docsUrl": "https://bowire.io/docs/features/asyncapi.html",
+          "repoUrl": "https://github.com/Kuestenlogik/Bowire"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            }
+          ],
+          "technology": [
+            {
+              "name": ".NET",
+              "color": "bg-[#A184FF]",
+              "borderColor": "border-[#5026D4]"
+            },
+            {
+              "name": "ASP.NET",
+              "color": "bg-[#71C2FB]",
+              "borderColor": "border-[#1577BC]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "mocking-and-testing",
+            "cli"
           ],
           "hasCommercial": false
         }
