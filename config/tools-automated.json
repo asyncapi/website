@@ -458,6 +458,29 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "Scalar AsyncAPI Upgrader",
+        "description": "Upgrade AsyncAPI documents to the latest version. Converts AsyncAPI 1.2 to 2.6, 2.6 to 3.0, and 3.0 to 3.1.",
+        "links": {
+          "websiteUrl": "https://scalar.com",
+          "docsUrl": "https://scalar.com/tools/asyncapi-upgrader/getting-started",
+          "repoUrl": "https://github.com/scalar/scalar/tree/main/packages/asyncapi-upgrader"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "JavaScript"
+          ],
+          "technology": [
+            "Node js"
+          ],
+          "categories": [
+            "converter"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -843,6 +866,29 @@
         }
       },
       {
+        "title": "Bowire",
+        "description": "The API workbench that embeds in your own service. Loads an AsyncAPI 2.x or 3.0 document and turns its channels into methods you can publish to and subscribe from, over MQTT, Kafka, WebSocket, AMQP and the other transports Bowire speaks - in a browser UI, from the CLI or through an AI agent over MCP.",
+        "links": {
+          "websiteUrl": "https://bowire.io",
+          "docsUrl": "https://bowire.io/docs/features/asyncapi.html",
+          "repoUrl": "https://github.com/Kuestenlogik/Bowire"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET",
+            "Docker"
+          ],
+          "categories": [
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "Mokapi",
         "description": "Your API Mocking Tool for Agile Development. Mock and simulate AsyncAPI and OpenAPI services for local testing, development, and CI pipelines — with a visual dashboard to inspect your mocks and a powerful test data generator fully customizable with JavaScript.",
         "links": {
@@ -1129,6 +1175,29 @@
             "framework",
             "ui-component",
             "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Bowire",
+        "description": "The API workbench that embeds in your own service. Loads an AsyncAPI 2.x or 3.0 document and turns its channels into methods you can publish to and subscribe from, over MQTT, Kafka, WebSocket, AMQP and the other transports Bowire speaks - in a browser UI, from the CLI or through an AI agent over MCP.",
+        "links": {
+          "websiteUrl": "https://bowire.io",
+          "docsUrl": "https://bowire.io/docs/features/asyncapi.html",
+          "repoUrl": "https://github.com/Kuestenlogik/Bowire"
+        },
+        "filters": {
+          "language": "C#",
+          "technology": [
+            ".NET",
+            "ASP.NET",
+            "Docker"
+          ],
+          "categories": [
+            "mocking-and-testing",
+            "cli"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
