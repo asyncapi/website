@@ -95,22 +95,6 @@
       "score": 11.774158138719608
     },
     {
-      "id": "MDU6SXNzdWU4NzE2MjU2MDk=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Make it possible to generate only given template files",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/generator/issues/581",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 11.48698354997035
-    },
-    {
       "id": "I_kwDOBW5R_c67zQdK",
       "isPR": false,
       "isAssigned": false,
@@ -211,6 +195,17 @@
           "color": "007acc"
         }
       ],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "fix: resolve pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
+      "labels": [],
       "score": 7.179364718731469
     }
   ],
