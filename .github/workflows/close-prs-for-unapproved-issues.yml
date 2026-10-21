@@ -1,8 +1,9 @@
 # Purpose of this workflow is to automatically close PRs that reference
 # issues still carrying the 'Awaiting Approval' label, preventing work
 # on issues that have not yet been approved by a maintainer.
-# PRs from core maintainers (CODEOWNERS catch-all line) are exempt and
-# receive a 'Maintainer PR' label instead.
+# PRs without a linked issue are kept open and tagged with 'no-issue-linked'.
+# PRs from AsyncAPI maintainers (config/MAINTAINERS.json) are exempt and
+# receive a 'Maintainer\'s PR' label instead.
 
 name: Close PRs linked to unapproved issues
 
@@ -18,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout CODEOWNERS
+      - name: Checkout MAINTAINERS
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          sparse-checkout: CODEOWNERS
+          sparse-checkout: config/MAINTAINERS.json
           sparse-checkout-cone-mode: false
 
       - name: Check linked issue and close PR if unapproved
@@ -33,6 +34,28 @@ jobs:
             const prAuthor = context.payload.pull_request.user.login;
             const prNumber = context.payload.pull_request.number;
 
+            // ---------- helpers ----------
+            async function ensureLabel(name, color, description) {
+              const { data: repoLabels } = await github.rest.issues.listLabelsForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
+
+              if (!repoLabels.some(l => l.name === name)) {
+                try {
+                  await github.rest.issues.createLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name,
+                    color,
+                    description,
+                  });
+                } catch (e) {
+                  if (e.status !== 422) throw e;
+                }
+              }
+            }
+
             // ---------- bot bypass ----------
             const botAuthors = ['asyncapi-bot', 'dependabot[bot]', 'dependabot-preview[bot]', 'github-actions[bot]', 'asyncapi-bot-eve'];
             if (botAuthors.includes(prAuthor)) {
@@ -40,50 +63,20 @@ jobs:
               return;
             }
 
-            // ---------- parse CODEOWNERS for maintainer bypass ----------
-            const codeowners = fs.readFileSync('./CODEOWNERS', 'utf8');
-            const codeownerLines = codeowners.split('\n');
+            // ---------- parse MAINTAINERS for maintainer bypass ----------
+            const maintainersData = JSON.parse(fs.readFileSync('./config/MAINTAINERS.json', 'utf8'));
+            const maintainers = maintainersData
+              .map(m => (m.github || '').toLowerCase())
+              .filter(Boolean);
 
-            const catchAllLine = codeownerLines.find(
-              line => !line.startsWith('#') && line.trim().startsWith('* ')
-            );
+            core.info(`Maintainers from config/MAINTAINERS.json: ${maintainers.length} maintainers loaded`);
 
-            let maintainers = [];
-            if (catchAllLine) {
-              const regex = /@([a-zA-Z0-9_-]+)/g;
-              const matches = catchAllLine.match(regex);
-              maintainers = matches
-                ? matches
-                    .map(m => m.substring(1))
-                    .filter(name => !name.includes('bot'))
-                : [];
-            }
-
-            core.info(`Core maintainers from CODEOWNERS: ${maintainers.join(', ')}`);
-
-            if (maintainers.includes(prAuthor)) {
+            if (maintainers.includes(prAuthor.toLowerCase())) {
               console.log(`PR #${prNumber} opened by maintainer @${prAuthor}. Skipping issue-link enforcement.`);
 
               // Add "Maintainer's PR" label
               const maintainerLabel = "Maintainer's PR";
-              const { data: repoLabels } = await github.rest.issues.listLabelsForRepo({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-              });
-
-              if (!repoLabels.some(l => l.name === maintainerLabel)) {
-                try {
-                  await github.rest.issues.createLabel({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    name: maintainerLabel,
-                    color: '5319e7',
-                    description: 'PR opened by a core maintainer',
-                  });
-                } catch (e) {
-                  if (e.status !== 422) throw e;
-                }
-              }
+              await ensureLabel(maintainerLabel, '5319e7', 'PR opened by an AsyncAPI maintainer');
 
               await github.rest.issues.addLabels({
                 issue_number: prNumber,
@@ -101,24 +94,38 @@ jobs:
             const issuePattern = /(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?):?\s+#(\d+)/gi;
             const matches = [...prBody.matchAll(issuePattern)];
 
-            if (matches.length === 0) {
-              console.log(`No linked issues found in PR #${prNumber} body. Closing PR.`);
+            const noIssueLabel = 'no-issue-linked';
 
-              await github.rest.issues.createComment({
+            if (matches.length === 0) {
+              console.log(`No linked issues found in PR #${prNumber} body. Adding '${noIssueLabel}' label and keeping PR open.`);
+
+              await ensureLabel(noIssueLabel, 'EDEDED', 'PR does not have a linked issue');
+
+              await github.rest.issues.addLabels({
                 issue_number: prNumber,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `🚫 This PR has been automatically closed because it does not reference a linked issue.\n\nPlease update your PR description to include a reference to the issue it addresses (e.g. \`Fixes #123\`, \`Closes #123\`, or \`Resolves #123\`) and reopen this PR.`,
-              });
-
-              await github.rest.pulls.update({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: prNumber,
-                state: 'closed',
+                labels: [noIssueLabel],
               });
 
               return;
+            }
+
+            // If an issue IS linked, ensure 'no-issue-linked' label is removed if it was previously added (e.g., on PR edit)
+            const { data: prLabels } = await github.rest.issues.listLabelsOnIssue({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            if (prLabels.some(l => l.name === noIssueLabel)) {
+              console.log(`Issue reference found, removing '${noIssueLabel}' label from PR #${prNumber}...`);
+              await github.rest.issues.removeLabel({
+                issue_number: prNumber,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: noIssueLabel,
+              });
             }
 
             // ---------- check linked issues for approval ----------

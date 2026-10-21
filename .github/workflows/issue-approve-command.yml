@@ -1,7 +1,7 @@
-# Purpose of this workflow is to allow core maintainers (listed on the catch-all
-# `*` line of the CODEOWNERS file) to approve issues via the /approve command,
-# swapping the 'Awaiting Approval' label for 'Approved Issue' and posting an
-# instruction comment for contributors.
+# Purpose of this workflow is to allow AsyncAPI maintainers (listed in
+# config/MAINTAINERS.json) to approve issues via the /approve command,
+# swapping the 'Awaiting Approval' label for 'Approved Issue' + 'triaged'
+# and posting an instruction comment for contributors.
 
 name: Issue /approve command
 
@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout CODEOWNERS
+      - name: Checkout MAINTAINERS
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          sparse-checkout: CODEOWNERS
+          sparse-checkout: config/MAINTAINERS.json
           sparse-checkout-cone-mode: false
 
       - name: Check authorization and approve
@@ -41,33 +41,17 @@ jobs:
               return;
             }
 
-            // ---------- parse CODEOWNERS ----------
-            const codeowners = fs.readFileSync('./CODEOWNERS', 'utf8');
-            const lines = codeowners.split('\n');
+            // ---------- parse MAINTAINERS ----------
+            const maintainersData = JSON.parse(fs.readFileSync('./config/MAINTAINERS.json', 'utf8'));
+            const approvers = maintainersData
+              .map(m => (m.github || '').toLowerCase())
+              .filter(Boolean);
 
-            const catchAllLine = lines.find(
-              line => !line.startsWith('#') && line.trim().startsWith('* ')
-            );
-
-            if (!catchAllLine) {
-              core.setFailed('Could not find the catch-all `*` line in CODEOWNERS');
-              return;
-            }
-
-            const regex = /@([a-zA-Z0-9_-]+)/g;
-            const matches = catchAllLine.match(regex);
-            const approvers = matches
-              ? matches
-                  .map(m => m.substring(1))
-                  .filter(name => !name.includes('bot'))
-              : [];
-
-            core.info(`Core maintainer approvers from CODEOWNERS: ${approvers.join(', ')}`);
+            core.info(`Maintainers from config/MAINTAINERS.json: ${approvers.length} maintainers loaded`);
 
             // ---------- authorization check ----------
-            if (!approvers.includes(actor)) {
-              const approverMentions = approvers.map(u => `[@${u}](https://github.com/${u})`).join(', ');
-              const commentText = `❌ @${actor} is not authorized to use the \`/approve\` command.\nOnly core maintainers (${approverMentions}) can approve issues.`;
+            if (!approvers.includes(actor.toLowerCase())) {
+              const commentText = `❌ @${actor} is not authorized to use the \`/approve\` command.\nOnly AsyncAPI maintainers can approve issues.`;
 
               console.log(`❌ @${actor} made an unauthorized attempt to use /approve.`);
               await github.rest.issues.createComment({

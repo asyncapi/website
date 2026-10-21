@@ -1,6 +1,6 @@
 # Purpose of this workflow is to automatically add the 'Awaiting Approval' label
 # to every newly opened issue so maintainers can triage before work begins.
-# Issues opened by core maintainers (from the CODEOWNERS catch-all line) are
+# Issues opened by AsyncAPI maintainers (listed in config/MAINTAINERS.json) are
 # automatically approved and triaged instead.
 
 name: Add 'Awaiting Approval' label on new issues
@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout CODEOWNERS
+      - name: Checkout MAINTAINERS
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          sparse-checkout: CODEOWNERS
+          sparse-checkout: config/MAINTAINERS.json
           sparse-checkout-cone-mode: false
 
       - name: Label new issue
@@ -53,30 +53,15 @@ jobs:
               }
             }
 
-            // ---------- parse CODEOWNERS ----------
-            const codeowners = fs.readFileSync('./CODEOWNERS', 'utf8');
-            const lines = codeowners.split('\n');
+            // ---------- parse MAINTAINERS ----------
+            const maintainersData = JSON.parse(fs.readFileSync('./config/MAINTAINERS.json', 'utf8'));
+            const maintainers = maintainersData
+              .map(m => (m.github || '').toLowerCase())
+              .filter(Boolean);
 
-            const catchAllLine = lines.find(
-              line => !line.startsWith('#') && line.trim().startsWith('* ')
-            );
+            core.info(`Maintainers from config/MAINTAINERS.json: ${maintainers.length} maintainers loaded`);
 
-            if (!catchAllLine) {
-              core.setFailed('Could not find the catch-all `*` line in CODEOWNERS');
-              return;
-            }
-
-            const regex = /@([a-zA-Z0-9_-]+)/g;
-            const matches = catchAllLine.match(regex);
-            const maintainers = matches
-              ? matches
-                  .map(m => m.substring(1))
-                  .filter(name => !name.includes('bot'))
-              : [];
-
-            core.info(`Core maintainers from CODEOWNERS: ${maintainers.join(', ')}`);
-
-            const isMaintainer = maintainers.includes(actor);
+            const isMaintainer = maintainers.includes(actor.toLowerCase());
 
             if (isMaintainer) {
               // ---------- auto-approve maintainer issues ----------
