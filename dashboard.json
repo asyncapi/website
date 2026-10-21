@@ -170,6 +170,17 @@
       "score": 7.7537138962299865
     },
     {
+      "id": "I_kwDOFLhIt88AAAABSPEgqQ",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Budget 2027 | Planning and discussion",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3633",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 7.179364718731469
+    },
+    {
       "id": "I_kwDOBW5R_c6ovh9-",
       "isPR": false,
       "isAssigned": false,
@@ -195,17 +206,6 @@
           "color": "007acc"
         }
       ],
-      "score": 7.179364718731469
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "fix: resolve pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
       "score": 7.179364718731469
     }
   ],
