@@ -23,7 +23,7 @@
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
       "isPR": true,
-      "isAssigned": false,
+      "isAssigned": true,
       "title": "chore: define permissions in workflows  and pin actions to SHA",
       "author": "Florence-Njeri",
       "resourcePath": "/asyncapi/generator/pull/2211",
@@ -52,17 +52,6 @@
       "score": 12.180480298462836
     },
     {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 12.061332727468868
-    },
-    {
       "id": "I_kwDOCoBobc6fqNYx",
       "isPR": false,
       "isAssigned": true,
@@ -76,7 +65,18 @@
           "color": "d73a4a"
         }
       ],
-      "score": 11.774158138719608
+      "score": 12.061332727468868
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.061332727468868
     },
     {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
@@ -93,22 +93,6 @@
         }
       ],
       "score": 11.774158138719608
-    },
-    {
-      "id": "MDU6SXNzdWU4NzE2MjU2MDk=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Make it possible to generate only given template files",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/generator/issues/581",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 11.48698354997035
     },
     {
       "id": "I_kwDOBW5R_c67zQdK",
@@ -133,22 +117,6 @@
         }
       ],
       "score": 10.625459783722574
-    },
-    {
-      "id": "I_kwDOCHlHJM61Y1X2",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "explore how to handle `reply` operation in code generation",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/generator/issues/1547",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 8.902412251227021
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -200,6 +168,45 @@
         }
       ],
       "score": 7.7537138962299865
+    },
+    {
+      "id": "I_kwDOFLhIt88AAAABSPEgqQ",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Budget 2027 | Planning and discussion",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3633",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 7.179364718731469
+    },
+    {
+      "id": "I_kwDOBW5R_c6ovh9-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
+      "author": "cbum-dev",
+      "resourcePath": "/asyncapi/website/issues/3649",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
