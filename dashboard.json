@@ -119,6 +119,17 @@
       "score": 10.625459783722574
     },
     {
+      "id": "I_kwDOFLhIt88AAAABSPEgqQ",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Budget 2027 | Planning and discussion",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3633",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 10.051110606224057
+    },
+    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -168,17 +179,6 @@
         }
       ],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSPEgqQ",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Budget 2027 | Planning and discussion",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3633",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 7.179364718731469
     },
     {
       "id": "I_kwDOBW5R_c6ovh9-",
