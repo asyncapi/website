@@ -72,7 +72,7 @@
     "dayjs": "^1.11.19",
     "dedent": "^1.5.1",
     "dotenv": "^16.4.4",
-    "dompurify": "3.4.16",
+    "dompurify": "3.4.17",
     "fs-extra": "^11.2.0",
     "fuse.js": "^7.0.0",
     "googleapis": "^133.0.0",
@@ -87,7 +87,7 @@
     "markdown-to-txt": "^2.0.1",
     "markdown-toc": "^1.2.0",
     "mermaid": "12.2.0",
-    "next": "15.5.21",
+    "next": "15.5.28",
     "next-i18next": "^15.3.0",
     "next-language-detector": "^1.1.1",
     "next-mdx-remote": "^6.0.0",
@@ -167,7 +167,7 @@
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.0",
     "remark-mdx": "^3.0.1",
-    "storybook": "^8.6.17",
+    "storybook": "^8.6.19",
     "tsx": "^4.19.4",
     "typescript": "^5.3.3"
   }
