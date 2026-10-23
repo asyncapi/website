@@ -472,6 +472,7 @@
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
         "repos": [
+            "bindings",
             "vs-asyncapi-preview"
         ],
         "githubID": 1246876
