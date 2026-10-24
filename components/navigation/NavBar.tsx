@@ -4,6 +4,7 @@ import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import { defaultLanguage, i18nPaths, languages } from '@/utils/i18n';
 
@@ -40,8 +41,13 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
   const { pathname, query, asPath } = router;
   const [open, setOpen] = useState<'learning' | 'tooling' | 'community' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Adding Scroll listener
   useEffect(() => {
@@ -194,7 +200,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           )}
 
           <div
-            className='-my-2 -mr-2 flex flex-row items-center justify-center gap-1 lg:hidden'
+            className='-my-2 -mr-2 flex flex-row items-center justify-center gap-1 min-[1100px]:hidden'
             data-testid='Navbar-search'
           >
             <SearchButton
@@ -218,7 +224,7 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
           </div>
 
           <nav
-            className='hidden w-full space-x-4 lg:flex lg:items-center lg:justify-end xl:space-x-8'
+            className='hidden w-full space-x-4 min-[1100px]:flex min-[1100px]:items-center min-[1100px]:justify-end xl:space-x-8'
             data-testid='Navbar-main'
           >
             <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
@@ -293,14 +299,17 @@ export default function NavBar({ className = '', hideLogo = false }: NavBarProps
 
       {/* </div> */}
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && (
-        <MobileNavMenu
-          onClickClose={() => setMobileMenuOpen(false)}
-          uniqueLangs={uniqueLangs}
-          currentLanguage={i18n.language ? i18n.language : 'en'}
-          changeLanguage={changeLanguage}
-        />
-      )}
+      {isMounted &&
+        mobileMenuOpen &&
+        createPortal(
+          <MobileNavMenu
+            onClickClose={() => setMobileMenuOpen(false)}
+            uniqueLangs={uniqueLangs}
+            currentLanguage={i18n.language ? i18n.language : 'en'}
+            changeLanguage={changeLanguage}
+          />,
+          document.body
+        )}
     </>
   );
 }
