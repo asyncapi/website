@@ -21,6 +21,17 @@
       "score": 31.589204762418465
     },
     {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.210031082465903
+    },
+    {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
       "isPR": true,
       "isAssigned": true,
@@ -65,17 +76,6 @@
           "color": "d73a4a"
         }
       ],
-      "score": 12.061332727468868
-    },
-    {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
       "score": 12.061332727468868
     },
     {
