@@ -22,7 +22,7 @@ export default function ThemeImage({ lightSrc, darkSrc, alt, className }: ThemeI
   return (
     <>
       <img src={lightSrc} alt={alt} className={twMerge(imageClassName, 'dark:hidden')} />
-      <img src={darkSrc} alt='' aria-hidden='true' className={twMerge(imageClassName, 'hidden dark:block')} />
+      <img src={darkSrc} alt={alt} className={twMerge(imageClassName, 'hidden dark:block')} />
     </>
   );
 }
