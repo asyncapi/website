@@ -12,6 +12,7 @@ import IconTwitter from '../icons/Twitter';
 type TSCMemberCardProps = Readonly<{
   member: Tsc;
   isAmbassador?: boolean;
+  isChair?: boolean;
 }>;
 
 /**
@@ -19,8 +20,9 @@ type TSCMemberCardProps = Readonly<{
  * @param {TSCMemberCardProps} props - The props for TSC member card
  * @param {Tsc} props.member - The TSC member data
  * @param {boolean} [props.isAmbassador] - Whether the member is also an AsyncAPI Ambassador
+ * @param {boolean} [props.isChair] - Whether the member chairs the Governance Board
  */
-export default function TSCMemberCard({ member, isAmbassador = false }: TSCMemberCardProps) {
+export default function TSCMemberCard({ member, isAmbassador = false, isChair = false }: TSCMemberCardProps) {
   const [showAllRepos, setShowAllRepos] = useState(false);
 
   const visibleRepos = showAllRepos ? member.repos : member.repos?.slice(0, 2);
@@ -52,16 +54,26 @@ export default function TSCMemberCard({ member, isAmbassador = false }: TSCMembe
         )}
       </div>
 
-      {isAmbassador && (
-        <div className='mb-3'>
-          <a
-            href={`/community/ambassadors/${member.github}`}
-            data-testid='ambassador-badge'
-            className='inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 dark:bg-secondary-500/20 text-secondary-600 dark:text-secondary-200 border border-secondary-300 dark:border-secondary-400 hover:bg-secondary-200 dark:hover:bg-secondary-500/35 transition-colors'
-          >
-            <IconStar className='w-3 h-3' />
-            Ambassador
-          </a>
+      {(isChair || isAmbassador) && (
+        <div className='mb-3 flex flex-wrap gap-2'>
+          {isChair && (
+            <span
+              data-testid='chair-badge'
+              className='inline-flex items-center w-fit px-3 py-1 rounded-full text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 border border-amber-300 dark:border-amber-500'
+            >
+              Chairperson
+            </span>
+          )}
+          {isAmbassador && (
+            <a
+              href={`/community/ambassadors/${member.github}`}
+              data-testid='ambassador-badge'
+              className='inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full text-xs font-medium bg-secondary-100 dark:bg-secondary-500/20 text-secondary-600 dark:text-secondary-200 border border-secondary-300 dark:border-secondary-400 hover:bg-secondary-200 dark:hover:bg-secondary-500/35 transition-colors'
+            >
+              <IconStar className='w-3 h-3' />
+              Ambassador
+            </a>
+          )}
         </div>
       )}
 

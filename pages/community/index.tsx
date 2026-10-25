@@ -12,6 +12,7 @@ import IconBadgeCheckmark from '../../components/icons/BadgeCheckmark';
 import IconExternalLink from '../../components/icons/ExternalLink';
 import GenericLayout from '../../components/layout/GenericLayout';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import ThemeImage from '../../components/ThemeImage';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 
@@ -86,10 +87,10 @@ export default function CommunityIndexPage() {
           {/* Right Preview Image */}
           <div className='flex-1 w-full lg:max-w-2xl'>
             <div className='relative bg-white dark:bg-dark-card rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden border border-gray-200 dark:border-gray-700'>
-              <img
-                src='/img/social/communitypage.webp'
+              <ThemeImage
+                lightSrc='/img/community/github-org-light.webp'
+                darkSrc='/img/community/github-org-dark.webp'
                 alt='AsyncAPI GitHub Community Preview'
-                className='w-full h-auto'
               />
             </div>
           </div>
@@ -125,10 +126,10 @@ export default function CommunityIndexPage() {
           {/* Right Slack Screenshot */}
           <div className='flex-1 w-full lg:max-w-2xl'>
             <div className='relative rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden'>
-              <img
-                src='/img/social/slack-ss.webp'
+              <ThemeImage
+                lightSrc='/img/community/slack-introductions-light.webp'
+                darkSrc='/img/community/slack-introductions-dark.webp'
                 alt='AsyncAPI Slack Community Screenshot'
-                className='w-full h-auto'
               />
             </div>
           </div>
@@ -165,10 +166,10 @@ export default function CommunityIndexPage() {
           {/* Bottom Slack Events Screenshot */}
           <div className='mt-12 flex justify-center'>
             <div className='relative rounded-lg shadow-2xl dark:shadow-primary-500/20 overflow-hidden bg-white dark:bg-gray-800 max-w-4xl w-full'>
-              <img
-                src='/img/social/community-3.webp'
+              <ThemeImage
+                lightSrc='/img/community/slack-events-light.webp'
+                darkSrc='/img/community/slack-events-dark.webp'
                 alt='AsyncAPI Community Events and Meetings'
-                className='w-full h-auto'
               />
             </div>
           </div>

@@ -2,7 +2,7 @@
     "generator": {
         "path": "/tools/generator",
         "heading": "Docs, Code, Anything!",
-        "image": "generator diagram",
+        "diagram": "[aria-label='generator diagram'] svg",
         "github": "https://www.github.com/asyncapi/generator",
         "docs": "/docs/tools/generator"
     },
