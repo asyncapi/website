@@ -20,9 +20,9 @@ const MermaidDiagram = dynamic(() => import('../../components/MDX/MermaidDiagram
   loading: () => <div className='min-h-[280px]' />
 });
 
-const GENERATOR_DIAGRAM = `accTitle: Generator workflow
-accDescr: An AsyncAPI file is passed into the Generator, which produces HTML, Markdown, Node.js, and Java SpringBoot.
-flowchart LR
+const GENERATOR_DIAGRAM = `flowchart LR
+  accTitle: Generator workflow
+  accDescr: An AsyncAPI file is passed into the Generator, which produces HTML, Markdown, Node.js, and Java SpringBoot.
   spec@{ shape: doc, label: "AsyncAPI.yml" }
   gen{Generator}
   html[HTML]
