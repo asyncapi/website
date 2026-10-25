@@ -1,6 +1,5 @@
 import Button from '@/components/buttons/Button';
 import AnnouncementHero from '@/components/campaigns/AnnouncementHero';
-import AsyncAPILogo from '@/components/logos/AsyncAPILogo';
 import Heading from '@/components/typography/Heading';
 
 /**
@@ -22,7 +21,11 @@ export default function ErrorPage() {
           </header>
         </div>
         <div className='mt-8 flex justify-center'>
-          <AsyncAPILogo className='h-14 w-auto' />
+          <img
+            src='/img/illustrations/not-found.webp'
+            alt='Page not found'
+            className='mx-auto h-auto w-72 max-w-full sm:w-80'
+          />
         </div>
       </div>
 

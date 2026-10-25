@@ -20,7 +20,7 @@ type TSCMemberCardProps = Readonly<{
  * @param {TSCMemberCardProps} props - The props for TSC member card
  * @param {Tsc} props.member - The TSC member data
  * @param {boolean} [props.isAmbassador] - Whether the member is also an AsyncAPI Ambassador
- * @param {boolean} [props.isChair] - Whether the member chairs the Governance Board
+ * @param {boolean} [props.isChair] - Board page only. TSC must not pass this; a chair is not a TSC role.
  */
 export default function TSCMemberCard({ member, isAmbassador = false, isChair = false }: TSCMemberCardProps) {
   const [showAllRepos, setShowAllRepos] = useState(false);
