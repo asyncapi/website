@@ -141,6 +141,17 @@
       "score": 8.615237662477762
     },
     {
+      "id": "PR_kwDOFLhIt87cYXTP",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add Coderabbit config for community documentation",
+      "author": "bandantonio",
+      "resourcePath": "/asyncapi/community/pull/3552",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.615237662477762
+    },
+    {
       "id": "I_kwDODwv8N87e2ifU",
       "isPR": false,
       "isAssigned": true,
@@ -179,34 +190,6 @@
         }
       ],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "I_kwDOBW5R_c6ovh9-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
-      "author": "cbum-dev",
-      "resourcePath": "/asyncapi/website/issues/3649",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        }
-      ],
-      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
