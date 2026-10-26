@@ -95,6 +95,17 @@
       "score": 11.774158138719608
     },
     {
+      "id": "PR_kwDOFLhIt87cYXTP",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add Coderabbit config for community documentation",
+      "author": "bandantonio",
+      "resourcePath": "/asyncapi/community/pull/3552",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 11.48698354997035
+    },
+    {
       "id": "I_kwDOBW5R_c67zQdK",
       "isPR": false,
       "isAssigned": false,
@@ -136,17 +147,6 @@
       "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
       "author": "princerajpoot20",
       "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOFLhIt87cYXTP",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Coderabbit config for community documentation",
-      "author": "bandantonio",
-      "resourcePath": "/asyncapi/community/pull/3552",
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
