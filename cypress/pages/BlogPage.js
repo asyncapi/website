@@ -107,7 +107,7 @@ class BlogPage extends BasePage {
   }
 
   verifyCoverImageAlt(expectedAlt) {
-    cy.get('[data-testid="BlogLayout-main"] article > img')
+    cy.get('main article > img')
       .first()
       .should('have.attr', 'alt', expectedAlt);
   }
