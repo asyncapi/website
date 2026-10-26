@@ -156,13 +156,14 @@ HTTP Request → Express → Controller → Domain Service → HTTP Response
 This repository is an npm-workspaces + [Turborepo](https://turbo.build/) monorepo. The root package is
 `@asyncapi/cli` (still published from the repo root). `workspaces` includes both `"."` and `packages/*`
 so Changesets versions the CLI the same way it does today (`npx changeset` → select `@asyncapi/cli`)
-and also versions workspace packages such as `@asyncapi/optimizer` and `@asyncapi/diff`. Additional publishable packages live under `packages/*`:
+and also versions workspace packages such as `@asyncapi/optimizer`, `@asyncapi/diff`, and `@asyncapi/bundler`. Additional publishable packages live under `packages/*`:
 
 | Package | Path | Notes |
 |---------|------|-------|
 | `@asyncapi/optimizer` | `packages/optimizer/` | The optimization library used by the `asyncapi optimize` command. Published independently to npm; the CLI depends on it via the workspace (`"@asyncapi/optimizer": "*"`). `@asyncapi/parser` is a `peerDependency` of this package. |
 | `@asyncapi/diff` | `packages/diff/` | The diff library used by `asyncapi diff` and `POST /v1/diff`. Published independently to npm; the CLI depends on it via the workspace (`"@asyncapi/diff": "*"`). Callers pass already-parsed documents. `@asyncapi/parser` is a devDependency of this package. |
+| `@asyncapi/bundler` | `packages/bundler/` | The bundler library used by `asyncapi bundle`, preview, and `POST /bundle`. Published independently to npm; the CLI depends on it via the workspace (`"@asyncapi/bundler": "*"`). |
 
-Turbo orders builds so `@asyncapi/optimizer` and `@asyncapi/diff` are built before the root CLI (whose build compiles the
-commands that import them). Use `npm run optimizer:build` / `npm run optimizer:test` and `npm run diff:build` / `npm run diff:test` to work on them
-in isolation. Specs: [`docs/optimizer/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/optimizer/spec.md), [`docs/diff/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/diff/spec.md).
+Turbo orders builds so `@asyncapi/optimizer`, `@asyncapi/diff`, and `@asyncapi/bundler` are built before the root CLI (whose build compiles the
+commands that import them). Use `npm run optimizer:build` / `npm run optimizer:test`, `npm run diff:build` / `npm run diff:test`, and `npm run bundler:build` / `npm run bundler:test` to work on them
+in isolation. Specs: [`docs/optimizer/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/optimizer/spec.md), [`docs/diff/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/diff/spec.md), [`docs/bundler/spec.md`](https://github.com/asyncapi/cli/blob/master/docs/bundler/spec.md).

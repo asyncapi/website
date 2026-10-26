@@ -424,7 +424,7 @@ describe('MyTest', () => {
 npm test
 ```
 
-This runs optimizer Jest (`optimizer:test`), then CLI Mocha (`cli:test`), then the GitHub Action tests.
+This runs optimizer Jest (`optimizer:test`), diff Jest (`diff:test`), bundler Jest (`bundler:test`), then CLI Mocha (`cli:test`), then the GitHub Action tests.
 PR CI (`.github/workflows/if-nodejs-pr-testing.yml`) and the Changesets release workflow both call `npm test`.
 
 ### Run Only Optimizer Tests
