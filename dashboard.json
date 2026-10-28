@@ -21,17 +21,6 @@
       "score": 31.589204762418465
     },
     {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.210031082465903
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSPEgqQ",
       "isPR": false,
       "isAssigned": true,
@@ -49,7 +38,18 @@
           "color": "ededed"
         }
       ],
-      "score": 12.922856493716644
+      "score": 19.815046623698855
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.210031082465903
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -61,26 +61,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 12.635681904967385
-    },
-    {
-      "id": "I_kwDOBW5R_c6VGYzo",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[FEATURE] Performance + Accessibility Improvement of website",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/issues/3186",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        }
-      ],
-      "score": 12.180480298462836
     },
     {
       "id": "I_kwDOCoBobc6fqNYx",
@@ -199,6 +179,34 @@
         }
       ],
       "score": 7.7537138962299865
+    },
+    {
+      "id": "I_kwDOBW5R_c6ovh9-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
+      "author": "cbum-dev",
+      "resourcePath": "/asyncapi/website/issues/3649",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
