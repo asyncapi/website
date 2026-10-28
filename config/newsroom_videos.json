@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/XEwfCaKhblE/hqdefault.jpg",
+    "title": "Conference Dry Run",
+    "description": "Join us for the AsyncAPI Online Conference Edition as the community unites worldwide to share experiences, collaborate, and ...",
+    "videoId": "XEwfCaKhblE"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/L9-Gl-d99vM/hqdefault.jpg",
+    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday October 27th 2026",
+    "description": "https://github.com/asyncapi/community/issues/3649.",
+    "videoId": "L9-Gl-d99vM"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/8aPUIFnVNjY/hqdefault.jpg",
     "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday October 6th 2026",
     "description": "https://github.com/asyncapi/community/issues/3629.",
@@ -16,17 +28,5 @@
     "title": "Making AI Agents Reliable Event-Driven API Consumers with Arazzo",
     "description": "AI agents are increasingly expected to act across any of your APIs, publishing to a queue, waiting on a webhook, correlating an ...",
     "videoId": "KuuKTUfMiV0"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/PNlbq0-nxa8/hqdefault.jpg",
-    "title": "Governance Board Meeting, 15:30 UTC Tuesday September 22nd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3630.",
-    "videoId": "PNlbq0-nxa8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/jQM5mEPqiYM/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 2nd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3607.",
-    "videoId": "jQM5mEPqiYM"
   }
 ]

@@ -529,6 +529,7 @@
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
+        "isBoardChair": true,
         "repos": [
             "website",
             "conference-website",
