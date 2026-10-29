@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 19.815046623698855
+      "score": 23.548316277439216
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -63,6 +63,22 @@
       "score": 12.635681904967385
     },
     {
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 12.061332727468868
+    },
+    {
       "id": "I_kwDOCoBobc6fqNYx",
       "isPR": false,
       "isAssigned": true,
@@ -79,22 +95,6 @@
       "score": 12.061332727468868
     },
     {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 11.774158138719608
-    },
-    {
       "id": "PR_kwDOFLhIt87cYXTP",
       "isPR": true,
       "isAssigned": true,
@@ -104,30 +104,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOBW5R_c67zQdK",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] “Edit This Page” Button for Docs and Blog Pages",
-      "author": "Sauve9119",
-      "resourcePath": "/asyncapi/website/issues/4187",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 10.625459783722574
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -155,6 +131,17 @@
         }
       ],
       "score": 8.328063073728504
+    },
+    {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 7.7537138962299865
     },
     {
       "id": "I_kwDOBW5R_c7uh0fo",
