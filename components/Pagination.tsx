@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import IconChevronDown from './icons/ChevronDown';
 
@@ -106,6 +106,21 @@ export default function Pagination({
 }: PaginationProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [dropdownDirection, setDropdownDirection] = useState<'down' | 'up'>('down');
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handlePointerDown = (e: PointerEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('pointerdown', handlePointerDown);
+    }
+
+    return () => document.removeEventListener('pointerdown', handlePointerDown);
+  }, [isDropdownOpen]);
 
   if (totalPages <= 1) return null;
 
@@ -237,16 +252,15 @@ export default function Pagination({
       {showGoToPage && (
         <div className='relative flex items-center gap-2 sm:ml-4'>
           <span className='text-sm text-gray-600 dark:text-gray-400'>Go to page</span>
-          <div className='relative'>
+          <div ref={dropdownRef} className='relative'>
             <button
               onClick={handleDropdownToggle}
-              onBlur={() => setTimeout(() => setIsDropdownOpen(false), 200)}
               className='px-2 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm w-[60px] sm:w-[65px] md:w-[70px] text-left flex items-center justify-between gap-1 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'
               aria-label='Select page'
             >
               <span className='flex-1 text-left text-gray-900 dark:text-white'>{currentPage}</span>
               <IconChevronDown
-                className={`w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400 transition-transform ${chevronRotation}`}
+                className={`w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400 transition-transform pointer-events-none ${chevronRotation}`}
               />
             </button>
 
@@ -254,7 +268,7 @@ export default function Pagination({
               <div
                 className={`absolute left-0 w-[60px] sm:w-[65px] md:w-[70px] bg-white dark:bg-gray-800 
                   border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg max-h-[140px] 
-                  overflow-y-auto z-50 ${dropdownDirection === 'up' ? 'bottom-full mb-1' : 'top-full mt-1'}`}
+                  overflow-y-auto z-10 ${dropdownDirection === 'up' ? 'bottom-full mb-1' : 'top-full mt-1'}`}
               >
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                   <button
