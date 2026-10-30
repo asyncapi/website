@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 23.548316277439216
+      "score": 23.835490866188476
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -60,7 +60,7 @@
       "resourcePath": "/asyncapi/generator/pull/2211",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.635681904967385
+      "score": 12.922856493716644
     },
     {
       "id": "I_kwDOFdFGUs8AAAABCc6TlA",
@@ -168,31 +168,14 @@
       "score": 7.7537138962299865
     },
     {
-      "id": "I_kwDOBW5R_c6ovh9-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] <Social Sharing Buttons on Blogs>",
-      "author": "cbum-dev",
-      "resourcePath": "/asyncapi/website/issues/3649",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        }
-      ],
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "fix: resolve pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
+      "labels": [],
       "score": 7.179364718731469
     }
   ],
