@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import AsyncAPISummary from '../components/FinancialSummary/AsyncAPISummary';
 import BarChartComponent from '../components/FinancialSummary/BarChartComponent';
@@ -18,19 +18,17 @@ import Container from '../components/layout/Container';
 export default function FinancialSummary() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
-  const handleResizeRef = useRef<() => void>(null!);
-
-  handleResizeRef.current = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
   // Handle window resize event to update the window width state value for responsive design purposes
   useEffect(() => {
-    handleResizeRef.current!();
-    window.addEventListener('resize', handleResizeRef.current!);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResizeRef.current!);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
