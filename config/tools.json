@@ -2659,6 +2659,27 @@
       },
       {
         "title": "AsyncAPI Parser",
+        "description": "Use this library to parse and validate AsyncAPI documents — either YAML or JSON — in your Java application. It is a native parser implemented on top of [json-sKema](https://github.com/erosb/json-sKema) using official json schema from [spec-json-schemas](https://github.com/asyncapi/spec-json-schemas)",
+        "links": {
+          "repoUrl": "https://github.com/AsyncAPITools/parser-java"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            }
+          ],
+          "technology": [],
+          "categories": [
+            "validator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Parser",
         "description": "The AsyncAPI Parser validates AsyncAPI documents according to dedicated schemas.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/parser-go"

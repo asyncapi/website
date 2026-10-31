@@ -16,6 +16,7 @@ import GoldSponsors from '../../components/sponsors/GoldSponsors';
 import PlatinumSponsors from '../../components/sponsors/PlatinumSponsors';
 import SilverSponsors from '../../components/sponsors/SilverSponsors';
 import SupportUs from '../../components/SupportUs/SupportUs';
+import ThemeImage from '../../components/ThemeImage';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
@@ -58,7 +59,12 @@ export default function HomePage() {
             />
           </div>
           <div className='mt-8'>
-            <img src='/img/social/slack.webp' alt='Community Slack' className='rounded-lg shadow-md' />
+            <ThemeImage
+              lightSrc='/img/homepage/slack-wg-community-light.webp'
+              darkSrc='/img/homepage/slack-wg-community-dark.webp'
+              alt='AsyncAPI Slack #wg-community channel'
+              className='rounded-lg shadow-md'
+            />
           </div>
         </Container>
 
