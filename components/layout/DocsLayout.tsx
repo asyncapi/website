@@ -11,6 +11,7 @@ import editOptions from '../../config/edit-page-config.json';
 import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
 import getDocsBreadcrumbs from '../../utils/getDocsBreadcrumbs';
+import { getEditLink } from '../../utils/getEditLink';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
 import DocsBreadcrumbs from '../docs/DocsBreadcrumbs';
@@ -35,40 +36,15 @@ interface IDocsLayoutProps {
  * @param {IPost} post
  */
 function generateEditLink(post: IPost) {
-  let last = post.id.substring(post.id.lastIndexOf('/') + 1);
+  const fileName = post.id.substring(post.id.lastIndexOf('/') + 1).replace(/\.mdx$/, '.md');
+  const slug = `${post.slug.replace(/^\/docs/, '')}${post.isIndex ? '/index' : ''}`;
+  const href = getEditLink(slug, fileName, editOptions);
 
-  if (last.endsWith('.mdx')) {
-    last = last.replace('.mdx', '.md');
-  }
-  const target = editOptions.find((edit) => {
-    return post.slug.includes(edit.value);
-  });
-  const editHref = target?.href;
-  const hrefList = editHref?.split('/');
-
-  if (!hrefList) return null;
-
-  const lastListElement = hrefList[hrefList.length - 1].split('.');
-  const isHrefToFile = lastListElement.length > 1;
-  const EditPage = 'Edit this page on GitHub';
-
-  if (target?.value === '') {
-    return (
-      <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href={`${target.href}${post.isIndex ? `${post.slug}/index` : post.slug}.md`}
-        className='ml-1 underline'
-      >
-        {EditPage}
-      </a>
-    );
-  }
-  if (isHrefToFile) last = '';
+  if (!href) return null;
 
   return (
-    <a target='_blank' rel='noopener noreferrer' href={`${target?.href}/${last}`} className='ml-1 underline'>
-      {EditPage}
+    <a target='_blank' rel='noopener noreferrer' href={href} className='ml-1 underline'>
+      Edit this page on GitHub
     </a>
   );
 }

@@ -4,14 +4,9 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import editUrls from '../../config/edit-page-config.json';
+import { getEditLink } from '../../utils/getEditLink';
 import { logger } from '../helpers/logger';
 import { pause } from '../helpers/utils';
-
-const ignoreFiles = [
-  'reference/specification/v2.x.md',
-  'reference/specification/v3.0.0-explorer.md',
-  'reference/specification/v3.0.0.md'
-];
 
 interface PathObject {
   filePath: string;
@@ -24,7 +19,7 @@ interface PathObject {
  *
  * For each provided path object, this function sends an HTTP HEAD request to the associated edit link.
  * If the response returns a 404 status, the original path object is retained; otherwise, null is returned.
- * Files missing an edit link or whose file paths match predefined ignore patterns are skipped.
+ * Files missing an edit link are skipped.
  * Each request is aborted if it exceeds a configurable timeout (defaulting to 5000ms).
  *
  * @param batch - Array of path objects, each containing a file path, URL path, and edit link.
@@ -40,7 +35,7 @@ async function processBatch(batch: PathObject[]): Promise<(PathObject | null)[]>
       let timeout: NodeJS.Timeout | undefined;
       
       try {
-        if (!editLink || ignoreFiles.some((ignorePath) => filePath.endsWith(ignorePath))) return null;
+        if (!editLink) return null;
 
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -105,10 +100,9 @@ async function checkUrls(paths: PathObject[]): Promise<PathObject[]> {
 /**
  * Generates an edit link for a markdown file based on its URL and file path.
  *
- * The function removes a leading "docs/" segment from the URL if present, then checks the provided
- * edit options for a matching entry. If a matching option is found with an empty value, it applies a fallback
- * pattern to generate the edit link using the URL path; otherwise, it constructs the link using the file's basename.
- * Returns null if no appropriate edit option is found.
+ * The function removes a leading "docs/" segment from the URL if present and delegates to
+ * `getEditLink`, the same resolver used by the docs layout, so the checker validates exactly
+ * the links that are rendered on the website.
  *
  * @param urlPath - The URL path associated with the markdown file.
  * @param filePath - The file system path of the markdown file.
@@ -122,16 +116,9 @@ function determineEditLink(
 ): string | null {
   // Remove leading 'docs/' if present for matching
   const pathForMatching = urlPath.startsWith('docs/') ? urlPath.slice(5) : urlPath;
+  const slug = pathForMatching.startsWith('/') ? pathForMatching : `/${pathForMatching}`;
 
-  const target = editOptions.find((edit) => pathForMatching.includes(edit.value));
-
-  // Handle the empty value case (fallback)
-  if (target?.value === '') {
-    return `${target.href}/docs/${urlPath}.md`;
-  }
-
-  // For other cases with specific targets
-  return target ? `${target.href}/${path.basename(filePath)}` : null;
+  return getEditLink(slug, path.basename(filePath), editOptions);
 }
 
 /**
