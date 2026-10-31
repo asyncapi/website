@@ -76,7 +76,7 @@
           "color": "708090"
         }
       ],
-      "score": 12.061332727468868
+      "score": 12.348507316218127
     },
     {
       "id": "I_kwDOCoBobc6fqNYx",
@@ -133,6 +133,22 @@
       "score": 8.328063073728504
     },
     {
+      "id": "PR_kwDOBW5R_c75L5uF",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: resolve page selection issue in the \"Go to page\" dropdown on desktop",
+      "author": "swarupasaroogumma",
+      "resourcePath": "/asyncapi/website/pull/5678",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
+        }
+      ],
+      "score": 8.040888484979245
+    },
+    {
       "id": "I_kwDOFLhIt88AAAABSgjN-g",
       "isPR": false,
       "isAssigned": false,
@@ -166,17 +182,6 @@
         }
       ],
       "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "fix: resolve pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [
