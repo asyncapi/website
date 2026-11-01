@@ -133,6 +133,17 @@
       "score": 8.328063073728504
     },
     {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.040888484979245
+    },
+    {
       "id": "PR_kwDOBW5R_c75L5uF",
       "isPR": true,
       "isAssigned": false,
@@ -147,17 +158,6 @@
         }
       ],
       "score": 8.040888484979245
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 7.7537138962299865
     },
     {
       "id": "I_kwDOBW5R_c7uh0fo",
