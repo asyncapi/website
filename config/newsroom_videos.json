@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/-LPCnm3F9Mc/hqdefault.jpg",
-    "title": "AsyncAPI Online Conference 2026",
-    "description": "Join us for the AsyncAPI Online Conference Edition as the community unites worldwide to share experiences, collaborate, and ...",
-    "videoId": "-LPCnm3F9Mc"
+    "image_url": "https://i.ytimg.com/vi/Q5l6vHqnf-I/hqdefault.jpg",
+    "title": "AsyncAPI CLI: From Specification to Production - Tushar Anand",
+    "description": "",
+    "videoId": "Q5l6vHqnf-I"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/XEwfCaKhblE/hqdefault.jpg",
-    "title": "Conference Dry Run",
-    "description": "Join us for the AsyncAPI Online Conference Edition as the community unites worldwide to share experiences, collaborate, and ...",
-    "videoId": "XEwfCaKhblE"
+    "image_url": "https://i.ytimg.com/vi/3vub49XMUv4/hqdefault.jpg",
+    "title": "Beyond the Broker: What Event Gateways Are Really Trying to Solve - Daniel Kocot",
+    "description": "",
+    "videoId": "3vub49XMUv4"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/L9-Gl-d99vM/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday October 27th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3649.",
-    "videoId": "L9-Gl-d99vM"
+    "image_url": "https://i.ytimg.com/vi/hAoxCrkBGRI/hqdefault.jpg",
+    "title": "Secure by Default Is a Lie: What Building DaloyJS Taught Me About Making It True - Devlin Duldulao",
+    "description": "",
+    "videoId": "hAoxCrkBGRI"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/8aPUIFnVNjY/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday October 6th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3629.",
-    "videoId": "8aPUIFnVNjY"
+    "image_url": "https://i.ytimg.com/vi/kR8JVx1NZpQ/hqdefault.jpg",
+    "title": "Beyond the Broker: What Event Gateways Are Really Trying to Solve - Daniel Kocot",
+    "description": "",
+    "videoId": "kR8JVx1NZpQ"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/4uILaCAAkxk/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 30th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3628.",
-    "videoId": "4uILaCAAkxk"
+    "image_url": "https://i.ytimg.com/vi/u4WvwzCtkIc/hqdefault.jpg",
+    "title": "Stop API Drift: Provision Kafka from AsyncAPI  - Iván García Sainz-Aja",
+    "description": "",
+    "videoId": "u4WvwzCtkIc"
   }
 ]
