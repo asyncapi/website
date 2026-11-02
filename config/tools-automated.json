@@ -121,8 +121,8 @@
         "title": "ChanX",
         "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
         "links": {
-          "docsUrl": "https://chanx.readthedocs.io/",
-          "repoUrl": "https://github.com/huynguyengl99/chanx"
+          "docsUrl": "https://python.chanx.dev/",
+          "repoUrl": "https://github.com/chanx-dev/chanx"
         },
         "filters": {
           "language": "python",
@@ -228,6 +228,42 @@
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "Java",
+            "Python",
+            "Go",
+            "C#",
+            "Elixir"
+          ],
+          "technology": [
+            "Kafka",
+            "AMQP",
+            "MQTT",
+            "WebSocket",
+            "Docker"
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "AsyncAPI Modelina",
         "description": "Generate payload models into Java, TypeScript, Go, etc, you name it, from AsyncAPI documents. This tool gives you full control over the models through high customization",
         "links": {
@@ -271,8 +307,8 @@
         "title": "ChanX",
         "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
         "links": {
-          "docsUrl": "https://chanx.readthedocs.io/",
-          "repoUrl": "https://github.com/huynguyengl99/chanx"
+          "docsUrl": "https://python.chanx.dev/",
+          "repoUrl": "https://github.com/chanx-dev/chanx"
         },
         "filters": {
           "language": "python",
@@ -491,6 +527,42 @@
   "Documentation Generators": {
     "description": "The following is a list of tools that generate human-readable documentation from an AsyncAPI document.",
     "toolsList": [
+      {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "Java",
+            "Python",
+            "Go",
+            "C#",
+            "Elixir"
+          ],
+          "technology": [
+            "Kafka",
+            "AMQP",
+            "MQTT",
+            "WebSocket",
+            "Docker"
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
       {
         "title": "Bielu.AspNetCore.AsyncApi",
         "description": "A library that provides built-in support for generating AsyncAPI documents from minimal or controller-based APIs in ASP.NET Core, bringing the same developer experience as Microsoft.AspNetCore.OpenApi but for AsyncAPI specifications.",
@@ -844,6 +916,42 @@
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "Java",
+            "Python",
+            "Go",
+            "C#",
+            "Elixir"
+          ],
+          "technology": [
+            "Kafka",
+            "AMQP",
+            "MQTT",
+            "WebSocket",
+            "Docker"
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "AsyncAPI Payload Validator",
         "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
         "links": {
@@ -965,6 +1073,42 @@
     "description": "The following is a list of tools that validate AsyncAPI documents.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "Java",
+            "Python",
+            "Go",
+            "C#",
+            "Elixir"
+          ],
+          "technology": [
+            "Kafka",
+            "AMQP",
+            "MQTT",
+            "WebSocket",
+            "Docker"
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "AsyncAPI Payload Validator",
         "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
         "links": {
@@ -1054,6 +1198,42 @@
     "description": "The following is a list of tools that compare AsyncAPI documents.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "Java",
+            "Python",
+            "Go",
+            "C#",
+            "Elixir"
+          ],
+          "technology": [
+            "Kafka",
+            "AMQP",
+            "MQTT",
+            "WebSocket",
+            "Docker"
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
         "title": "AsyncAPI Diff",
         "description": "Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes.",
         "links": {
@@ -1096,6 +1276,42 @@
   "CLIs": {
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
     "toolsList": [
+      {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            "TypeScript",
+            "Java",
+            "Python",
+            "Go",
+            "C#",
+            "Elixir"
+          ],
+          "technology": [
+            "Kafka",
+            "AMQP",
+            "MQTT",
+            "WebSocket",
+            "Docker"
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
       {
         "title": "AsyncAPI CLI",
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",

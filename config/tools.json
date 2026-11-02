@@ -269,8 +269,8 @@
         "title": "ChanX",
         "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
         "links": {
-          "docsUrl": "https://chanx.readthedocs.io/",
-          "repoUrl": "https://github.com/huynguyengl99/chanx"
+          "docsUrl": "https://python.chanx.dev/",
+          "repoUrl": "https://github.com/chanx-dev/chanx"
         },
         "filters": {
           "language": [
@@ -750,6 +750,85 @@
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            },
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            },
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            },
+            {
+              "name": "Elixir",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Kafka",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "amqp",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "MQTT",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "AsyncAPI Generator",
         "description": "Generator is a tool that you can use to generate whatever you want basing on the AsyncAPI specification file as an input.",
         "links": {
@@ -844,8 +923,8 @@
         "title": "ChanX",
         "description": "WebSocket framework for Django/FastAPI with AsyncAPI 3.0 spec generation and Python client generation from AsyncAPI schemas",
         "links": {
-          "docsUrl": "https://chanx.readthedocs.io/",
-          "repoUrl": "https://github.com/huynguyengl99/chanx"
+          "docsUrl": "https://python.chanx.dev/",
+          "repoUrl": "https://github.com/chanx-dev/chanx"
         },
         "filters": {
           "language": [
@@ -1403,6 +1482,85 @@
   "Documentation Generators": {
     "description": "The following is a list of tools that generate human-readable documentation from an AsyncAPI document.",
     "toolsList": [
+      {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            },
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            },
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            },
+            {
+              "name": "Elixir",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Kafka",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "amqp",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "MQTT",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
       {
         "title": "AsyncAPI Generator",
         "description": "Generator is a tool that you can use to generate whatever you want basing on the AsyncAPI specification file as an input.",
@@ -2322,6 +2480,85 @@
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            },
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            },
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            },
+            {
+              "name": "Elixir",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Kafka",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "amqp",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "MQTT",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "AsyncAPI Payload Validator",
         "description": "A Python library and CLI for validating message payloads against AsyncAPI 2.x and 3.x specifications written in JSON or YAML format. Performs detailed JSON Schema validation including type checking, required fields, string patterns, enums, numeric constraints, and composition rules. Supports HTML reports, Jinja2 template validation, and is CI/CD ready with GitHub Actions and GitLab CI examples.",
         "links": {
@@ -2629,6 +2866,85 @@
         }
       },
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            },
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            },
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            },
+            {
+              "name": "Elixir",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Kafka",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "amqp",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "MQTT",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "AsyncAPI GitHub Action",
         "description": "This action validates if the AsyncAPI schema file is valid or not.",
         "links": {
@@ -2652,6 +2968,27 @@
           ],
           "categories": [
             "github-action",
+            "validator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
+        "title": "AsyncAPI Parser",
+        "description": "Use this library to parse and validate AsyncAPI documents — either YAML or JSON — in your Java application. It is a native parser implemented on top of [json-sKema](https://github.com/erosb/json-sKema) using official json schema from [spec-json-schemas](https://github.com/asyncapi/spec-json-schemas)",
+        "links": {
+          "repoUrl": "https://github.com/AsyncAPITools/parser-java"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            }
+          ],
+          "technology": [],
+          "categories": [
             "validator"
           ],
           "hasCommercial": false
@@ -2914,6 +3251,85 @@
     "description": "The following is a list of tools that compare AsyncAPI documents.",
     "toolsList": [
       {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            },
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            },
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            },
+            {
+              "name": "Elixir",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Kafka",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "amqp",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "MQTT",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
+      {
         "title": "Api-Smart-Diff",
         "description": "It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema.",
         "links": {
@@ -3023,6 +3439,85 @@
   "CLIs": {
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
     "toolsList": [
+      {
+        "title": "API Genie",
+        "description": "Lint, diff, mock, contract-test and generate code for AsyncAPI 3 alongside OpenAPI, GraphQL and Protobuf, from one set of free native binaries. Validates Kafka, AMQP and MQTT 5 traffic against the spec.",
+        "links": {
+          "websiteUrl": "https://apigenie.pl",
+          "docsUrl": "https://apigenie.pl/docs/quickstart",
+          "repoUrl": "https://github.com/mykulyak/api-genie"
+        },
+        "filters": {
+          "language": [
+            {
+              "name": "TypeScript",
+              "color": "bg-[#7DBCFE]",
+              "borderColor": "border-[#2C78C7]"
+            },
+            {
+              "name": "Java",
+              "color": "bg-[#ECA2A4]",
+              "borderColor": "border-[#EC2125]"
+            },
+            {
+              "name": "Python",
+              "color": "bg-[#A8D0EF]",
+              "borderColor": "border-[#3878AB]"
+            },
+            {
+              "name": "Go/Golang",
+              "color": "bg-[#8ECFDF]",
+              "borderColor": "border-[#00AFD9]"
+            },
+            {
+              "name": "C#",
+              "color": "bg-[#E3AFE0]",
+              "borderColor": "border-[#9B4F96]"
+            },
+            {
+              "name": "Elixir",
+              "color": "bg-[#57f281]",
+              "borderColor": "border-[#37f069]"
+            }
+          ],
+          "technology": [
+            {
+              "name": "Kafka",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "amqp",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "MQTT",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Socket.IO",
+              "color": "bg-[#61d0f2]",
+              "borderColor": "border-[#40ccf7]"
+            },
+            {
+              "name": "Docker",
+              "color": "bg-[#B8E0FF]",
+              "borderColor": "border-[#2596ED]"
+            }
+          ],
+          "categories": [
+            "cli",
+            "validator",
+            "compare-tool",
+            "mocking-and-testing",
+            "code-generator",
+            "documentation-generator"
+          ],
+          "hasCommercial": false
+        }
+      },
       {
         "title": "AsyncAPI CLI",
         "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
