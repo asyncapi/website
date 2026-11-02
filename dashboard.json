@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 23.835490866188476
+      "score": 24.409840043686994
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -106,6 +106,33 @@
       "score": 11.48698354997035
     },
     {
+      "id": "PR_kwDODwv8N88AAAABHRpDeg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add gallery page with photos from Cloudinary",
+      "author": "TenzDelek",
+      "resourcePath": "/asyncapi/conference-website/pull/1096",
+      "repo": "asyncapi/conference-website",
+      "labels": [
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 9.18958683997628
+    },
+    {
+      "id": "PR_kwDOFDnrNc8AAAABLLSzYg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: harden workspace releases with Changesets and OIDC",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/cli/pull/2336",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 8.902412251227021
+    },
+    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -142,46 +169,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.040888484979245
-    },
-    {
-      "id": "PR_kwDOBW5R_c75L5uF",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: resolve page selection issue in the \"Go to page\" dropdown on desktop",
-      "author": "swarupasaroogumma",
-      "resourcePath": "/asyncapi/website/pull/5678",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 8.040888484979245
-    },
-    {
-      "id": "I_kwDOBW5R_c7uh0fo",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Introduce AI-facing documentation",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/issues/5205",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 7.7537138962299865
     }
   ],
   "goodFirstIssues": [
