@@ -21,17 +21,6 @@
       "score": 31.589204762418465
     },
     {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.210031082465903
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSPEgqQ",
       "isPR": false,
       "isAssigned": true,
@@ -49,7 +38,18 @@
           "color": "ededed"
         }
       ],
-      "score": 12.922856493716644
+      "score": 25.27136380993477
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.78438025996442
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -60,27 +60,23 @@
       "resourcePath": "/asyncapi/generator/pull/2211",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.635681904967385
+      "score": 12.922856493716644
     },
     {
-      "id": "I_kwDOBW5R_c6VGYzo",
+      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
       "isPR": false,
-      "isAssigned": true,
-      "title": "[FEATURE] Performance + Accessibility Improvement of website",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/issues/3186",
-      "repo": "asyncapi/website",
+      "isAssigned": false,
+      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/training/issues/65",
+      "repo": "asyncapi/training",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
+          "name": "microgrant",
+          "color": "708090"
         }
       ],
-      "score": 12.180480298462836
+      "score": 12.348507316218127
     },
     {
       "id": "I_kwDOCoBobc6fqNYx",
@@ -99,22 +95,6 @@
       "score": 12.061332727468868
     },
     {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 11.774158138719608
-    },
-    {
       "id": "PR_kwDOFLhIt87cYXTP",
       "isPR": true,
       "isAssigned": true,
@@ -124,30 +104,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOBW5R_c67zQdK",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] “Edit This Page” Button for Docs and Blog Pages",
-      "author": "Sauve9119",
-      "resourcePath": "/asyncapi/website/issues/4187",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 10.625459783722574
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -161,20 +117,31 @@
       "score": 8.615237662477762
     },
     {
-      "id": "I_kwDODwv8N87e2ifU",
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Add Gallery Section to the website",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/issues/877",
-      "repo": "asyncapi/conference-website",
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.040888484979245
+    },
+    {
+      "id": "PR_kwDOBW5R_c75L5uF",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: resolve page selection issue in the \"Go to page\" dropdown on desktop",
+      "author": "swarupasaroogumma",
+      "resourcePath": "/asyncapi/website/pull/5678",
+      "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "microgrant",
-          "color": "708090"
+          "name": "waiting-for-author",
+          "color": "BDDB3C"
         }
       ],
-      "score": 8.328063073728504
+      "score": 8.040888484979245
     },
     {
       "id": "I_kwDOBW5R_c7uh0fo",
@@ -199,6 +166,17 @@
         }
       ],
       "score": 7.7537138962299865
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "fix: resolve pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [

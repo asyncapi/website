@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/8aPUIFnVNjY/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday October 6th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3629.",
-    "videoId": "8aPUIFnVNjY"
+    "image_url": "https://i.ytimg.com/vi/hAoxCrkBGRI/hqdefault.jpg",
+    "title": "Secure by Default Is a Lie: What Building DaloyJS Taught Me About Making It True - Devlin Duldulao",
+    "description": "",
+    "videoId": "hAoxCrkBGRI"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/4uILaCAAkxk/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 30th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3628.",
-    "videoId": "4uILaCAAkxk"
+    "image_url": "https://i.ytimg.com/vi/u4WvwzCtkIc/hqdefault.jpg",
+    "title": "Stop API Drift: Provision Kafka from AsyncAPI  - Iván García Sainz-Aja",
+    "description": "",
+    "videoId": "u4WvwzCtkIc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/KuuKTUfMiV0/hqdefault.jpg",
-    "title": "Making AI Agents Reliable Event-Driven API Consumers with Arazzo",
-    "description": "AI agents are increasingly expected to act across any of your APIs, publishing to a queue, waiting on a webhook, correlating an ...",
-    "videoId": "KuuKTUfMiV0"
+    "image_url": "https://i.ytimg.com/vi/kR8JVx1NZpQ/hqdefault.jpg",
+    "title": "Beyond the Broker: What Event Gateways Are Really Trying to Solve - Daniel Kocot",
+    "description": "",
+    "videoId": "kR8JVx1NZpQ"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/PNlbq0-nxa8/hqdefault.jpg",
-    "title": "Governance Board Meeting, 15:30 UTC Tuesday September 22nd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3630.",
-    "videoId": "PNlbq0-nxa8"
+    "image_url": "https://i.ytimg.com/vi/zd_rmojvkig/hqdefault.jpg",
+    "title": "Taming Schema Evolution in Kafka-Based Event Pipelines - Sreekanth Nalla",
+    "description": "",
+    "videoId": "zd_rmojvkig"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/jQM5mEPqiYM/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday September 2nd 2026",
-    "description": "https://github.com/asyncapi/community/issues/3607.",
-    "videoId": "jQM5mEPqiYM"
+    "image_url": "https://i.ytimg.com/vi/bIuUlgs9w_M/hqdefault.jpg",
+    "title": "Keeping WebSocket APIs honest with AsyncAPI: a code-first approach in Python - Huy Nguyen",
+    "description": "",
+    "videoId": "bIuUlgs9w_M"
   }
 ]
