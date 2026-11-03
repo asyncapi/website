@@ -1,21 +1,15 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/Q5l6vHqnf-I/hqdefault.jpg",
-    "title": "AsyncAPI CLI: From Specification to Production - Tushar Anand",
-    "description": "",
-    "videoId": "Q5l6vHqnf-I"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/3vub49XMUv4/hqdefault.jpg",
-    "title": "Beyond the Broker: What Event Gateways Are Really Trying to Solve - Daniel Kocot",
-    "description": "",
-    "videoId": "3vub49XMUv4"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/hAoxCrkBGRI/hqdefault.jpg",
     "title": "Secure by Default Is a Lie: What Building DaloyJS Taught Me About Making It True - Devlin Duldulao",
     "description": "",
     "videoId": "hAoxCrkBGRI"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/u4WvwzCtkIc/hqdefault.jpg",
+    "title": "Stop API Drift: Provision Kafka from AsyncAPI  - Iván García Sainz-Aja",
+    "description": "",
+    "videoId": "u4WvwzCtkIc"
   },
   {
     "image_url": "https://i.ytimg.com/vi/kR8JVx1NZpQ/hqdefault.jpg",
@@ -24,9 +18,15 @@
     "videoId": "kR8JVx1NZpQ"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/u4WvwzCtkIc/hqdefault.jpg",
-    "title": "Stop API Drift: Provision Kafka from AsyncAPI  - Iván García Sainz-Aja",
+    "image_url": "https://i.ytimg.com/vi/zd_rmojvkig/hqdefault.jpg",
+    "title": "Taming Schema Evolution in Kafka-Based Event Pipelines - Sreekanth Nalla",
     "description": "",
-    "videoId": "u4WvwzCtkIc"
+    "videoId": "zd_rmojvkig"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/bIuUlgs9w_M/hqdefault.jpg",
+    "title": "Keeping WebSocket APIs honest with AsyncAPI: a code-first approach in Python - Huy Nguyen",
+    "description": "",
+    "videoId": "bIuUlgs9w_M"
   }
 ]
