@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 25.27136380993477
+      "score": 25.845712987433288
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -144,30 +144,6 @@
       "score": 8.040888484979245
     },
     {
-      "id": "I_kwDOBW5R_c7uh0fo",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Introduce AI-facing documentation",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/issues/5205",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 7.7537138962299865
-    },
-    {
       "id": "PR_kwDOCHlHJM8AAAABAm34jA",
       "isPR": true,
       "isAssigned": true,
@@ -177,6 +153,22 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 7.179364718731469
+    },
+    {
+      "id": "I_kwDOCoBobc5p7LyT",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "\"messageId\" must be unique across all the messages.",
+      "author": "wiegell",
+      "resourcePath": "/asyncapi/parser-js/issues/793",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
