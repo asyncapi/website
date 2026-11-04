@@ -157,13 +157,13 @@ Integrating AsyncAPI with Kafka offers a structured approach to managing and doc
 Mentorship duration - 12 to 18weeks \(full-time schedule\)
 
 ## Contact AsyncAPI Mentors
-- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Observe our [Slack etiquette](../060-meetings-and-communication/slack-etiquette) and [AsyncAPI code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
+- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Observe our [Slack etiquette](https://www.asyncapi.com/docs/community/060-meetings-and-communication/slack-etiquette) and [AsyncAPI code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 - Join the dedicated Mentorship channel `#09_mentorships` to meet all other mentees and mentors.
 
 ## FAQ
 
 1. **How active are previous mentees in AsyncAPI?**
-   Many mentees from our 2023 programs remain actively involved in the community, with several transitioning to maintainer roles. You can view detailed retention statistics on our [Mentorship Programs Insights](./insights) page.
+   Many mentees from our 2023 programs remain actively involved in the community, with several transitioning to maintainer roles. You can view detailed retention statistics on our [Mentorship Programs Insights](https://www.asyncapi.com/docs/community/050-mentorship-program/insights) page.
 
 2. **What is the time commitment for mentees?**
    Projects range from 175 to 350 hours depending on scope and complexity. This typically translates to 10-20 hours per week over 3-6 months.

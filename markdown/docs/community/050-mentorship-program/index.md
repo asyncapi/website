@@ -22,12 +22,10 @@ Organization admins for specific programs are listed on each program's respectiv
 
 | Program | Purpose | Learn More |
 |---------|---------|------------|
-| [AsyncAPI Mentorship](./asyncapi-mentorship-README) | Year-round mentoring initiative offering structured guidance on AsyncAPI projects | [Details & History](./asyncapi-mentorship-README) |
-| [Google Summer of Code](./summerofcode-README) | Annual program connecting students with open-source organizations for paid summer internships | [Details & History](./summerofcode-README) |
-| [Google Season of Docs](./seasonofdocs-2023-README) | Program supporting technical writers contributing to open-source documentation | [Details & History](./seasonofdocs-2023-README) |
-| [Winter of Code](./winterofcode-2023-README) | Preparatory program helping students build skills for Google Summer of Code | [Details & History](./winterofcode-2023-README) |
-| [OpenForce](./openforce/README) | CROSS Research Experiences program for undergraduate and graduate students | [Details & History](./openforce/README) |
-| [Hacktoberfest](./hacktoberfest/README) | Annual month-long celebration encouraging open-source contributions for all skill levels | [Details & History](./hacktoberfest/README) |
+| [AsyncAPI Mentorship](https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-README) | Year-round mentoring initiative offering structured guidance on AsyncAPI projects | [Details & History](https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-README) |
+| [Google Summer of Code](https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-README) | Annual program connecting students with open-source organizations for paid summer internships | [Details & History](https://www.asyncapi.com/docs/community/050-mentorship-program/summerofcode-README) |
+| [Google Season of Docs](https://www.asyncapi.com/docs/community/050-mentorship-program/seasonofdocs-2023-README) | Program supporting technical writers contributing to open-source documentation | [Details & History](https://www.asyncapi.com/docs/community/050-mentorship-program/seasonofdocs-2023-README) |
+| [Winter of Code](https://www.asyncapi.com/docs/community/050-mentorship-program/winterofcode-2023-README) | Preparatory program helping students build skills for Google Summer of Code | [Details & History](https://www.asyncapi.com/docs/community/050-mentorship-program/winterofcode-2023-README) |
 
 ## Program Impact by Year
 
@@ -59,6 +57,6 @@ Our mentorship programs have created a sustainable pipeline where mentees become
 - **100% mentor-convert retention**: All former mentees who became mentors remain active
 - **Notable examples**: [Akshat Nema](https://github.com/akshatnema) (mentee 2022 → mentor 2023+), [Aishat Muibudeen](https://github.com/Mayaleeeee) (mentee 2022-23 → mentor 2024-25), [Ashmit Jagtap](https://github.com/ashmit-coder) (GSoC 2024 mentee → GSoC 2025 mentor)
 
-> **For detailed statistics and program insights**, visit our [Mentorship Programs Insights](./insights) page.
+> **For detailed statistics and program insights**, visit our [Mentorship Programs Insights](https://www.asyncapi.com/docs/community/050-mentorship-program/insights) page.
 
 Want to be part of our growing community? Check out the individual program pages to learn how to apply!
