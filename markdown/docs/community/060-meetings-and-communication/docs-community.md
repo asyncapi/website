@@ -3,7 +3,7 @@ title: 'AsyncAPI docs community'
 weight: 20
 ---
 
- [Schedule your own docs meetings](MEETINGS_ORGANIZATION).
+ [Schedule your own docs meetings](https://www.asyncapi.com/docs/community/060-meetings-and-communication/MEETINGS_ORGANIZATION).
 
 ## AsyncAPI Slack workspace and docs channels
 Join the [AsyncAPI documentation Slack channel](https://join.slack.com/share/enQtNjUxNTY1NTU1MDk0NS1mYjNhODFhZDI3ZDRjODA1ZWRkZTZlYmM4ZTNjNzZjNTg5NTBiYjNmNTkwYzRlYzY4ZjQ4M2RhMDYzMjI3N2U5) to meet other technical writers:
