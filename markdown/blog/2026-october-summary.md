@@ -18,7 +18,7 @@ As we near the end of the year, we also take time to reflect on our community go
 
 ## State of Finances and Funding
 
-Like many Open Source communities, the AsyncAPI Initiative is navigating financial challenges and funding. This year, we weren’t able to secure enough sponsorship funding to support community activities at the level we planned for 2026/27, as many companies didn’t renew. We’re still grateful to the few companies that are still sponsoring.
+Like many open-source communities, the AsyncAPI Initiative is navigating financial challenges and funding. This year, we weren’t able to secure enough sponsorship funding to support community activities at the level we planned for 2026/27, as many companies didn’t renew. We’re still grateful to the few companies that are still sponsoring.
 
 While this doesn't take away the work we have done so far, we do need to readjust our community programs and activities, including the resources and people involved under the Community WG.
 
@@ -44,13 +44,13 @@ We have built a strong community, and we hope more members will get involved.
 
 ## AsyncAPI Conference 2026
 
-We were back again for our 6th anniversary of the AsyncAPI Online Conference, and as something we strive to do annually, it was great to do it again this year. We expanded the talks a bit this year and brought more Event-Driven Architecture into the mix, and overall we had over **972 views** from YouTube who engaged with us during the livestream
+We were back again for our 6th anniversary of the AsyncAPI Online Conference, and as something we strive to do annually, it was great to do it again this year. We expanded the talks a bit this year and brought more Event-Driven Architecture into the mix, and overall we had over **972 views on YouTube** during the livestream.
 
 We wouldn’t have had a successful event without our speakers and volunteers, who took the time to record sessions and support us on-stage and off-stage. If you missed the conference, [catch up on all the sessions available on the YouTube playlist](https://www.youtube.com/watch?v=-LPCnm3F9Mc&list=PLEIhCC9TfRbo).
 
 ### API Standards Conference
 
-We’re heading to Paris this December to join the API Standards Conference with our friends and fellow communities, OpenAPI, GraphQL, and JSON Schema. The conference will span 3 days from the 1-3 of December and we will also be at the API Standards booth.
+We’re heading to Paris this December to join the API Standards Conference with our friends and fellow communities, OpenAPI, GraphQL, and JSON Schema. The conference will span 3 days from the 1st to the 3rd of December and we will also be at the API Standards booth.
 
 [Please keep an eye out for the speakers and the agenda](https://api-standards.joinfost.io/), but you can now get yourself [a Free Ticket](https://portal.joinfost.io/event/future-of-software-technologies-paris-2026/5e27c773-7fa8-4169-b6a7-93494701212a/api-standards-conference?coupon=APISTANDARDSFREE144) to the conference and be sure to invite your friends as well. We look forward to seeing you there!
 
