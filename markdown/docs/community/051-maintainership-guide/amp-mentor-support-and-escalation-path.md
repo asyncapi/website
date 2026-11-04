@@ -35,4 +35,4 @@ To ensure our mentors feel supported and empowered, here’s how we help you nav
 
 ### 5. Code of Conduct & Reporting
  - All mentors and contributors are expected to uphold the AsyncAPI Code of Conduct
- - For violations or inappropriate behaviour, use our [formal reporting process](https://github.com/asyncapi/community/blob/master/code_of_conduct/coc-incident-resolution-procedures.md) or contact the CoC team
+ - For violations or inappropriate behaviour, use our [formal reporting process](https://www.asyncapi.com/docs/community/coc-incident-resolution-procedures) or contact the CoC team
