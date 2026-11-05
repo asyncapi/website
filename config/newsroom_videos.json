@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/HCj1H1JElOE/hqdefault.jpg",
+    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday November 4th 2026",
+    "description": "https://github.com/asyncapi/community/issues/3650.",
+    "videoId": "HCj1H1JElOE"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/hAoxCrkBGRI/hqdefault.jpg",
     "title": "Secure by Default Is a Lie: What Building DaloyJS Taught Me About Making It True - Devlin Duldulao",
     "description": "",
@@ -22,11 +28,5 @@
     "title": "Taming Schema Evolution in Kafka-Based Event Pipelines - Sreekanth Nalla",
     "description": "",
     "videoId": "zd_rmojvkig"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/bIuUlgs9w_M/hqdefault.jpg",
-    "title": "Keeping WebSocket APIs honest with AsyncAPI: a code-first approach in Python - Huy Nguyen",
-    "description": "",
-    "videoId": "bIuUlgs9w_M"
   }
 ]

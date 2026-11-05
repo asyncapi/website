@@ -63,22 +63,6 @@
       "score": 12.922856493716644
     },
     {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 12.348507316218127
-    },
-    {
       "id": "I_kwDOCoBobc6fqNYx",
       "isPR": false,
       "isAssigned": true,
@@ -93,17 +77,6 @@
         }
       ],
       "score": 12.061332727468868
-    },
-    {
-      "id": "PR_kwDOFLhIt87cYXTP",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Coderabbit config for community documentation",
-      "author": "bandantonio",
-      "resourcePath": "/asyncapi/community/pull/3552",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 11.48698354997035
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -166,6 +139,33 @@
         {
           "name": "stale",
           "color": "ededed"
+        }
+      ],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "I_kwDOCVQpZM6zcoZ7",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Schemas in AsyncAPI 3.0.0 file not fully rendered (only example1 parsed correctly)",
+      "author": "juanmbco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/1154",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "I_kwDOCHlHJM7hOEpu",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[BUG] React warning: missing key prop in AvailableOperations component during integration tests",
+      "author": "Harsh16gupta",
+      "resourcePath": "/asyncapi/generator/issues/1820",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
         }
       ],
       "score": 6.605015541232952
