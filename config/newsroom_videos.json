@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/ZHs4JPCr624/hqdefault.jpg",
+    "title": "AI Learned From Open Source. What Does It Owe Open Source?",
+    "description": "AI has learned a lot from open source. Code, documentation, discussions, examples, and years of knowledge shared publicly by ...",
+    "videoId": "ZHs4JPCr624"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/HCj1H1JElOE/hqdefault.jpg",
     "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday November 4th 2026",
     "description": "https://github.com/asyncapi/community/issues/3650.",
@@ -22,11 +28,5 @@
     "title": "Beyond the Broker: What Event Gateways Are Really Trying to Solve - Daniel Kocot",
     "description": "",
     "videoId": "kR8JVx1NZpQ"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/zd_rmojvkig/hqdefault.jpg",
-    "title": "Taming Schema Evolution in Kafka-Based Event Pipelines - Sreekanth Nalla",
-    "description": "",
-    "videoId": "zd_rmojvkig"
   }
 ]
