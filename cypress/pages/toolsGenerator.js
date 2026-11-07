@@ -3,7 +3,7 @@ import toolsData from '../fixtures/toolsPages.json';
 
 class ToolsGenerator extends BasePage {
   verifyGeneratorWorkflowDiagram() {
-    return this.verifyImageVisible(toolsData.generator.image);
+    return cy.get(toolsData.generator.diagram).should('be.visible');
   }
 }
 

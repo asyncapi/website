@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -10,8 +11,32 @@ import IconCode from '../../components/icons/Code';
 import IconDocuments from '../../components/icons/Documents';
 import IconPowerPlug from '../../components/icons/PowerPlug';
 import GenericLayout from '../../components/layout/GenericLayout';
+import GeneratorDocsPreview from '../../components/tools/GeneratorDocsPreview';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
+
+const MermaidDiagram = dynamic(() => import('../../components/MDX/MermaidDiagram'), {
+  ssr: false,
+  loading: () => <div className='min-h-[280px]' />
+});
+
+const GENERATOR_DIAGRAM = `flowchart LR
+  accTitle: Generator workflow
+  accDescr: An AsyncAPI file is passed into the Generator, which produces HTML, Markdown, Node.js, and Java SpringBoot.
+  spec@{ shape: doc, label: "AsyncAPI.yml" }
+  gen{Generator}
+  html[HTML]
+  md[Markdown]
+  nodejs["Node.js"]
+  java["Java SpringBoot"]
+  spec --> gen
+  gen --> html
+  gen --> md
+  gen --> nodejs
+  gen --> java`;
+
+const featureIconClassName =
+  'flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900 dark:border-dark-text dark:bg-dark-card dark:text-dark-heading';
 
 /**
  * @description Render the buttons for the Generator page.
@@ -39,7 +64,6 @@ function renderButtons(centered: boolean = false): React.JSX.Element {
 export default function GeneratorPage() {
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.';
   const image = '/img/social/generator-card.jpg';
-  const generatorimage = '/img/diagrams/generator.webp';
 
   return (
     <GenericLayout title='Generator' description={description} image={image} wide>
@@ -50,7 +74,12 @@ export default function GeneratorPage() {
               Docs, Code, Anything!
             </Heading>
             <Paragraph className='mt-4'>{description}</Paragraph>
-            <img src={generatorimage} alt='generator diagram' className=' mx-auto h-auto object-cover lg:w-1/2' />
+            <div
+              className='mx-auto mt-8 max-w-4xl [&_svg]:mx-auto [&_svg]:h-auto [&_svg]:max-w-full'
+              aria-label='generator diagram'
+            >
+              <MermaidDiagram graph={GENERATOR_DIAGRAM} />
+            </div>
           </div>
 
           <div className='relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8'>
@@ -80,7 +109,7 @@ export default function GeneratorPage() {
                 <li>
                   <div className='flex'>
                     <div className='shrink-0'>
-                      <div className='flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900'>
+                      <div className={featureIconClassName}>
                         <IconDocuments className='size-6' />
                       </div>
                     </div>
@@ -99,7 +128,7 @@ export default function GeneratorPage() {
                 <li className='mt-10'>
                   <div className='flex'>
                     <div className='shrink-0'>
-                      <div className='flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900'>
+                      <div className={featureIconClassName}>
                         <IconCode className='size-6' />
                       </div>
                     </div>
@@ -117,7 +146,7 @@ export default function GeneratorPage() {
                 <li className='mt-10'>
                   <div className='flex'>
                     <div className='shrink-0'>
-                      <div className='flex size-12 items-center justify-center rounded-md border border-gray-900 bg-secondary-100 text-gray-900'>
+                      <div className={featureIconClassName}>
                         <IconPowerPlug className='size-6' />
                       </div>
                     </div>
@@ -134,9 +163,8 @@ export default function GeneratorPage() {
                 </li>
               </ul>
             </div>
-            <div className='relative -mx-4 mt-10 lg:mt-0'>
-              <img className='relative mx-auto rounded shadow-lg' src='/img/tools/generator-1.png' alt='' />
-              <img className='relative mx-auto mt-8 rounded shadow-lg' src='/img/tools/generator-2.png' alt='' />
+            <div className='relative mt-10 lg:mt-0'>
+              <GeneratorDocsPreview />
             </div>
           </div>
           <div className='mt-16 text-center'>{renderButtons(true)}</div>

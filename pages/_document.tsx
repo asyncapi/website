@@ -24,10 +24,8 @@ class MyDocument extends Document {
                 (function() {
                   try {
                     var theme = localStorage.getItem('theme');
-                    // Temporarily disabled system theme detection to default to light theme
-                    // var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    // var shouldUseDark = theme === 'dark' || (!theme && systemPrefersDark);
-                    var shouldUseDark = theme === 'dark';
+                    // Visitors with no saved choice get dark mode. A stored "light" choice stays light.
+                    var shouldUseDark = theme !== 'light';
                     if (shouldUseDark) {
                       document.documentElement.classList.add('dark');
                     }
