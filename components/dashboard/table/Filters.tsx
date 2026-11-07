@@ -1,7 +1,6 @@
 import { flip, offset, shift, useFloating } from '@floating-ui/react';
 import type { RefObject } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
-
 import type { Issue } from '@/types/components/dashboard/TableTypes';
 
 import Select from '../../form/Select';
@@ -17,18 +16,28 @@ interface FilterProps {
 }
 
 /**
- * @description Hook that alerts clicks outside of the passed ref
+ * @description Hook that alerts clicks outside of the passed refs
  */
-function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void) {
+function useOutsideAlerter(
+  wrapperRef: RefObject<HTMLElement>,
+  triggerRef: RefObject<HTMLElement>,
+  setOpen: (open: boolean) => void
+) {
   /**
    * @description This useEffect handles the click event outside of the element
    */
   useEffect(() => {
     /**
-     * @description Alert if clicked on outside of element
+     * @description Alert if clicked on outside of both the popover and the trigger
      */
     function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target)) {
+      const target = event.target as Node;
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(target) &&
+        triggerRef.current &&
+        !triggerRef.current.contains(target)
+      ) {
         setOpen(false);
       }
     }
@@ -39,7 +48,7 @@ function useOutsideAlerter(ref: RefObject<any>, setOpen: (open: boolean) => void
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref, setOpen]);
+  }, [wrapperRef, triggerRef, setOpen]);
 }
 
 /**
@@ -86,9 +95,16 @@ export default function Filters({
     middleware: [offset(10), flip(), shift({ padding: 10 })]
   });
 
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  useOutsideAlerter(wrapperRef, triggerRef, setOpen);
 
-  useOutsideAlerter(wrapperRef, setOpen);
+  // Merge the floating-ui reference ref and our triggerRef onto the same button node
+  const setTriggerRef = (node: HTMLButtonElement | null) => {
+    triggerRef.current = node;
+    refs.setReference(node);
+  };
+
   const areas = allIssues.map((issue) => issue.area);
   const uniqueAreas = ['All', ...Array.from(new Set(areas))].map((area) => ({
     value: area === undefined ? 'All' : area,
@@ -105,7 +121,7 @@ export default function Filters({
     <>
       <button
         onClick={() => setOpen(!open)}
-        ref={refs.setReference}
+        ref={setTriggerRef}
         className={`flex items-center justify-center w-8 h-8 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-background hover:bg-gray-50 dark:hover:bg-dark-card transition-all duration-200 hover:shadow-md ${className}`}
         aria-label='Filter issues'
         data-testid='Filters-img-container'
