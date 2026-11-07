@@ -89,7 +89,8 @@ export async function getFinalTool(toolObject: AsyncAPITool): Promise<FinalAsync
       language: [],
       technology: [],
       categories: toolObject.filters.categories,
-      hasCommercial: toolObject.filters.hasCommercial
+      hasCommercial: toolObject.filters.hasCommercial,
+      isAsyncAPIOwner: toolObject.filters.isAsyncAPIOwner
     }
   } as FinalAsyncAPITool;
 
