@@ -16,7 +16,12 @@ export function ensureDirectoryExists(directory: PathLike) {
     fs.mkdirSync(directory, { recursive: true });
   }
 }
-ensureDirectoryExists(TARGET_DIR);
+try {
+  ensureDirectoryExists(TARGET_DIR);
+} catch (error) {
+  process.stderr.write(`build-pages: cannot create output directory "${TARGET_DIR}": ${error}\n`);
+  process.exitCode = 1;
+}
 
 /**
  * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
@@ -42,40 +47,62 @@ export function capitalizeJsxTags(content: string): string {
  *
  * The function processes each entry found in the source directory. For files, it transforms the content by converting HTML comments into JSX comments and capitalizing specific JSX tags. After transformation, the content is written to the target directory. Files with a '.md' extension are renamed to use the '.mdx' extension. For directories, a corresponding directory is created in the target if it doesn't exist, and the function is called recursively.
  *
+ * Individual failures (unreadable files or directories) do not abort the whole
+ * build: each one is reported to stderr with the offending path, the remaining
+ * entries are still processed, and the process exit code is set to 1 so CI
+ * still fails on incomplete output.
+ *
  * @param srcDir - The path to the source directory containing files and subdirectories.
  * @param targetDir - The path to the target directory where transformed files and directories are written.
  */
 export function copyAndRenameFiles(srcDir: string, targetDir: string) {
-  // Read all files and directories from source directory
-  const entries = fs.readdirSync(srcDir, { withFileTypes: true });
+  // Read all files and directories from source directory; an unreadable
+  // source directory is reported and skipped instead of crashing the build
+  let entries: fs.Dirent[];
+
+  try {
+    entries = fs.readdirSync(srcDir, { withFileTypes: true });
+  } catch (error) {
+    process.stderr.write(`build-pages: cannot read directory "${srcDir}": ${error}\n`);
+    process.exitCode = 1;
+
+    return;
+  }
 
   entries.forEach((entry) => {
     const srcPath = path.join(srcDir, entry.name);
     const targetPath = path.join(targetDir, entry.name);
 
-    if (entry.isDirectory()) {
-      // If entry is a directory, create it in target directory and recurse
-      if (!fs.existsSync(targetPath)) {
-        fs.mkdirSync(targetPath);
+    try {
+      if (entry.isDirectory()) {
+        // If entry is a directory, create it in target directory and recurse
+        if (!fs.existsSync(targetPath)) {
+          fs.mkdirSync(targetPath);
+        }
+        copyAndRenameFiles(srcPath, targetPath);
+      } else if (entry.isFile()) {
+        // Read file content
+        let content = fs.readFileSync(srcPath, 'utf8');
+
+        content = content.replace(/{/g, '{');
+
+        content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
+
+        content = capitalizeJsxTags(content);
+
+        // Write content to target directory
+        fs.writeFileSync(targetPath, content, 'utf8');
+
+        // If file has .md extension, rename it to .mdx
+        if (path.extname(targetPath) === '.md') {
+          fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
+        }
       }
-      copyAndRenameFiles(srcPath, targetPath);
-    } else if (entry.isFile()) {
-      // Read file content
-      let content = fs.readFileSync(srcPath, 'utf8');
-
-      content = content.replace(/{/g, '{');
-
-      content = content.replace(/<!--([\s\S]*?)-->/g, '{/*$1*/}');
-
-      content = capitalizeJsxTags(content);
-
-      // Write content to target directory
-      fs.writeFileSync(targetPath, content, 'utf8');
-
-      // If file has .md extension, rename it to .mdx
-      if (path.extname(targetPath) === '.md') {
-        fs.renameSync(targetPath, `${targetPath.slice(0, -3)}.mdx`);
-      }
+    } catch (error) {
+      // One unreadable/unwritable entry must not kill the whole build:
+      // report it with context and keep processing the remaining entries
+      process.stderr.write(`build-pages: failed to process "${srcPath}": ${error}\n`);
+      process.exitCode = 1;
     }
   });
 }
