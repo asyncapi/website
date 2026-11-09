@@ -16,12 +16,6 @@ export function ensureDirectoryExists(directory: PathLike) {
     fs.mkdirSync(directory, { recursive: true });
   }
 }
-try {
-  ensureDirectoryExists(TARGET_DIR);
-} catch (error) {
-  process.stderr.write(`build-pages: cannot create output directory "${TARGET_DIR}": ${error}\n`);
-  process.exitCode = 1;
-}
 
 /**
  * Capitalizes the first letter of JSX tag names in the provided content if they are in a predefined list.
@@ -107,4 +101,28 @@ export function copyAndRenameFiles(srcDir: string, targetDir: string) {
   });
 }
 
-copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+/**
+ * Runs the pages build: prepare the output directory, then transform the
+ * markdown sources into it.
+ *
+ * If the output directory cannot be created there is nothing to write to, so
+ * the build stops right away. Continuing would make every single file write
+ * fail on its own and flood stderr with N identical errors.
+ *
+ * @param srcDir - The source directory holding the markdown files.
+ * @param targetDir - The output directory the pages are written to.
+ */
+export function buildPages(srcDir: string = SRC_DIR, targetDir: string = TARGET_DIR) {
+  try {
+    ensureDirectoryExists(targetDir);
+  } catch (error) {
+    process.stderr.write(`build-pages: cannot create output directory "${targetDir}": ${error}\n`);
+    process.exitCode = 1;
+
+    return;
+  }
+
+  copyAndRenameFiles(srcDir, targetDir);
+}
+
+buildPages();

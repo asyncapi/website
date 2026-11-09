@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages';
+import { buildPages, capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages';
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {
@@ -201,6 +201,61 @@ describe('copyAndRenameFiles error handling', () => {
     } finally {
       process.exitCode = previousExitCode;
       stderrSpy.mockRestore();
+    }
+  });
+});
+
+describe('buildPages', () => {
+  const TEST_DIR = 'test-build-pages';
+  const SRC_DIR = path.join(TEST_DIR, 'src');
+  const TARGET_DIR = path.join(TEST_DIR, 'target');
+
+  beforeEach(() => {
+    fs.mkdirSync(SRC_DIR, { recursive: true });
+  });
+
+  afterEach(() => {
+    fs.rmSync(TEST_DIR, { recursive: true, force: true });
+    jest.restoreAllMocks();
+  });
+
+  test('stops before copying when the output directory cannot be created', () => {
+    const stderrSpy = jest.spyOn(process.stderr, 'write').mockImplementation(() => true);
+    const mkdirSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(() => {
+      throw new Error('EACCES: permission denied');
+    });
+    const readdirSpy = jest.spyOn(fs, 'readdirSync');
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      buildPages(SRC_DIR, TARGET_DIR);
+
+      expect(process.exitCode).toBe(1);
+      // without an output directory no entry is processed at all, instead of
+      // every file write failing one by one
+      expect(readdirSpy).not.toHaveBeenCalled();
+      expect(stderrSpy.mock.calls.map((call) => String(call[0])).join('\n')).toContain(TARGET_DIR);
+    } finally {
+      process.exitCode = previousExitCode;
+      mkdirSpy.mockRestore();
+    }
+  });
+
+  test('does not crash on malformed frontmatter, since frontmatter is never parsed here', () => {
+    const malformedFrontmatter = '---\ntitle: "unterminated\n---\n# Body\n';
+
+    fs.writeFileSync(path.join(SRC_DIR, 'broken.md'), malformedFrontmatter, 'utf8');
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      buildPages(SRC_DIR, TARGET_DIR);
+
+      expect(process.exitCode).toBe(previousExitCode);
+      expect(fs.readFileSync(path.join(TARGET_DIR, 'broken.mdx'), 'utf8')).toBe(malformedFrontmatter);
+    } finally {
+      process.exitCode = previousExitCode;
     }
   });
 });
