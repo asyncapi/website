@@ -43,23 +43,24 @@ const invalidRequests = [
   },
 ];
 
-// Counter of calls hitting the New Relic metrics endpoint, incremented by the
-// fetch stubs below. The variable itself must be module-scoped because the stub
-// closures capture it, but every test resets it before asserting, so no test
-// depends on execution order or on another test's leftover value.
-let metricCalls = 0;
-
 const context = {
   next: () => {},
   log: () => {},
 };
 
+/**
+ * Creates the New Relic-counting fetch stub together with the counter it
+ * increments. Both belong to exactly one test, so no test can observe another
+ * test's calls and nothing needs to be reset.
+ */
 function setup() {
-  return stub(globalThis, "fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
+  const counter = { calls: 0 };
+
+  const fetchStub = stub(globalThis, "fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
     const req = new Request(input, init);
 
     if (req.url === metricURL) {
-      metricCalls++;
+      counter.calls++;
     }
 
     const body = {
@@ -75,11 +76,13 @@ function setup() {
       },
     });
   });
+
+  return { fetchStub, counter };
 }
 
 Deno.test("serve-definitions test for validRequests", async () => {
-  using _fetchStub = setup();
-  metricCalls = 0;
+  const session = setup();
+  using _fetchStub = session.fetchStub;
 
   for (const entry of validRequests) {
     const request = new Request(entry.requestURL, { method: "GET" });
@@ -91,12 +94,12 @@ Deno.test("serve-definitions test for validRequests", async () => {
     assertEquals(body.url, entry.responseURL);
   }
 
-  assertEquals(metricCalls, validRequests.length);
+  assertEquals(session.counter.calls, validRequests.length);
 });
 
 Deno.test("serve-definitions test for invalidRequests", async () => {
-  using _fetchStub = setup();
-  metricCalls = 0;
+  const session = setup();
+  using _fetchStub = session.fetchStub;
 
   for (const entry of invalidRequests) {
     const request = new Request(entry.requestURL, { method: "GET" });
@@ -106,10 +109,11 @@ Deno.test("serve-definitions test for invalidRequests", async () => {
   }
 
   // No metrics should be sent for invalid requests
-  assertEquals(metricCalls, 0);
+  assertEquals(session.counter.calls, 0);
 });
 
 Deno.test("serve-definitions test for various response statuses", async () => {
+  const counter = { calls: 0 };
   const testCases = [
     { requestURL: "https://asyncapi.com/definitions/2.4.0/info.json", status: 200 },
     { requestURL: "https://asynccode.com/definitions/2.4.0/info.json", status: 304 },
@@ -122,7 +126,7 @@ Deno.test("serve-definitions test for various response statuses", async () => {
       const req = new Request(input, init);
 
       if (req.url === metricURL) {
-        metricCalls++;
+        counter.calls++;
       }
 
       return new Response(status === 200 ? JSON.stringify({ url: requestURL }) : null, {
@@ -143,14 +147,14 @@ Deno.test("serve-definitions test for various response statuses", async () => {
   }
 
   // serve-definitions.ts reports a metric for every .json file request:
-  // 200/304 as success, 404/500 as errors. The stub increments metricCalls
-  // for each NR endpoint call, so the expected total is every test case.
-  assertEquals(metricCalls, testCases.length);
+  // 200/304 as success, 404/500 as errors. The stub counts each NR endpoint
+  // call, so the expected total is every test case.
+  assertEquals(counter.calls, testCases.length);
 });
 
 Deno.test("serve-definitions test for schema-unrelated requests", async () => {
-  using _fetchStub = setup();
-  metricCalls = 0;
+  const session = setup();
+  using _fetchStub = session.fetchStub;
 
   const schemaUnrelatedRequests = [
     "https://asyncapi.com/definitions/asyncapi.yaml",
@@ -166,12 +170,12 @@ Deno.test("serve-definitions test for schema-unrelated requests", async () => {
     assertEquals(response, undefined);
   }
 
-  assertEquals(metricCalls, 0);
+  assertEquals(session.counter.calls, 0);
 });
 
 Deno.test("serve-definitions test for schema-related non-JSON requests", async () => {
-  using _fetchStub = setup();
-  metricCalls = 0;
+  const session = setup();
+  using _fetchStub = session.fetchStub;
 
   const schemaRelatedNonJsonRequests = [
     "https://asyncapi.com/schema-store/2.5.0-without-$id",
@@ -199,5 +203,5 @@ Deno.test("serve-definitions test for schema-related non-JSON requests", async (
     assertEquals(response.headers.get("Content-Type"), "application/json"); // Default content type for non-JSON requests
   }
 
-  assertEquals(metricCalls, 0);
+  assertEquals(session.counter.calls, 0);
 });
