@@ -82,8 +82,6 @@ Deno.test("serve-definitions test for validRequests", async () => {
   metricCalls = 0;
 
   for (const entry of validRequests) {
-    console.log("Testing: " + entry.requestURL);
-
     const request = new Request(entry.requestURL, { method: "GET" });
     const response = await serveDefinitions(request, context as Context);
     const body = await response.json();
@@ -91,8 +89,6 @@ Deno.test("serve-definitions test for validRequests", async () => {
     assertEquals(response.status, 200);
     assertEquals(response.headers.get("Content-Type"), "application/schema+json");
     assertEquals(body.url, entry.responseURL);
-
-    console.log("\n");
   }
 
   assertEquals(metricCalls, validRequests.length);
@@ -103,7 +99,6 @@ Deno.test("serve-definitions test for invalidRequests", async () => {
   metricCalls = 0;
 
   for (const entry of invalidRequests) {
-    console.log("Testing: " + entry.requestURL);
     const request = new Request(entry.requestURL, { method: "GET" });
     const response = await serveDefinitions(request, context as Context);
 
@@ -123,8 +118,6 @@ Deno.test("serve-definitions test for various response statuses", async () => {
   ];
 
   for (const { requestURL, status } of testCases) {
-    console.log("Testing: " + requestURL);
-
     using _fetchStub = stub(globalThis, "fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
       const req = new Request(input, init);
 
@@ -147,8 +140,6 @@ Deno.test("serve-definitions test for various response statuses", async () => {
     } else {
       assertEquals(response.status, status);
     }
-
-    console.log("\n");
   }
 
   // serve-definitions.ts reports a metric for every .json file request:
@@ -169,7 +160,6 @@ Deno.test("serve-definitions test for schema-unrelated requests", async () => {
   ];
 
   for (const requestURL of schemaUnrelatedRequests) {
-    console.log("Testing: " + requestURL);
     const request = new Request(requestURL, { method: "GET" });
     const response = await serveDefinitions(request, context as Context);
 
@@ -200,7 +190,6 @@ Deno.test("serve-definitions test for schema-related non-JSON requests", async (
       log: () => {},
     };
 
-    console.log("Testing: " + requestURL);
     const request = new Request(requestURL, { method: "GET" });
     const response = await serveDefinitions(request, localContext as unknown as Context);
     const body = response?.body ? await response.json() : null;
