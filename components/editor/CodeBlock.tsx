@@ -1,9 +1,35 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
-import React, { useState } from 'react';
-import Highlight from 'react-syntax-highlighter';
+import dynamic from 'next/dynamic';
+import React, { useEffect, useState } from 'react';
+import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 
 import Caption from '../Caption';
 import IconClipboard from '../icons/Clipboard';
+
+/**
+ * @description Loading skeleton placeholder rendered while the syntax highlighter bundle loads dynamically.
+ * @returns {React.JSX.Element} The rendered skeleton element.
+ */
+function CodeSkeleton(): React.JSX.Element {
+  return (
+    <div className='animate-pulse space-y-2 py-3 pl-3' aria-label='Loading code snippet...'>
+      <div className='h-3.5 w-3/4 rounded bg-gray-700/60' />
+      <div className='h-3.5 w-1/2 rounded bg-gray-700/60' />
+      <div className='h-3.5 w-5/6 rounded bg-gray-700/60' />
+    </div>
+  );
+}
+
+const Highlight = dynamic<SyntaxHighlighterProps>(
+  () =>
+    import('react-syntax-highlighter').then((mod) =>
+      mod.default && (mod.default as any).default ? (mod.default as any).default : mod.default
+    ),
+  {
+    ssr: false,
+    loading: () => <CodeSkeleton />
+  }
+);
 
 interface CodeBlockProps {
   children?: string;
@@ -213,6 +239,11 @@ export default function CodeBlock({
 }: CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // eslint-disable-next-line no-param-reassign
   codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }];
@@ -241,6 +272,12 @@ export default function CodeBlock({
    * @description This function renders the syntax-highlighted code blocks.
    */
   function renderHighlight() {
+    const activeCode = codeBlocks && codeBlocks[activeBlock] ? codeBlocks[activeBlock].code : '';
+    const activeLanguage =
+      codeBlocks && codeBlocks[activeBlock] && codeBlocks[activeBlock].language
+        ? codeBlocks[activeBlock].language
+        : language;
+
     return (
       <div className='h-full max-h-screen'>
         {codeBlocks && codeBlocks.length > 1 && (
@@ -262,54 +299,63 @@ export default function CodeBlock({
         )}
 
         <div className={`relative overflow-y-auto pr-8 ${highlightClassName}`}>
-          <Highlight
-            className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
-              ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
-            language={codeBlocks && codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
-            style={theme}
-            showLineNumbers={showLineNumbers}
-            startingLineNumber={startingLineNumber}
-            lineNumberContainerStyle={{
-              paddingLeft: '0.5em',
-              background: '#252f3f'
-            }}
-            lineNumberStyle={(lineNumber: number) => {
-              const isHighlighted = highlightedLines?.includes(lineNumber);
+          {isMounted ? (
+            <Highlight
+              className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
+                ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
+              language={activeLanguage}
+              style={theme}
+              showLineNumbers={showLineNumbers}
+              startingLineNumber={startingLineNumber}
+              lineNumberContainerStyle={{
+                paddingLeft: '0.5em',
+                background: '#252f3f'
+              }}
+              lineNumberStyle={(lineNumber: number) => {
+                const isHighlighted = highlightedLines?.includes(lineNumber);
 
-              const styles: React.CSSProperties = {
-                display: 'inline-block',
-                marginLeft: '16px',
-                paddingRight: '16px',
-                backgroundColor: isHighlighted ? '#3e4d64' : '#252f3f',
-                color: isHighlighted ? '#A3ACAD' : '#8B9394'
-              };
+                const styles: React.CSSProperties = {
+                  display: 'inline-block',
+                  marginLeft: '16px',
+                  paddingRight: '16px',
+                  backgroundColor: isHighlighted ? '#3e4d64' : '#252f3f',
+                  color: isHighlighted ? '#A3ACAD' : '#8B9394'
+                };
 
-              return styles;
-            }}
-            wrapLines={true}
-            lineProps={(lineNumber: number) => {
-              const isHighlighted = highlightedLines?.includes(lineNumber);
+                return styles;
+              }}
+              wrapLines={true}
+              lineProps={(lineNumber: number) => {
+                const isHighlighted = highlightedLines?.includes(lineNumber);
 
-              const style: React.CSSProperties = {
-                paddingRight: '2rem'
-              };
+                const style: React.CSSProperties = {
+                  paddingRight: '2rem'
+                };
 
-              if (isHighlighted) {
-                style.display = 'block';
-                style.width = '100%';
-                style.backgroundColor = '#3e4d64';
-              }
+                if (isHighlighted) {
+                  style.display = 'block';
+                  style.width = '100%';
+                  style.backgroundColor = '#3e4d64';
+                }
 
-              return {
-                style
-              };
-            }}
-            codeTagProps={{
-              className: 'mr-8'
-            }}
-          >
-            {codeBlocks ? [codeBlocks[activeBlock].code] : ''}
-          </Highlight>
+                return {
+                  style
+                };
+              }}
+              codeTagProps={{
+                className: 'mr-8'
+              }}
+            >
+              {codeBlocks ? [activeCode] : ''}
+            </Highlight>
+          ) : (
+            <pre
+              className={`pb-2 pt-px text-sm font-medium font-ligatures-contextual
+                text-[#c0e2a3] bg-[#252f3f] overflow-x-auto ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
+            >
+              <code>{activeCode}</code>
+            </pre>
+          )}
         </div>
       </div>
     );
