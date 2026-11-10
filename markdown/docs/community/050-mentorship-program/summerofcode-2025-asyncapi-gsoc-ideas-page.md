@@ -100,7 +100,7 @@ Create new designs for the website pages based on the theme chosen by [Aishat Mu
 - ⏳ **Length:** 350 hours
 
 ## Contact AsyncAPI Mentors
-- Join [our Slack workspace](https://www.asyncapi.com/slack-invite).  Observe our [Slack etiquette](../060-meetings-and-communication/slack-etiquette) and [AsyncAPI code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
+- Join [our Slack workspace](https://www.asyncapi.com/slack-invite).  Observe our [Slack etiquette](https://www.asyncapi.com/docs/community/060-meetings-and-communication/slack-etiquette) and [AsyncAPI code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 - Join the dedicated Mentorship channel `#09_mentorships` to meet all other GSoC mentees and mentors.
 
 ## FAQ

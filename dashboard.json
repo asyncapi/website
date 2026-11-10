@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 23.835490866188476
+      "score": 28.717458874925875
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -49,7 +49,7 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 13.210031082465903
+      "score": 13.78438025996442
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -61,22 +61,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 12.348507316218127
     },
     {
       "id": "I_kwDOCoBobc6fqNYx",
@@ -95,17 +79,6 @@
       "score": 12.061332727468868
     },
     {
-      "id": "PR_kwDOFLhIt87cYXTP",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Coderabbit config for community documentation",
-      "author": "bandantonio",
-      "resourcePath": "/asyncapi/community/pull/3552",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 11.48698354997035
-    },
-    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -117,20 +90,15 @@
       "score": 8.615237662477762
     },
     {
-      "id": "I_kwDODwv8N87e2ifU",
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Add Gallery Section to the website",
-      "author": "kajal-jotwani",
-      "resourcePath": "/asyncapi/conference-website/issues/877",
-      "repo": "asyncapi/conference-website",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 8.328063073728504
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.040888484979245
     },
     {
       "id": "PR_kwDOBW5R_c75L5uF",
@@ -149,39 +117,58 @@
       "score": 8.040888484979245
     },
     {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "fix: resolve pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
       "labels": [],
-      "score": 7.7537138962299865
+      "score": 7.179364718731469
     },
     {
-      "id": "I_kwDOBW5R_c7uh0fo",
+      "id": "I_kwDOCoBobc5p7LyT",
       "isPR": false,
       "isAssigned": false,
-      "title": "[FEATURE] Introduce AI-facing documentation",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/issues/5205",
-      "repo": "asyncapi/website",
+      "title": "\"messageId\" must be unique across all the messages.",
+      "author": "wiegell",
+      "resourcePath": "/asyncapi/parser-js/issues/793",
+      "repo": "asyncapi/parser-js",
       "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
         {
           "name": "stale",
           "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
         }
       ],
-      "score": 7.7537138962299865
+      "score": 6.605015541232952
+    },
+    {
+      "id": "I_kwDOCVQpZM6zcoZ7",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Schemas in AsyncAPI 3.0.0 file not fully rendered (only example1 parsed correctly)",
+      "author": "juanmbco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/1154",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "I_kwDOCHlHJM7hOEpu",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[BUG] React warning: missing key prop in AvailableOperations component during integration tests",
+      "author": "Harsh16gupta",
+      "resourcePath": "/asyncapi/generator/issues/1820",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ],
+      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
