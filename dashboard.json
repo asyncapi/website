@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 28.717458874925875
+      "score": 29.578982641173653
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -90,6 +90,17 @@
       "score": 8.615237662477762
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "ci: harden Netlify docs preview workflows against pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.328063073728504
+    },
+    {
       "id": "I_kwDOFLhIt88AAAABSgjN-g",
       "isPR": false,
       "isAssigned": false,
@@ -115,17 +126,6 @@
         }
       ],
       "score": 8.040888484979245
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "fix: resolve pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.179364718731469
     },
     {
       "id": "I_kwDOCoBobc5p7LyT",
@@ -155,19 +155,14 @@
       "score": 6.605015541232952
     },
     {
-      "id": "I_kwDOCHlHJM7hOEpu",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[BUG] React warning: missing key prop in AvailableOperations component during integration tests",
-      "author": "Harsh16gupta",
-      "resourcePath": "/asyncapi/generator/issues/1820",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
+      "id": "PR_kwDOCVQpZM8AAAABNKtpMA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: make AsyncAPI React component LLM-native (Markdown export + operation examples)",
+      "author": "MauryaQbit",
+      "resourcePath": "/asyncapi/asyncapi-react/pull/1385",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
       "score": 6.605015541232952
     }
   ],
