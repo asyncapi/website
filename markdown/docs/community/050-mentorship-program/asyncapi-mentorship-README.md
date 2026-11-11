@@ -20,7 +20,7 @@ The AsyncAPI Mentorship Program connects aspiring developers, technical writers,
 
 ## Program Statistics
 
-Our mentorship programs demonstrate strong impact with improving retention rates. For detailed statistics and success stories, visit our [Mentorship Programs Insights](./insights) page.
+Our mentorship programs demonstrate strong impact with improving retention rates. For detailed statistics and success stories, visit our [Mentorship Programs Insights](https://www.asyncapi.com/docs/community/050-mentorship-program/insights) page.
 
 **Highlights:**
 - **50% overall retention rate** - Double the industry standard
@@ -32,9 +32,9 @@ Our mentorship programs demonstrate strong impact with improving retention rates
 
 | Year | Term | Status | Details |
 | ---- | ---- | ------ | ------- |
-| 2024 | Sept-May | Completed | [2024 Projects](./asyncapi-mentorship-2024-project-ideas.md) |
-| 2023 | Jan-Nov | Completed | [2023 Projects](./asyncapi-mentorship-2023-project-ideas.md) |
-| 2022 | Jan-Nov | Completed | [2022 Projects](./asyncapi-mentorship-2022-project-ideas.md) |
+| 2024 | Sept-May | Completed | [2024 Projects](https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2024-project-ideas) |
+| 2023 | Jan-Nov | Completed | [2023 Projects](https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2023-project-ideas) |
+| 2022 | Jan-Nov | Completed | [2022 Projects](https://www.asyncapi.com/docs/community/050-mentorship-program/asyncapi-mentorship-2022-project-ideas) |
 
 ## Program Leadership
 
@@ -76,7 +76,7 @@ To participate in the AsyncAPI Mentorship Program, you must:
 ### How to Apply
 
 1. **Verify Eligibility**: Ensure you meet all eligibility requirements
-2. **Review Projects**: Browse the [Ideas List](./asyncapi-mentorship-2025-README) for available projects
+2. **Review Projects**: Browse the [Ideas List](https://www.asyncapi.com/docs/community/050-mentorship-program#available-programs) for available projects
 3. **Connect with Mentors**: Join our Slack and discuss project ideas in `#09_mentorships`
 4. **Submit Proposal**: Submit your Project Proposal to the project mentor during the application period
 5. **Wait for Acceptance**: Accepted proposals will be announced on the Program Slack channel and GitHub Discussions
@@ -213,7 +213,7 @@ Many of our mentees have become active maintainers and mentors:
 - **[Ashmit Jagtap](https://github.com/ashmit-coder)**: GSoC 2024 mentee → GSoC 2025 mentor (1 year)
 - **[Ashmit JaiSarita Gupta](https://github.com/devilkiller-ag)**: GSoC 2024 mentee → GSoC 2025 mentor (1 year)
 
-Learn more about our program impact on the [Mentorship Programs Insights](./insights) page.
+Learn more about our program impact on the [Mentorship Programs Insights](https://www.asyncapi.com/docs/community/050-mentorship-program/insights) page.
 
 ## Frequently Asked Questions
 

@@ -45,7 +45,7 @@ If you experience or witness behaviour that violates this Code of Conduct, we en
 ### You can:
 - **Message the AMP organizers directly via Slack**
 - **Email the Program Organizers** (ea.elegbede@gmail.com | sibanda.thulie@gmail.com)
-- **Follow the [Incident Resolution Procedure](https://github.com/asyncapi/community/blob/master/code_of_conduct/coc-incident-resolution-procedures.md)**
+- **Follow the [Incident Resolution Procedure](https://www.asyncapi.com/docs/community/coc-incident-resolution-procedures)**
 
 All reports will be handled with confidentiality, empathy, and care. Action will be taken based on the severity and context of the violation, ranging from warnings to removal from the program and community spaces.
 

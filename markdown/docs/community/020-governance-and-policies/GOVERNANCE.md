@@ -46,7 +46,7 @@ In the event that a board member's term is terminated prior to its scheduled end
 
 Among others, the duties and responsibilities of the GB include:
 
-- Ensure compliance with the [charter](CHARTER).
+- Ensure compliance with the [charter](https://www.asyncapi.com/docs/community/020-governance-and-policies/CHARTER).
 - Maintain a safe and inclusive environment for all AsyncAPI participants.
 - Sustain AsyncAPI’s economic viability, including sponsorship and funding strategies.
 - Securely manage credentials for all AsyncAPI services.
@@ -54,7 +54,7 @@ Among others, the duties and responsibilities of the GB include:
 - Ensure authorized access to AsyncAPI services.
 - Conduct regular GB succession via a transparent voting process.
 - Manage funding streams (e.g., Open Collective, GitHub Sponsors).
-- Serve as a servant leader with authority limited to what is specified in the [charter](CHARTER); all proposals require TSC approval.
+- Serve as a servant leader with authority limited to what is specified in the [charter](https://www.asyncapi.com/docs/community/020-governance-and-policies/CHARTER); all proposals require TSC approval.
 
 Please note that the list above is not an exhaustive list and should not be treated as a legal document, but just for reference.
 
@@ -71,7 +71,7 @@ Any maintainer and any ambassador can change their status by editing `isTSCMembe
 
 ## Voting
 
-TSC Voting process and all related rules are described in detail in [voting procedure document](voting).
+TSC Voting process and all related rules are described in detail in [voting procedure document](https://www.asyncapi.com/docs/community/020-governance-and-policies/voting).
 
 GB election voting is a separate manual process run by current GB members:
 - The vote should be sent to info@asyncapi.io not later than two weeks after the elections start
