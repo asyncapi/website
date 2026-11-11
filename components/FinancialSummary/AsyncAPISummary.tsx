@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
@@ -50,28 +51,35 @@ export default function AsyncAPISummary() {
       </div>
 
       <div className='text-center'>
-        <a href='https://opencollective.com/asyncapi' target='_blank'>
-          <img
+        <a href='https://opencollective.com/asyncapi' target='_blank' rel='noopener noreferrer'>
+          <Image
             className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90'
             src='/img/logos/OpenCollective.svg'
             alt='Open Collective'
+            width={40}
+            height={40}
           />
         </a>
         <a
           href='https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc'
           target='_blank'
+          rel='noopener noreferrer'
         >
-          <img
+          <Image
             className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90'
             src='/img/logos/LFX.svg'
             alt='Linux Foundation'
+            width={40}
+            height={40}
           />
         </a>
-        <a href='https://github.com/sponsors/asyncapi' target='_blank'>
-          <img
+        <a href='https://github.com/sponsors/asyncapi' target='_blank' rel='noopener noreferrer'>
+          <Image
             className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90 dark:invert'
             src='/img/logos/github-black.svg'
             alt='Github'
+            width={40}
+            height={40}
           />
         </a>
       </div>
