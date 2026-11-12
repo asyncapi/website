@@ -38,7 +38,7 @@
           "color": "ededed"
         }
       ],
-      "score": 29.578982641173653
+      "score": 30.153331818672168
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -49,7 +49,7 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 13.78438025996442
+      "score": 14.358729437462937
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -77,6 +77,22 @@
         }
       ],
       "score": 12.061332727468868
+    },
+    {
+      "id": "I_kwDOCHlHJM61Y1X2",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 9.18958683997628
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -150,17 +166,6 @@
       "title": "Schemas in AsyncAPI 3.0.0 file not fully rendered (only example1 parsed correctly)",
       "author": "juanmbco",
       "resourcePath": "/asyncapi/asyncapi-react/issues/1154",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 6.605015541232952
-    },
-    {
-      "id": "PR_kwDOCVQpZM8AAAABNKtpMA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: make AsyncAPI React component LLM-native (Markdown export + operation examples)",
-      "author": "MauryaQbit",
-      "resourcePath": "/asyncapi/asyncapi-react/pull/1385",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
       "score": 6.605015541232952
