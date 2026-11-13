@@ -1,26 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 31.589204762418465
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSPEgqQ",
       "isPR": false,
       "isAssigned": true,
@@ -38,18 +18,7 @@
           "color": "ededed"
         }
       ],
-      "score": 28.717458874925875
-    },
-    {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.78438025996442
+      "score": 30.440506407421427
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -60,7 +29,38 @@
       "resourcePath": "/asyncapi/generator/pull/2211",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.922856493716644
+      "score": 16.08177696995849
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 15.225600373078546
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.358729437462937
     },
     {
       "id": "I_kwDOCoBobc6fqNYx",
@@ -79,15 +79,31 @@
       "score": 12.061332727468868
     },
     {
-      "id": "I_kwDOFLhIt874rNRL",
+      "id": "I_kwDOCHlHJM61Y1X2",
       "isPR": false,
       "isAssigned": true,
-      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
-      "author": "princerajpoot20",
-      "resourcePath": "/asyncapi/community/issues/3495",
-      "repo": "asyncapi/community",
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 9.18958683997628
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "ci: harden Netlify docs preview workflows against pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
       "labels": [],
-      "score": 8.615237662477762
+      "score": 9.18958683997628
     },
     {
       "id": "I_kwDOFLhIt88AAAABSgjN-g",
@@ -98,7 +114,18 @@
       "resourcePath": "/asyncapi/community/issues/3634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 8.040888484979245
+      "score": 8.902412251227021
+    },
+    {
+      "id": "I_kwDOFLhIt874rNRL",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[2026 Goals][S1] Repository Audit & Consolidation (Targets O1, O2)",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/community/issues/3495",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 8.615237662477762
     },
     {
       "id": "PR_kwDOBW5R_c75L5uF",
@@ -115,17 +142,6 @@
         }
       ],
       "score": 8.040888484979245
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "fix: resolve pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.179364718731469
     },
     {
       "id": "I_kwDOCoBobc5p7LyT",
@@ -152,22 +168,6 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/1154",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 6.605015541232952
-    },
-    {
-      "id": "I_kwDOCHlHJM7hOEpu",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[BUG] React warning: missing key prop in AvailableOperations component during integration tests",
-      "author": "Harsh16gupta",
-      "resourcePath": "/asyncapi/generator/issues/1820",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
       "score": 6.605015541232952
     }
   ],
