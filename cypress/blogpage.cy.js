@@ -47,6 +47,16 @@ describe('Blog Page Tests', () => {
     blog.verifyFilteredPostsVisible();
   });
 
+  it('Verification of cover image alt text falling back to the post title', () => {
+    blog.visitPost('2022-summary');
+    blog.verifyCoverImageAlt('State of AsyncAPI Initiative 2022 in Numbers');
+  });
+
+  it('Verification of cover image alt text using the cover caption when present', () => {
+    blog.visitPost('asyncapi-joins-linux-foundation');
+    blog.verifyCoverImageAlt('Background vector created by starline.');
+  });
+
   it('Verification of filters by tag, clicking a post, and verifying post detail page loads', () => {
     blog.filterByFirstAvailableTag();
     blog.verifyFilteredPostsVisible();

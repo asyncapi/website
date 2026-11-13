@@ -101,6 +101,16 @@ class BlogPage extends BasePage {
     cy.get('[data-testid="BlogLayout-main"]').should('be.visible');
     cy.url().should('include', '/blog/');
   }
+
+  visitPost(slug) {
+    super.visit(`/blog/${slug}`);
+  }
+
+  verifyCoverImageAlt(expectedAlt) {
+    cy.get('main article > img')
+      .first()
+      .should('have.attr', 'alt', expectedAlt);
+  }
 }
 
 export default BlogPage;
