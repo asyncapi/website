@@ -2,10 +2,12 @@
  * Script based on https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/scripts/compose.js
  */
 
+import { fileURLToPath } from 'node:url';
+
+import dayjs from 'dayjs';
 import dedent from 'dedent';
 import fs from 'fs';
 import inquirer from 'inquirer';
-import dayjs from 'dayjs';
 
 import { logger } from './helpers/logger';
 
@@ -21,17 +23,34 @@ type ComposePromptType = {
 };
 
 /**
+ * Converts a blog post title into a URL-safe kebab-case slug.
+ *
+ * Lowercases the title, strips all non-alphanumeric characters (except spaces),
+ * replaces spaces with hyphens, and collapses consecutive hyphens into one.
+ *
+ * @param title - The raw post title string.
+ * @returns The generated slug string.
+ */
+export function getSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .replace(/ /g, '-')
+    .replace(/-+/g, '-');
+}
+
+/**
  * Generates a complete Markdown front matter block for a blog post.
  *
  * Constructs a YAML front matter section using the blog post details provided by the user,
  * including title, current date, type, canonical URL, and comma-separated tags. The front matter
- * also embeds fixed cover image and author metadata along with a Markdown template containing guidelines
- * for composing the blog content.
+ * also embeds fixed cover image and author metadata along with a Markdown template containing
+ * guidelines for composing the blog content.
  *
- * @param answers - User inputs for the blog post, including title, excerpt, comma-separated tags, type, and canonical URL.
+ * @param answers - User inputs for the blog post, including title, excerpt, tags, type, and canonical URL.
  * @returns The generated Markdown front matter and blog post content template.
  */
-function genFrontMatter(answers: ComposePromptType): string {
+export function genFrontMatter(answers: ComposePromptType): string {
   const tagArray = answers.tags.split(',');
 
   tagArray.forEach((tag: string, index: number) => {
@@ -39,6 +58,7 @@ function genFrontMatter(answers: ComposePromptType): string {
   });
   const tags = `'${tagArray.join("','")}'`;
 
+  /* eslint-disable max-len */
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
   date: ${dayjs().format('YYYY-MM-DDTh:mm:ssZ')}
@@ -112,64 +132,91 @@ function genFrontMatter(answers: ComposePromptType): string {
   <center><iframe src="https://anchor.fm/asyncapi/embed/episodes/April-2021-at-AsyncAPI-Initiative-e111lo9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
 
   `;
+  /* eslint-enable max-len */
 
   frontMatter += '\n---';
 
   return frontMatter;
 }
 
-inquirer
-  .prompt([
-    {
-      name: 'title',
-      message: 'Enter post title:',
-      type: 'input'
-    },
-    {
-      name: 'excerpt',
-      message: 'Enter post excerpt:',
-      type: 'input'
-    },
-    {
-      name: 'tags',
-      message: 'Any Tags? Separate them with , or leave empty if no tags.',
-      type: 'input'
-    },
-    {
-      name: 'type',
-      message: 'Enter the post type:',
-      type: 'list',
-      choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
-    },
-    {
-      name: 'canonical',
-      message: 'Enter the canonical URL if any:',
-      type: 'input'
-    }
-  ])
-  .then((answers: ComposePromptType) => {
-    // Remove special characters and replace space with -
-    const fileName = answers.title
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .replace(/ /g, '-')
-      .replace(/-+/g, '-');
-    const frontMatter = genFrontMatter(answers);
-    const filePath = `pages/blog/${fileName || 'untitled'}.md`;
+/**
+ * Writes the blog post front matter to a file at the computed path.
+ *
+ * Resolves the file path from the slug generated from `answers.title` and writes
+ * the generated front matter content. Logs success on completion and throws on failure.
+ *
+ * @param answers - User inputs used to compute the slug and generate front matter content.
+ * @returns A Promise that resolves to the file path that was written.
+ */
+export function writePost(answers: ComposePromptType): Promise<string> {
+  const slug = getSlug(answers.title);
+  const filePath = `pages/blog/${slug || 'untitled'}.md`;
+  const frontMatter = genFrontMatter(answers);
 
+  return new Promise((resolve, reject) => {
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
-        throw err;
+        logger.error(err);
+        reject(err);
       } else {
         logger.info(`Blog post generated successfully at ${filePath}`);
+        resolve(filePath);
       }
     });
-  })
-  .catch((error) => {
+  });
+}
+
+/**
+ * Runs the interactive CLI prompt and writes the new blog post file.
+ *
+ * @returns A Promise that resolves when the blog post is written.
+ */
+/* istanbul ignore next */
+// eslint-disable-next-line require-jsdoc
+async function main(): Promise<void> {
+  try {
+    const answers = await inquirer.prompt([
+      {
+        name: 'title',
+        message: 'Enter post title:',
+        type: 'input'
+      },
+      {
+        name: 'excerpt',
+        message: 'Enter post excerpt:',
+        type: 'input'
+      },
+      {
+        name: 'tags',
+        message: 'Any Tags? Separate them with , or leave empty if no tags.',
+        type: 'input'
+      },
+      {
+        name: 'type',
+        message: 'Enter the post type:',
+        type: 'list',
+        choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video']
+      },
+      {
+        name: 'canonical',
+        message: 'Enter the canonical URL if any:',
+        type: 'input'
+      }
+    ]);
+
+    await writePost(answers);
+  } catch (error) {
     logger.error(error);
-    if (error.isTtyError) {
+    if (error && (error as { isTtyError?: boolean }).isTtyError) {
       logger.error("Prompt couldn't be rendered in the current environment");
     } else {
       logger.error('Something went wrong, sorry!');
     }
-  });
+    process.exitCode = 1;
+  }
+}
+
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main(); // NOSONAR — top-level await is unsupported in Jest's CJS transform
+}
