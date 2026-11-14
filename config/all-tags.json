@@ -91,6 +91,11 @@
       "borderColor": "border-[#37f069]"
     },
     {
+      "name": "Elixir",
+      "color": "bg-[#57f281]",
+      "borderColor": "border-[#37f069]"
+    },
+    {
       "name": "Scala",
       "color": "bg-[#57f281]",
       "borderColor": "border-[#37f069]"
@@ -273,6 +278,11 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "Kafka",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "Kotlin",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
@@ -288,7 +298,17 @@
       "borderColor": "border-[#40ccf7]"
     },
     {
+      "name": "MQTT",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
       "name": "Paho",
+      "color": "bg-[#61d0f2]",
+      "borderColor": "border-[#40ccf7]"
+    },
+    {
+      "name": "Pydantic",
       "color": "bg-[#61d0f2]",
       "borderColor": "border-[#40ccf7]"
     },
