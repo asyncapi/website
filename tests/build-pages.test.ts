@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages';
+import { buildPages, capitalizeJsxTags, copyAndRenameFiles, ensureDirectoryExists } from '../scripts/build-pages';
 
 describe('capitalizeJsxTags', () => {
   test('should capitalize JSX tags', () => {
@@ -94,5 +94,168 @@ describe('copyAndRenameFiles', () => {
     expect(fs.existsSync(NEW_TEST_DIR)).toBe(true);
     // delete the test directory after the test
     fs.rmSync(NEW_TEST_DIR, { recursive: true, force: true });
+  });
+});
+
+describe('copyAndRenameFiles error handling', () => {
+  const TEST_DIR = 'test-error-handling';
+  const SRC_DIR = path.join(TEST_DIR, 'src');
+  const TARGET_DIR = path.join(TEST_DIR, 'target');
+
+  beforeEach(() => {
+    fs.mkdirSync(SRC_DIR, { recursive: true });
+    fs.mkdirSync(TARGET_DIR, { recursive: true });
+  });
+
+  afterEach(() => {
+    fs.rmSync(TEST_DIR, { recursive: true, force: true });
+    jest.restoreAllMocks();
+  });
+
+  test('processes remaining files when one source file is unreadable', () => {
+    const fileContent = '<table><tr><td>Hello</td></tr></table>';
+
+    fs.writeFileSync(path.join(SRC_DIR, 'readable.md'), fileContent, 'utf8');
+    fs.writeFileSync(path.join(SRC_DIR, 'unreadable.md'), 'irrelevant', 'utf8');
+
+    const realReadFileSync = fs.readFileSync;
+    const readSpy = jest.spyOn(fs, 'readFileSync').mockImplementation(((
+      filePath: fs.PathOrFileDescriptor,
+      options?: any
+    ) => {
+      if (String(filePath).endsWith('unreadable.md')) {
+        throw new Error('EACCES: permission denied');
+      }
+
+      return realReadFileSync(filePath, options);
+    }) as typeof fs.readFileSync);
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+
+      // the failing file is reported through the exit code...
+      expect(process.exitCode).toBe(1);
+      // ...while every other file is still processed correctly
+      expect(fs.readFileSync(path.join(TARGET_DIR, 'readable.mdx'), 'utf8')).toBe(
+        '<Table><Tr><Td>Hello</Td></Tr></Table>'
+      );
+    } finally {
+      process.exitCode = previousExitCode;
+      readSpy.mockRestore();
+    }
+  });
+
+  test('reports an unreadable directory and continues with sibling entries', () => {
+    const fileContent = '<div>Hello</div>';
+
+    fs.writeFileSync(path.join(SRC_DIR, 'sibling.md'), fileContent, 'utf8');
+    fs.mkdirSync(path.join(SRC_DIR, 'brokenDir'), { recursive: true });
+
+    const realReaddirSync = fs.readdirSync;
+    const readdirSpy = jest.spyOn(fs, 'readdirSync').mockImplementation(((dirPath: fs.PathLike, options?: any) => {
+      if (String(dirPath).endsWith('brokenDir')) {
+        throw new Error('EACCES: permission denied');
+      }
+
+      return realReaddirSync(dirPath, options);
+    }) as unknown as typeof fs.readdirSync);
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+
+      expect(process.exitCode).toBe(1);
+      // the sibling file of the broken directory is still processed
+      expect(fs.readFileSync(path.join(TARGET_DIR, 'sibling.mdx'), 'utf8')).toBe('<div>Hello</div>');
+    } finally {
+      process.exitCode = previousExitCode;
+      readdirSpy.mockRestore();
+    }
+  });
+
+  test('logs a file-specific error message instead of a bare stack trace', () => {
+    const stderrSpy = jest.spyOn(process.stderr, 'write').mockImplementation(() => true);
+
+    fs.writeFileSync(path.join(SRC_DIR, 'bad.md'), 'irrelevant', 'utf8');
+    const realReadFileSync = fs.readFileSync;
+
+    jest.spyOn(fs, 'readFileSync').mockImplementation(((filePath: fs.PathOrFileDescriptor, options?: any) => {
+      if (String(filePath).endsWith('bad.md')) {
+        throw new Error('boom');
+      }
+
+      return realReadFileSync(filePath, options);
+    }) as typeof fs.readFileSync);
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      copyAndRenameFiles(SRC_DIR, TARGET_DIR);
+
+      const logged = stderrSpy.mock.calls.map((call) => String(call[0])).join('\n');
+
+      expect(logged).toContain('bad.md');
+    } finally {
+      process.exitCode = previousExitCode;
+      stderrSpy.mockRestore();
+    }
+  });
+});
+
+describe('buildPages', () => {
+  const TEST_DIR = 'test-build-pages';
+  const SRC_DIR = path.join(TEST_DIR, 'src');
+  const TARGET_DIR = path.join(TEST_DIR, 'target');
+
+  beforeEach(() => {
+    fs.mkdirSync(SRC_DIR, { recursive: true });
+  });
+
+  afterEach(() => {
+    fs.rmSync(TEST_DIR, { recursive: true, force: true });
+    jest.restoreAllMocks();
+  });
+
+  test('stops before copying when the output directory cannot be created', () => {
+    const stderrSpy = jest.spyOn(process.stderr, 'write').mockImplementation(() => true);
+    const mkdirSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(() => {
+      throw new Error('EACCES: permission denied');
+    });
+    const readdirSpy = jest.spyOn(fs, 'readdirSync');
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      buildPages(SRC_DIR, TARGET_DIR);
+
+      expect(process.exitCode).toBe(1);
+      // without an output directory no entry is processed at all, instead of
+      // every file write failing one by one
+      expect(readdirSpy).not.toHaveBeenCalled();
+      expect(stderrSpy.mock.calls.map((call) => String(call[0])).join('\n')).toContain(TARGET_DIR);
+    } finally {
+      process.exitCode = previousExitCode;
+      mkdirSpy.mockRestore();
+    }
+  });
+
+  test('does not crash on malformed frontmatter, since frontmatter is never parsed here', () => {
+    const malformedFrontmatter = '---\ntitle: "unterminated\n---\n# Body\n';
+
+    fs.writeFileSync(path.join(SRC_DIR, 'broken.md'), malformedFrontmatter, 'utf8');
+
+    const previousExitCode = process.exitCode;
+
+    try {
+      buildPages(SRC_DIR, TARGET_DIR);
+
+      expect(process.exitCode).toBe(previousExitCode);
+      expect(fs.readFileSync(path.join(TARGET_DIR, 'broken.mdx'), 'utf8')).toBe(malformedFrontmatter);
+    } finally {
+      process.exitCode = previousExitCode;
+    }
   });
 });
