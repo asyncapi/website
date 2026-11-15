@@ -1,26 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 31.589204762418465
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSPEgqQ",
       "isPR": false,
       "isAssigned": true,
@@ -38,18 +18,27 @@
           "color": "ededed"
         }
       ],
-      "score": 28.717458874925875
+      "score": 32.45072852866624
     },
     {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
+      "id": "I_kwDOBW5R_c6VGYzo",
+      "isPR": false,
       "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.78438025996442
+      "title": "[FEATURE] Performance + Accessibility Improvement of website",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/issues/3186",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ],
+      "score": 25.845712987433288
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -60,23 +49,87 @@
       "resourcePath": "/asyncapi/generator/pull/2211",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.922856493716644
+      "score": 16.08177696995849
     },
     {
-      "id": "I_kwDOCoBobc6fqNYx",
+      "id": "I_kwDODou01c5BZZv-",
       "isPR": false,
-      "isAssigned": true,
-      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
-      "author": "BenjaminSchwendner",
-      "resourcePath": "/asyncapi/parser-js/issues/1065",
-      "repo": "asyncapi/parser-js",
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
       "labels": [
         {
-          "name": "bug",
-          "color": "d73a4a"
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
         }
       ],
+      "score": 15.225600373078546
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2293",
+      "repo": "asyncapi/generator",
+      "labels": [],
       "score": 12.061332727468868
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "ci: harden Netlify docs preview workflows against pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 11.48698354997035
+    },
+    {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 10.338285194973315
+    },
+    {
+      "id": "I_kwDOCHlHJM61Y1X2",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 9.18958683997628
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -90,15 +143,15 @@
       "score": 8.615237662477762
     },
     {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
+      "id": "PR_kwDOCHlHJM8AAAABN5wqtg",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
+      "title": "fix: allow Python WebSocket clients to reconnect after close",
+      "author": "SHUBHANSHU602",
+      "resourcePath": "/asyncapi/generator/pull/2316",
+      "repo": "asyncapi/generator",
       "labels": [],
-      "score": 8.040888484979245
+      "score": 8.328063073728504
     },
     {
       "id": "PR_kwDOBW5R_c75L5uF",
@@ -115,60 +168,6 @@
         }
       ],
       "score": 8.040888484979245
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "fix: resolve pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.179364718731469
-    },
-    {
-      "id": "I_kwDOCoBobc5p7LyT",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"messageId\" must be unique across all the messages.",
-      "author": "wiegell",
-      "resourcePath": "/asyncapi/parser-js/issues/793",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 6.605015541232952
-    },
-    {
-      "id": "I_kwDOCVQpZM6zcoZ7",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Schemas in AsyncAPI 3.0.0 file not fully rendered (only example1 parsed correctly)",
-      "author": "juanmbco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/1154",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 6.605015541232952
-    },
-    {
-      "id": "I_kwDOCHlHJM7hOEpu",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[BUG] React warning: missing key prop in AvailableOperations component during integration tests",
-      "author": "Harsh16gupta",
-      "resourcePath": "/asyncapi/generator/issues/1820",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
-      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
