@@ -23,6 +23,7 @@ const buttonClassName =
  */
 export default function SocialShareButtons({ title, slug, className = '' }: ISocialShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [copyFailed, setCopyFailed] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const { url, twitter, linkedin } = getShareLinks(slug, title);
 
@@ -33,17 +34,20 @@ export default function SocialShareButtons({ title, slug, className = '' }: ISoc
   const copyLink = async () => {
     try {
       await navigator.clipboard.writeText(url);
+      setCopyFailed(false);
       setCopied(true);
       clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Clipboard access can be denied or unavailable (e.g. insecure context); nothing to copy then.
+      // Clipboard access can be denied or unavailable (e.g. insecure context), so let users copy the link manually.
+      clearTimeout(timeoutRef.current);
       setCopied(false);
+      setCopyFailed(true);
     }
   };
 
   return (
-    <div className={`flex items-center gap-2 ${className}`} data-testid='SocialShareButtons'>
+    <div className={`flex flex-wrap items-center gap-2 ${className}`} data-testid='SocialShareButtons'>
       <span className='mr-1 text-sm text-gray-500 dark:text-gray-400'>Share:</span>
       <a
         href={twitter}
@@ -91,8 +95,20 @@ export default function SocialShareButtons({ title, slug, className = '' }: ISoc
           )}
         </svg>
       </button>
+      {copyFailed && (
+        <input
+          type='text'
+          readOnly
+          value={url}
+          onFocus={(event) => event.currentTarget.select()}
+          className='h-9 w-56 rounded border border-gray-300 px-2 text-sm text-gray-600 dark:border-gray-600 dark:bg-transparent dark:text-gray-300'
+          aria-label='Post link'
+          data-testid='SocialShareButtons-url'
+        />
+      )}
       <span className='sr-only' role='status' aria-live='polite'>
-        {copied ? 'Link copied' : ''}
+        {copied && 'Link copied'}
+        {copyFailed && 'Could not copy the link. Copy it manually from the text field.'}
       </span>
     </div>
   );
