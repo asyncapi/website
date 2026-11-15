@@ -21,6 +21,26 @@
       "score": 32.45072852866624
     },
     {
+      "id": "I_kwDOBW5R_c6VGYzo",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[FEATURE] Performance + Accessibility Improvement of website",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/issues/3186",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ],
+      "score": 25.845712987433288
+    },
+    {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
       "isPR": true,
       "isAssigned": true,
@@ -63,19 +83,14 @@
       "score": 14.358729437462937
     },
     {
-      "id": "I_kwDOCoBobc6fqNYx",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
-      "author": "BenjaminSchwendner",
-      "resourcePath": "/asyncapi/parser-js/issues/1065",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
+      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2293",
+      "repo": "asyncapi/generator",
+      "labels": [],
       "score": 12.061332727468868
     },
     {
@@ -153,22 +168,6 @@
         }
       ],
       "score": 8.040888484979245
-    },
-    {
-      "id": "I_kwDOCoBobc5p7LyT",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"messageId\" must be unique across all the messages.",
-      "author": "wiegell",
-      "resourcePath": "/asyncapi/parser-js/issues/793",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
