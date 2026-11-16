@@ -10,8 +10,11 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import editOptions from '../../config/edit-page-config.json';
 import DocsContext from '../../context/DocsContext';
 import { getAllPosts } from '../../utils/api';
+import getDocsBreadcrumbs from '../../utils/getDocsBreadcrumbs';
 import Button from '../buttons/Button';
 import DocsButton from '../buttons/DocsButton';
+import DocsBreadcrumbs from '../docs/DocsBreadcrumbs';
+import ErrorBoundary from '../error/ErrorBoundary';
 import Feedback from '../Feedback';
 import Head from '../Head';
 import ArrowRight from '../icons/ArrowRight';
@@ -91,6 +94,8 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
 
   const navigation = posts.docsTree;
 
+  const breadcrumbs = getDocsBreadcrumbs(posts.docs, post);
+
   const sidebar = <DocsNavWrapper setShowMenu={setShowMenu} navigation={navigation} post={post} />;
 
   if (router.pathname.includes('-explorer')) {
@@ -111,7 +116,9 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
           />
           {explorerDocMenu && <div className='explorer-menu-wrapper mt-2'>{sidebar}</div>}
         </div>
-        <article>{children}</article>
+        <article>
+          <ErrorBoundary contextualLabel='content'>{children}</ErrorBoundary>
+        </article>
       </div>
     );
   }
@@ -147,6 +154,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   className='hidden xl:block sticky top-20 mt-4 max-h-screen overflow-y-auto xl:mt-0 xl:w-60 xl:flex-shrink-0 xl:bg-transparent xl:pb-8'
                 />
                 <div className='px-4 sm:px-6 w-full lg:max-w-6xl lg:mx-auto lg:px-8 xl:flex-1 xl:max-w-7xl overflow-x-hidden'>
+                  <DocsBreadcrumbs breadcrumbs={breadcrumbs} />
                   <Heading className='dark:text-dark-heading' level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg}>
                     {post.title}
                   </Heading>
@@ -200,7 +208,7 @@ export default function DocsLayout({ post, navItems = {}, children }: IDocsLayou
                   )}
                   <article className='my-12 overflow-x-auto'>
                     <Head title={post.title} description={post.excerpt} image={post.cover} />
-                    {children}
+                    <ErrorBoundary contextualLabel='content'>{children}</ErrorBoundary>
                   </article>
                   <div>
                     <DocsButton post={post} />

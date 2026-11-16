@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI Microgrant Program
-weight: 160
+weight: 170
 ---
 
 # AsyncAPI Microgrant Program

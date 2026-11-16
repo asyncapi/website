@@ -96,6 +96,6 @@ Keep these best practices in mind as you mentor and lead:
 
 ## Additional Resources
 
-- [AsyncAPI Maintainer Guide](https://www.asyncapi.com/docs/community/onboarding-guide/maintainer-guide)
+- [AsyncAPI Maintainer Guide](https://www.asyncapi.com/docs/community/000-onboarding/maintainer-guide)
 - [GSoC Mentor Guide](https://google.github.io/gsocguides/mentor/)
 - [Open Source Best Practices](https://opensource.guide/best-practices/)

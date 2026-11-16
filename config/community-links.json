@@ -1,0 +1,11 @@
+{
+  "conferences": "https://conference.asyncapi.com",
+  "email": "mailto:info@asyncapi.com",
+  "github": "https://github.com/asyncapi",
+  "linkedin": "https://linkedin.com/company/asyncapi",
+  "mastodon": "https://fosstodon.org/@AsyncAPISpec",
+  "slack": "https://asyncapi.com/slack-invite",
+  "twitch": "https://www.twitch.tv/asyncapi",
+  "twitter": "https://twitter.com/AsyncAPISpec",
+  "youtube": "https://youtube.com/asyncapi"
+}

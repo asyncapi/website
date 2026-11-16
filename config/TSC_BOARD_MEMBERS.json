@@ -8,6 +8,7 @@
         "availableForHire": true,
         "isTscMember": true,
         "tscMemberSince": "2023-07-13",
+        "isBoardMember": true,
         "repos": [
             "website",
             "conference-website",
@@ -25,6 +26,7 @@
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
         "repos": [
+            "cli",
             "diff"
         ],
         "githubID": 54525741
@@ -38,26 +40,13 @@
         "availableForHire": true,
         "isTscMember": true,
         "tscMemberSince": "2025-01-13",
+        "isBoardMember": true,
         "repos": [
             "parser-js",
             "openapi-schema-parser",
             "cli"
         ],
         "githubID": 60972989
-    },
-    {
-        "name": "Abir Pal",
-        "linkedin": "imabp",
-        "slack": "U01S8EQ9LQ2",
-        "twitter": "imabptweets",
-        "github": "imabp",
-        "availableForHire": false,
-        "isTscMember": true,
-        "tscMemberSince": "2023-07-05",
-        "repos": [
-            "problem"
-        ],
-        "githubID": 53480076
     },
     {
         "name": "Akshat Nema",
@@ -116,6 +105,7 @@
         "repos": [
             "spec",
             "spec-json-schemas",
+            "parser-js",
             "bindings",
             "avro-schema-parser",
             "java-template"
@@ -130,19 +120,14 @@
         "linkedin": "fmvilas",
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
-        "isBoardMember": true,
         "repos": [
             "spec",
             "spec-json-schemas",
             "extensions-catalog",
             "converter-js",
             "bindings",
-            "enterprise-patterns",
-            "openapi-schema-parser",
             "html-template",
-            "markdown-template",
-            "nodejs-ws-template",
-            "brand"
+            "markdown-template"
         ],
         "githubID": 242119
     },
@@ -181,17 +166,12 @@
             "generator",
             "extensions-catalog",
             "bindings",
-            "enterprise-patterns",
             "html-template",
             "markdown-template",
-            "nodejs-template",
-            "nodejs-ws-template",
-            "java-spring-template",
             ".github",
-            "template-for-generator-templates",
+            "cli",
             "community",
-            "diff",
-            "chatbot"
+            "diff"
         ],
         "githubID": 6995927
     },
@@ -212,12 +192,10 @@
             "studio",
             "html-template",
             "markdown-template",
-            "template-for-generator-templates",
             "modelina",
+            "cli",
             "diff",
-            "chatbot",
-            "EDAVisualiser",
-            "problem"
+            "EDAVisualiser"
         ],
         "githubID": 20404945
     },
@@ -232,8 +210,7 @@
         "tscMemberSince": "2023-07-05",
         "repos": [
             "asyncapi-react",
-            "conference-website",
-            "chatbot"
+            "conference-website"
         ],
         "githubID": 40604284
     },
@@ -275,10 +252,16 @@
         "availableForHire": true,
         "isTscMember": true,
         "tscMemberSince": "2023-11-30",
+        "isBoardMember": true,
         "repos": [
             "website",
             "parser-js",
-            "studio"
+            "studio",
+            "openapi-schema-parser",
+            "conference-website",
+            "cli",
+            "optimizer",
+            "bundler"
         ],
         "githubID": 44585452
     },
@@ -330,19 +313,6 @@
         "githubID": 41781438
     },
     {
-        "name": "Semen Tenishchev",
-        "github": "Tenischev",
-        "linkedin": "semen-tenishchev",
-        "availableForHire": true,
-        "slack": "U011D1DAU6S",
-        "isTscMember": true,
-        "tscMemberSince": "2023-07-05",
-        "repos": [
-            "java-spring-template"
-        ],
-        "githubID": 4137916
-    },
-    {
         "name": "Samridhi Agrawal",
         "github": "Samridhi-98",
         "slack": "U02T2MY9W5T",
@@ -366,6 +336,7 @@
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
         "repos": [
+            "bindings",
             "vs-asyncapi-preview"
         ],
         "githubID": 1246876,
@@ -558,6 +529,7 @@
         "isTscMember": true,
         "tscMemberSince": "2023-07-05",
         "isBoardMember": true,
+        "isBoardChair": true,
         "repos": [
             "website",
             "conference-website",
@@ -703,6 +675,18 @@
             "generator"
         ],
         "githubID": 114283933
+    },
+    {
+        "name": "Ruchi Pakhle",
+        "github": "Ruchip16",
+        "slack": "U02L0Q7JMQX",
+        "twitter": "Ruchicodess",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "vs-asyncapi-preview"
+        ],
+        "githubID": 72685035
     },
     {
         "name": "TenzDelek",

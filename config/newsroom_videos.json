@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/uIQsYEswD4s/hqdefault.jpg",
-    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday May 27th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3549.",
-    "videoId": "uIQsYEswD4s"
+    "image_url": "https://i.ytimg.com/vi/ZHs4JPCr624/hqdefault.jpg",
+    "title": "AI Learned From Open Source. What Does It Owe Open Source?",
+    "description": "AI has learned a lot from open source. The code, documentation, issue discussions, examples, and years of knowledge shared by ...",
+    "videoId": "ZHs4JPCr624"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/aS29NYITBWs/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday May 26th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3548.",
-    "videoId": "aS29NYITBWs"
+    "image_url": "https://i.ytimg.com/vi/HCj1H1JElOE/hqdefault.jpg",
+    "title": "AsyncAPI Docs Meeting, 16:00 UTC Wednesday November 4th 2026",
+    "description": "https://github.com/asyncapi/community/issues/3650.",
+    "videoId": "HCj1H1JElOE"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/8fkwstMaggI/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing: The State of Maintainership",
-    "description": "https://github.com/asyncapi/community/issues/3513.",
-    "videoId": "8fkwstMaggI"
+    "image_url": "https://i.ytimg.com/vi/hAoxCrkBGRI/hqdefault.jpg",
+    "title": "Secure by Default Is a Lie: What Building DaloyJS Taught Me About Making It True - Devlin Duldulao",
+    "description": "",
+    "videoId": "hAoxCrkBGRI"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Cy_yCrwtXGY/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday April 14th 2026",
-    "description": "https://github.com/asyncapi/community/issues/3498#issuecomment-4243180197.",
-    "videoId": "Cy_yCrwtXGY"
+    "image_url": "https://i.ytimg.com/vi/u4WvwzCtkIc/hqdefault.jpg",
+    "title": "Stop API Drift: Provision Kafka from AsyncAPI  - Iván García Sainz-Aja",
+    "description": "",
+    "videoId": "u4WvwzCtkIc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/hvUOm9OIpgI/hqdefault.jpg",
-    "title": "AsyncAPI Community WG Meeting, 15:00 UTC Tuesday March 31st 2026",
-    "description": "https://github.com/asyncapi/community/issues/2329.",
-    "videoId": "hvUOm9OIpgI"
+    "image_url": "https://i.ytimg.com/vi/kR8JVx1NZpQ/hqdefault.jpg",
+    "title": "Beyond the Broker: What Event Gateways Are Really Trying to Solve - Daniel Kocot",
+    "description": "",
+    "videoId": "kR8JVx1NZpQ"
   }
 ]

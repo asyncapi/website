@@ -5,15 +5,30 @@ import type { Expenses } from '@/types/FinancialSummary/BarChartComponent';
 import ExpensesData from '../../config/finance/json-data/Expenses.json';
 import Card from './Card';
 
+interface ExpensesCardProps {
+  readonly selectedCategory: string;
+  readonly selectedMonth: string;
+}
+
 /**
- * @description ExpensesCard component displays all expenses for each month.
+ * @description ExpensesCard component displays filtered expenses for each month.
  */
-export default function ExpensesCard() {
+export default function ExpensesCard({ selectedCategory, selectedMonth }: ExpensesCardProps) {
+  const filteredExpenses = Object.entries(ExpensesData).filter(
+    ([month]) => selectedMonth === 'All Months' || selectedMonth === month
+  );
+
   return (
     <div className='overflow-x-auto'>
       <div className='grid auto-cols-max grid-flow-col gap-4 p-4'>
-        {Object.entries(ExpensesData).map(([month, data], index) => {
-          return <Card key={index} month={month as keyof Expenses} data={data} />;
+        {filteredExpenses.map(([month, data]) => {
+          const filteredData = data.filter(
+            (item) => selectedCategory === 'All Categories' || item.Category === selectedCategory
+          );
+
+          if (filteredData.length === 0) return null;
+
+          return <Card key={month} month={month as keyof Expenses} data={filteredData} />;
         })}
       </div>
     </div>

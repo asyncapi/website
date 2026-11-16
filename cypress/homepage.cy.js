@@ -16,7 +16,6 @@ describe('Home Page E2E Tests Using Base Components', () => {
     ['Case Studies', () => homePage.goToCaseStudiesPage()],
     ['Tools', () => homePage.goToToolsPage()],
     ['Community', () => homePage.goToCommunityPage()],
-    ['Roadmap', () => homePage.goToRoadmapPage()],
   ];
 
   navigationTests.forEach(([name, nav]) => {

@@ -1,6 +1,8 @@
 // Centralized footer data - Pure data without React components
 // This file can be imported by both React components and Cypress tests
 
+import communityLinksConfig from '../../config/community-links.json';
+
 export interface FooterLink {
   url: string;
   label: string;
@@ -41,34 +43,34 @@ export const initiativeLinks: FooterLink[] = [
 
 export const socialMediaData: SocialMediaData[] = [
   {
-    url: 'https://twitter.com/AsyncAPISpec',
+    url: communityLinksConfig.twitter,
     label: 'Twitter'
   },
   {
-    url: 'https://github.com/asyncapi',
+    url: communityLinksConfig.github,
     label: 'GitHub'
   },
   {
-    url: 'https://linkedin.com/company/asyncapi',
+    url: communityLinksConfig.linkedin,
     label: 'LinkedIn'
   },
   {
-    url: 'https://youtube.com/asyncapi',
+    url: communityLinksConfig.youtube,
     label: 'YouTube'
   },
   {
-    url: 'https://asyncapi.com/slack-invite',
+    url: communityLinksConfig.slack,
     label: 'Slack'
   },
   {
-    url: 'https://www.twitch.tv/asyncapi',
+    url: communityLinksConfig.twitch,
     label: 'Twitch'
   }
 ];
 
 export const newsLinks: NewsLink[] = [
   {
-    url: 'mailto:info@asyncapi.com',
+    url: communityLinksConfig.email,
     label: 'Email Us'
   }
 ];

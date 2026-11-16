@@ -21,7 +21,7 @@ Here are some ways to effectively design links when referencing sources in a tut
 
 Consider using the following tips to format links for files, images, and other forms of multimedia in AsyncAPI's content:
 
-- **Use relative paths**: This will make it easier for readers to quickly access the image or source embedded in the repository.
+- **Use absolute paths**: When linking to assets, use the full path to the asset file rather than a relative path. This ensures that the link will work correctly regardless of where the content is accessed from.
 - **Use recent version files**:  Check that the assets used in the content are up-to-date. This ensures that readers get the correct information.
 - **Use meaningful names for files**:  Make sure the file names for assets correspond to what they describe. This makes the tutorial, blog post, or documentation-related update more accessible, especially for users who use screen readers to navigate the site.  
 
@@ -29,7 +29,7 @@ Consider using the following tips to format links for files, images, and other f
 
 When referencing sources that will take users outside AsyncAPI, refer to the following tips:
 
-- **Use absolute URLs:** Always include the full URL, starting with `https://`, for external resources. This helps users understand where they are going and prevents confusion.
+- **Use absolute URLs:** Always include the full URL, starting with `https://`, for external resources. This helps users understand where they are going and prevents confusion. For example: `https://www.asyncapi.com/docs/community/000-onboarding/github-actions`, not `docs/000-onboarding/github-actions.md`.
 - **Let users know when a link goes to another website:** Tell readers if clicking a link will take them away from the AsyncAPI site. This helps them know what to expect before they click.
 - **Use link text that fits the sentence:** Place links within sentences so the link text clearly tells users where the link goes. This helps readers understand what to expect and makes the content easier to follow.
 
@@ -37,9 +37,9 @@ When referencing sources that will take users outside AsyncAPI, refer to the fol
 
 When it comes to referring to other sections within the content being created for AsyncAPI, consider using the following methods:
 
-- **Use relative URLs**: When linking to other pages in the documentation, use easy-to-read paths that work no matter where the docs are moved or viewed. This makes it easier for users to navigate the content and ensures that the links remain functional.
-- **Keep it consistent**: Use the same style for links within the documentation so readers can easily find and navigate the content and know what to expect.
-- **Consider using anchor links**: For lengthy pages, use anchor links (links that point to specific headings or sections within the same page) to direct users to specific sections rather than forcing them to scroll through content.
+- **Use full rendered URLs**: When linking to another documentation page, use its full URL on the AsyncAPI website. Do not use a relative path to its repository source.
+- **Preserve heading fragments**: When linking to a specific heading, retain the fragment after the page URL.
+- **Use same-page anchors**: Links to headings within the current page can use a fragment such as #getting-started.
 
 ## Examples
 
@@ -49,11 +49,11 @@ When it comes to referring to other sections within the content being created fo
 
 ### Example of an Asset Link
 
-`![AsyncAPI Logo](../assets/asyncapi-logo.png)`
+`![Lightbulb](https://www.asyncapi.com/img/illustrations/icons/icon.svg)`
 
 ### Example of an Internal Link
 
-`Read the [AsyncAPI Specification](../specifications/latest).`
+`Read the [GitHub Actions guide](https://www.asyncapi.com/docs/community/000-onboarding/github-actions).`
 
 ### Example of an External Link
 

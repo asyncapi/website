@@ -3,10 +3,10 @@ title: 'AsyncAPI Bounty Program Summary - 2024'
 date: 2024-09-12T00:00:00+00:00
 type: Community
 tags:
-  - Community
+  - Microgrant Program
 cover: /img/posts/bounty-program/photo-from-starship-cockpit.jpeg
 authors:
-  - name: Viacheslav Turovskyi
+  - name: aeworxet
     photo: /img/avatars/aeworxet.webp
     link: https://github.com/aeworxet
     byline: Bounty Program Coordinator

@@ -219,13 +219,13 @@ Automate the discovery of changes in CODEOWNERS and update the TSC members list.
 Mentorship duration - seven months \(full-time schedule\)
 
 ## Contact AsyncAPI Mentors
-- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Observe our [Slack etiquette](../060-meetings-and-communication/slack-etiquette) and [AsyncAPI code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
+- Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Observe our [Slack etiquette](https://www.asyncapi.com/docs/community/060-meetings-and-communication/slack-etiquette) and [AsyncAPI code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 - Join the dedicated Mentorship channel `#09_mentorships` to meet all other mentees and mentors.
 
 ## FAQ
 
 1. **How active are previous mentees in AsyncAPI?**
-   This is our first formal mentorship program! However, many contributors from our community have gone on to become maintainers. You can view detailed retention statistics on our [Mentorship Programs Insights](./insights) page.
+   This is our first formal mentorship program! However, many contributors from our community have gone on to become maintainers. You can view detailed retention statistics on our [Mentorship Programs Insights](https://www.asyncapi.com/docs/community/050-mentorship-program/insights) page.
 
 2. **What is the time commitment for mentees?**
    Projects range from 175 to 350 hours depending on scope and complexity. This typically translates to 10-20 hours per week over 3-6 months.

@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'Call for Nominations for the AsyncAPI Governance Board 2026 seats.'
-featured: true
 ---
 
 We're excited to announce it's time to welcome new members to the Governance Board! **With three seats open**, there's a wonderful opportunity for more of you to get involved.

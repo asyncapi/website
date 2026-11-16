@@ -1,7 +1,7 @@
 ---
 title: Holopin Badge Workflow for Maintainers
 description: Learn how to set up and use Holopin digital badges to recognize contributors in your repository.
-weight: 30
+weight: 40
 ---
 
 ## Introduction

@@ -1,7 +1,6 @@
 import BasePage from './BasePage';
 import CaseStudiesPage from './CaseStudiesPage';
 import DocsPage from './DocsPage';
-import RoadmapPage from './RoadmapPage';
 import CommunityPage from './CommunityPage';
 import ToolsPage from './ToolsPage';
 import BlogPage from './BlogPage';
@@ -115,10 +114,6 @@ class HomePage extends BasePage {
     return new CommunityPage();
   }
 
-  goToRoadmapPage() {
-    cy.contains('a', 'Roadmap').click();
-    return new RoadmapPage();
-  }
 
   goToTSCPage() {
     cy.visit('/community/tsc');

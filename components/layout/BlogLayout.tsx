@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import ErrorPage from 'next/error';
-import HtmlHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -9,6 +8,7 @@ import type { IPosts } from '@/types/post';
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
+import ErrorBoundary from '../error/ErrorBoundary';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
@@ -84,14 +84,9 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
               </div>
             </header>
             <article className='mb-32'>
-              <Head title={post.title} description={post.excerpt} image={post.cover} />
-              {post.canonical && (
-                <HtmlHead>
-                  <link rel='canonical' href={post.canonical} />
-                </HtmlHead>
-              )}
+              <Head title={post.title} description={post.excerpt} image={post.cover} canonical={post.canonical} />
               <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
-              {children}
+              <ErrorBoundary contextualLabel='article'>{children}</ErrorBoundary>
             </article>
           </main>
         </Container>

@@ -82,7 +82,7 @@ Internal linking involves creating hyperlinks within a document that connect to 
 
 - "In this case, in your AsyncAPI file, you describe the `server`, and therefore, the [Server Object](https://www.asyncapi.com/docs/reference/specification/latest#serverObject) holds information about the actual server, including its physical location."
 - "JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, such as [Avro](https://github.com/asyncapi/avro-schema-parser#usage)."
-- "Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission."  
+- "Furthermore, the [Pub/sub](https://www.asyncapi.com/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission."  
 
 ### What are meta descriptions?
 

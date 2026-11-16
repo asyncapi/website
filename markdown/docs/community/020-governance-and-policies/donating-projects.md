@@ -7,7 +7,7 @@ weight: 90
 
 Donating your open-source project to an open-source initiative involves transferring ownership or stewardship to an organization that supports and promotes open-source software. It ensures the project's sustainability, attracts more contributors, and aligns it with broader community goals.
 
-AsyncAPI initiative is open to receiving project donations that align with our goals and values. Before considering donating your project to the initiative, kindly visit our [AsyncAPI Roadmap](https://www.asyncapi.com/roadmap) to learn more about what we are looking at as a community in the near future. 
+AsyncAPI initiative is open to receiving project donations that align with our goals and values.
 
 ### Project Licensing
 

@@ -43,7 +43,7 @@ const options = {
   keys: ['name', 'color', 'borderColor']
 };
 
-// Two seperate lists and Fuse objects initialised to search languages and technologies tags
+// Two separate lists and Fuse objects initialised to search languages and technologies tags
 // from specified list of same.
 const languageList = [...languagesColor];
 const technologyList = [...technologiesColor];

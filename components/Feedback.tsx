@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import GitHubIssue from './buttons/GitHubIssue';
 
@@ -12,93 +12,17 @@ interface IFeedbackProps {
  * @param {string} props.className - The class name for the component
  */
 export default function Feedback({ className }: IFeedbackProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
-  const [feedback, setFeedback] = useState('');
   const { asPath } = useRouter();
 
-  useEffect(() => {
-    setSubmitted(false);
-    setError(false);
-  }, [asPath]);
+  // Strip query string and hash so only the pathname appears in the issue title
+  const docsPath = asPath.split('?')[0].split('#')[0];
+  const issueTitle = `Docs Feedback: ${docsPath}`;
 
-  const dateStamp = new Date();
-  const timeStamp = dateStamp.toUTCString();
-
-  /**
-   * @description A function that handles the form submission
-   * @param {React.FormEvent<HTMLFormElement>} e - The form event
-   */
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = {
-      title: `Feedback on ${asPath} - ${timeStamp}`,
-      feedback
-    };
-
-    fetch('/.netlify/functions/github_discussions', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
-      if (response.status === 200) {
-        setSubmitted(true);
-      }
-      if (response.status !== 200) {
-        setError(true);
-      }
-      response.json();
-    });
-  }
-
-  if (submitted) {
-    return (
-      <div
-        className={`flex flex-col rounded-md border border-gray-200 dark:border-border dark:bg-dark-card p-4 text-center shadow-md ${className}`}
-      >
-        <div className='mx-auto block w-fit'>
-          <img src='/img/illustrations/icons/icon-check.svg' className='md:w-14' alt='checkmark' aria-hidden='true' />
-        </div>
-        <div className='mx-auto mt-4 text-center text-lg dark:text-white' data-testid='Feedback-div'>
-          Thank you for your feedback!
-        </div>
-        <div className='text-md mx-auto text-center text-gray-500 dark:text-gray-400'>
-          Your contribution has been received and we couldn&apos;t be happier.
-        </div>
-        <a
-          href='https://github.com/asyncapi/website'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='mx-auto mt-4 w-full rounded-md bg-black p-2 shadow-md transition-all duration-500 ease-in-out hover:shadow-lg md:w-1/2'
-        >
-          <div className='flex flex-row justify-center text-center text-white'>
-            <img src='/img/logos/github-fill.svg' className='mr-2 w-6' alt='GitHub' aria-hidden='true' />
-            Follow on GitHub
-          </div>
-        </a>
-      </div>
-    );
-  }
-  if (error) {
-    return (
-      <div
-        className={`flex flex-col rounded-md border border-gray-200 dark:border-border dark:bg-dark-card p-4 text-center shadow-md ${className}`}
-      >
-        <div className='mx-auto block w-fit'>
-          <img src='/img/illustrations/icons/icon-x.svg' className='md:w-14' alt='x' aria-hidden='true' />
-        </div>
-        <div className='mx-auto mt-4 text-center text-lg dark:text-white' data-testid='Feedback-error'>
-          Oops! Something went wrong...
-        </div>
-        <div className='text-md mx-auto text-center text-gray-500 dark:text-gray-400'>
-          We were unable to process your feedback
-        </div>
-        <GitHubIssue className='mx-auto' />
-      </div>
-    );
-  }
+  const feedbackUrl =
+    'https://github.com/asyncapi/website/issues/new' +
+    '?template=docs-feedback.yml' +
+    `&title=${encodeURIComponent(issueTitle)}` +
+    `&labels=${encodeURIComponent('📑 docs')}`;
 
   return (
     <div
@@ -109,30 +33,23 @@ export default function Feedback({ className }: IFeedbackProps) {
         <div className='ml-4 flex flex-col'>
           <div className='text-xl dark:text-dark-heading'>Was this helpful?</div>
           <div className='text-sm dark:text-dark-text text-gray-500'>
-            Help us improve the docs by adding your contribution.
+            Help us improve the docs by sharing your feedback.
           </div>
         </div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className='my-4 flex flex-col'>
-          <textarea
-            className='inline-block h-20 w-full rounded-md border dark:border-border dark:bg-dark-footer bg-gray-50 px-2 py-1 align-top text-sm text-gray-700 dark:text-gray-300 focus:border-0'
-            placeholder='Write your suggestions here'
-            onChange={(e) => setFeedback(e.target.value)}
-            required
-          />
-          <div className='mt-4 block text-sm lg:flex lg:flex-row'>
-            <button
-              className='w-full rounded bg-primary-500 dark:border border-primary-500 dark:hover:bg-transparent py-2 text-white shadow-md transition-all duration-300 ease-in-out hover:shadow-lg lg:w-6/12'
-              type='submit'
-            >
-              Submit feedback
-            </button>
-            <div className='my-2 w-full text-center dark:text-dark-text font-medium lg:my-auto lg:w-1/12'>OR</div>
-            <GitHubIssue className='bg-secondary-500 dark:border dark:border-secondary-500 dark:hover:bg-transparent' />
-          </div>
-        </div>
-      </form>
+      <div className='mt-4 block text-sm lg:flex lg:flex-row'>
+        <a
+          href={feedbackUrl}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='flex w-full flex-row justify-center rounded bg-primary-500 dark:border border-primary-500 dark:hover:bg-transparent py-2 text-white shadow-md transition-all duration-300 ease-in-out hover:shadow-lg lg:w-6/12'
+          data-testid='Feedback-submit-link'
+        >
+          Submit Feedback
+        </a>
+        <div className='my-2 w-full text-center dark:text-dark-text font-medium lg:my-auto lg:w-1/12'>OR</div>
+        <GitHubIssue className='bg-secondary-500 dark:border dark:border-secondary-500 dark:hover:bg-transparent' />
+      </div>
     </div>
   );
 }
