@@ -18,7 +18,7 @@
           "color": "ededed"
         }
       ],
-      "score": 32.45072852866624
+      "score": 33.02507770616476
     },
     {
       "id": "I_kwDOBW5R_c6VGYzo",
@@ -72,6 +72,28 @@
       "score": 15.225600373078546
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2293",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -83,17 +105,6 @@
       "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
-      "author": "devxdh",
-      "resourcePath": "/asyncapi/generator/pull/2293",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 12.061332727468868
-    },
-    {
       "id": "PR_kwDOCHlHJM8AAAABAm34jA",
       "isPR": true,
       "isAssigned": true,
@@ -103,17 +114,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 10.338285194973315
     },
     {
       "id": "I_kwDOCHlHJM61Y1X2",
