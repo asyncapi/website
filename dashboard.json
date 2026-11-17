@@ -18,7 +18,7 @@
           "color": "ededed"
         }
       ],
-      "score": 33.02507770616476
+      "score": 33.31225229491402
     },
     {
       "id": "I_kwDOBW5R_c6VGYzo",
@@ -36,9 +36,13 @@
         {
           "name": "Epic",
           "color": "3E4B9E"
+        },
+        {
+          "name": "microgrant",
+          "color": "708090"
         }
       ],
-      "score": 25.845712987433288
+      "score": 26.420062164931807
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -50,6 +54,17 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2293",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 15.507427792459973
     },
     {
       "id": "I_kwDODou01c5BZZv-",
@@ -72,17 +87,6 @@
       "score": 15.225600373078546
     },
     {
-      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
-      "author": "devxdh",
-      "resourcePath": "/asyncapi/generator/pull/2293",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSgjN-g",
       "isPR": false,
       "isAssigned": false,
@@ -91,7 +95,7 @@
       "resourcePath": "/asyncapi/community/issues/3634",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 14.645904026212197
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
