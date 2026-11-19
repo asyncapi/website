@@ -1,8 +1,8 @@
+import React from 'react';
+
 /**
  * @description Icon component for Book
  */
-import React from 'react';
-
 export default function IconBook({ className = '', ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
