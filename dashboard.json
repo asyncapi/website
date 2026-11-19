@@ -18,7 +18,7 @@
           "color": "ededed"
         }
       ],
-      "score": 32.45072852866624
+      "score": 33.886601472412536
     },
     {
       "id": "I_kwDOBW5R_c6VGYzo",
@@ -36,9 +36,13 @@
         {
           "name": "Epic",
           "color": "3E4B9E"
+        },
+        {
+          "name": "microgrant",
+          "color": "708090"
         }
       ],
-      "score": 25.845712987433288
+      "score": 26.420062164931807
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -50,6 +54,17 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2293",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 15.507427792459973
     },
     {
       "id": "I_kwDODou01c5BZZv-",
@@ -72,6 +87,17 @@
       "score": 15.225600373078546
     },
     {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -83,15 +109,15 @@
       "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "id": "PR_kwDOCHlHJM8AAAABPHwzlQ",
       "isPR": true,
       "isAssigned": false,
-      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
-      "author": "devxdh",
-      "resourcePath": "/asyncapi/generator/pull/2293",
+      "title": "chore: add bake-in-template skill",
+      "author": "Adi-204",
+      "resourcePath": "/asyncapi/generator/pull/2323",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.061332727468868
+      "score": 13.210031082465903
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm34jA",
@@ -103,17 +129,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 11.48698354997035
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 10.338285194973315
     },
     {
       "id": "I_kwDOCHlHJM61Y1X2",
@@ -132,6 +147,17 @@
       "score": 9.18958683997628
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABN5wqtg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: allow Python WebSocket clients to reconnect after close",
+      "author": "SHUBHANSHU602",
+      "resourcePath": "/asyncapi/generator/pull/2316",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 9.18958683997628
+    },
+    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -141,33 +167,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABN5wqtg",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: allow Python WebSocket clients to reconnect after close",
-      "author": "SHUBHANSHU602",
-      "resourcePath": "/asyncapi/generator/pull/2316",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 8.328063073728504
-    },
-    {
-      "id": "PR_kwDOBW5R_c75L5uF",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: resolve page selection issue in the \"Go to page\" dropdown on desktop",
-      "author": "swarupasaroogumma",
-      "resourcePath": "/asyncapi/website/pull/5678",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 8.040888484979245
     }
   ],
   "goodFirstIssues": [
