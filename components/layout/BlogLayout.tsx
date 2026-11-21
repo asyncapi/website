@@ -85,7 +85,12 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
             </header>
             <article className='mb-32'>
               <Head title={post.title} description={post.excerpt} image={post.cover} canonical={post.canonical} />
-              <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className='my-6 w-full' />
+              <img
+                src={post.cover}
+                alt={post.coverCaption || post.title}
+                title={post.coverCaption}
+                className='my-6 w-full'
+              />
               <ErrorBoundary contextualLabel='article'>{children}</ErrorBoundary>
             </article>
           </main>
