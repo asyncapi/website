@@ -1,10 +1,13 @@
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 import React from 'react';
 
 import type { IEvent } from '@/types/event';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import Heading from '../typography/Heading';
+
+dayjs.extend(utc);
 
 interface EventPostItemProps {
   post: IEvent;
@@ -43,7 +46,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
     active = false;
   }
 
-  const eventDateLabel = active ? dayjs(postDate).format('MMMM D, YYYY') : 'View Recording';
+  const eventDateLabel = active ? dayjs.utc(postDate).format('MMMM D, YYYY') : 'View Recording';
 
   return (
     <li key={id} className={className} data-testid='EventPostItem-main'>
@@ -72,7 +75,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): React.
               <span data-testid='Event-span'>{eventDateLabel}</span>
             </div>
             <div className='text-sm text-gray-600 dark:text-gray-400'>
-              {postDate.isValid() && dayjs(postDate).format('h:mm A [UTC]')}
+              {postDate.isValid() && dayjs.utc(postDate).format('h:mm A [UTC]')}
             </div>
           </div>
 
