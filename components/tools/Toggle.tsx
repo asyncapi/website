@@ -15,12 +15,7 @@ const Toggle = ({
 }: ToggleProps) => {
   return (
     <label className='relative inline-flex cursor-pointer items-center'>
-      <input
-        type='checkbox'
-        value={checked ? 'true' : 'false'}
-        className='peer sr-only'
-        onChange={() => setChecked(!checked)}
-      />
+      <input type='checkbox' checked={checked} className='peer sr-only' onChange={() => setChecked(!checked)} />
       <div
         className={twMerge(
           `h-6 w-11 rounded-full transition-colors peer peer-focus:outline-none peer-focus:ring-2
