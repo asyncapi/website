@@ -53,9 +53,10 @@ export default function HeadComponent({
   const { path = '' } = appContext || {};
   let currImage = image;
 
-  const permalink = `${url}${path}`;
+  const cleanPath = path ? path.split(/[?#]/)[0] : '';
+  const normalizedPath = stripTrailingSlashes(cleanPath);
+  const permalink = `${url}${normalizedPath}`;
   const canonicalUrl = canonical || permalink;
-  const normalizedPath = stripTrailingSlashes(path);
   const hasMarkdownAlternate =
     normalizedPath === '/docs' ||
     normalizedPath === '/about' ||
