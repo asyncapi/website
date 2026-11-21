@@ -3,6 +3,7 @@ import fs from 'fs';
 import { generateLlmsFiles } from '../scripts/build-llms';
 import { buildPostList } from '../scripts/build-post-list';
 import { rssFeed } from '../scripts/build-rss';
+import { buildToolsManual } from '../scripts/build-tools';
 import { buildCaseStudiesList } from '../scripts/casestudies/index';
 import { buildFinanceInfoList } from '../scripts/finance/index';
 import { start } from '../scripts/index';
@@ -11,6 +12,7 @@ import { buildUsecasesList } from '../scripts/usecases/index';
 jest.mock('../scripts/build-rss');
 jest.mock('../scripts/build-post-list');
 jest.mock('../scripts/build-llms');
+jest.mock('../scripts/build-tools');
 jest.mock('../scripts/casestudies');
 jest.mock('../scripts/usecases');
 jest.mock('../scripts/finance');
@@ -34,6 +36,7 @@ describe('start function', () => {
     );
 
     expect(buildCaseStudiesList).toHaveBeenCalled();
+    expect(buildToolsManual).toHaveBeenCalled();
     expect(buildUsecasesList).toHaveBeenCalled();
     expect(buildFinanceInfoList).toHaveBeenCalled();
   });
