@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 import { items } from './SupportItemsList';
@@ -30,7 +31,14 @@ export default function SupportUs({ className = '' }: SupportUsProps): React.Rea
               rel='noopener noreferrer'
               className='relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
             >
-              <img className={item.imgClass} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
+              <Image
+                className={item.imgClass}
+                src={item.imgSrc}
+                title={item.imgTitle}
+                alt={item.imgTitle}
+                width={160}
+                height={48}
+              />
             </a>
           ))}
       </div>
@@ -45,7 +53,14 @@ export default function SupportUs({ className = '' }: SupportUsProps): React.Rea
               rel='noopener noreferrer'
               className='relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
             >
-              <img className={item.imgClass} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
+              <Image
+                className={item.imgClass}
+                src={item.imgSrc}
+                title={item.imgTitle}
+                alt={item.imgTitle}
+                width={160}
+                height={48}
+              />
             </a>
           ))}
       </div>
@@ -60,7 +75,14 @@ export default function SupportUs({ className = '' }: SupportUsProps): React.Rea
               rel='noopener noreferrer'
               className='relative block w-2/3 p-4 text-center sm:w-1/3 sm:p-0 md:w-1/3 lg:w-1/5'
             >
-              <img className={item.imgClass} src={item.imgSrc} title={item.imgTitle} alt={item.imgTitle} />
+              <Image
+                className={item.imgClass}
+                src={item.imgSrc}
+                title={item.imgTitle}
+                alt={item.imgTitle}
+                width={160}
+                height={48}
+              />
             </a>
           ))}
       </div>
