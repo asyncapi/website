@@ -38,6 +38,27 @@ describe('Home Page E2E Tests Using Base Components', () => {
     homePage.verifySlackCTAButton();
   });
 
+  it('shows the Slack screenshot that matches the stored theme', () => {
+    const lightSrc = '/img/homepage/slack-wg-community-light.webp';
+    const darkSrc = '/img/homepage/slack-wg-community-dark.webp';
+
+    cy.visit('/en', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('theme', 'light');
+      }
+    });
+    cy.get(`img[src="${lightSrc}"]`).scrollIntoView().should('be.visible');
+    cy.get(`img[src="${darkSrc}"]`).should('not.be.visible');
+
+    cy.visit('/en', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('theme', 'dark');
+      }
+    });
+    cy.get(`img[src="${darkSrc}"]`).scrollIntoView().should('be.visible');
+    cy.get(`img[src="${lightSrc}"]`).should('not.be.visible');
+  });
+
   it('should display the Google Calendar link', () => {
     homePage.verifyLetUsKnowLink();
   });
