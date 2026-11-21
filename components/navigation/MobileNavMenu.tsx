@@ -65,7 +65,7 @@ export default function MobileNavMenu({
   const languageButtonHoverClass = 'ease-in-out hover:bg-gray-100/60 dark:hover:bg-gray-700/40 hover:translate-x-1';
 
   return (
-    <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition lg:hidden animate-in fade-in slide-in-from-top-5 duration-300'>
+    <div className='fixed inset-x-0 top-0 z-60 max-h-full origin-top-right overflow-y-auto py-2 transition min-[1100px]:hidden animate-in fade-in slide-in-from-top-5 duration-300'>
       <div className='mx-2 rounded-2xl'>
         <div className='shadow-xs divide-y divide-gray-100/50 dark:divide-gray-700/50 rounded-2xl bg-white/90 dark:bg-dark-card/90 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50'>
           <div className='space-y-6 px-5 pb-6 pt-5'>
