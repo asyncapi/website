@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { createContext, useEffect, useState } from 'react';
 
+import { normalizeArrayQuery, normalizeBooleanQuery, normalizeStringQuery } from '../utils/tool-filter';
+
 interface ToolFilterContextProps {
   isPaid: string;
   isAsyncAPIOwner: boolean;
@@ -35,11 +37,11 @@ function ToolFilter({ children }: { children: React.ReactNode }) {
 
     const { pricing, owned, langs, techs, categories: Categories } = router.query;
 
-    setIsPaid((pricing as string) || 'all');
-    setIsAsyncAPIOwner(owned === 'true');
-    setLanguages((langs as string)?.split(',') || []);
-    setTechnologies((techs as string)?.split(',') || []);
-    setCategories((Categories as string)?.split(',') || []);
+    setIsPaid(normalizeStringQuery(pricing, 'all'));
+    setIsAsyncAPIOwner(normalizeBooleanQuery(owned));
+    setLanguages(normalizeArrayQuery(langs));
+    setTechnologies(normalizeArrayQuery(techs));
+    setCategories(normalizeArrayQuery(Categories));
   }, [router?.query]);
 
   return (
