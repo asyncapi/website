@@ -101,6 +101,17 @@ class BlogPage extends BasePage {
     cy.get('[data-testid="BlogLayout-main"]').should('be.visible');
     cy.url().should('include', '/blog/');
   }
+
+  verifyShareButtons() {
+    cy.get('[data-testid="SocialShareButtons"]').should('be.visible');
+    cy.get('[data-testid="SocialShareButtons-twitter"]')
+      .should('have.attr', 'href')
+      .and('match', /^https:\/\/twitter\.com\/intent\/tweet\?text=.+&url=https%3A%2F%2Fwww\.asyncapi\.com%2Fblog%2F/);
+    cy.get('[data-testid="SocialShareButtons-linkedin"]')
+      .should('have.attr', 'href')
+      .and('match', /^https:\/\/www\.linkedin\.com\/sharing\/share-offsite\/\?url=https%3A%2F%2Fwww\.asyncapi\.com%2Fblog%2F/);
+    cy.get('[data-testid="SocialShareButtons-copy"]').should('be.visible');
+  }
 }
 
 export default BlogPage;
