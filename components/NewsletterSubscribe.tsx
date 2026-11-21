@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import IconCircularLoader from '@/components/icons/CircularLoader';
 import { ButtonType } from '@/types/components/buttons/ButtonPropsType';
@@ -51,6 +51,15 @@ export default function NewsletterSubscribe({
   const [email, setEmail] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [status, setStatus] = useState<FormStatus>(FormStatus.NORMAL);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
 
   const { t, ready } = useTranslation('common', { keyPrefix: 'newsletterCTA' });
 
@@ -58,13 +67,17 @@ export default function NewsletterSubscribe({
   const paragraphTextColor = dark ? 'text-gray-300' : 'text-gray-700 dark:text-gray-300';
 
   const setFormStatus = (formResponse: FormStatus) => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
     setStatus(formResponse);
     if (formResponse === FormStatus.SUCCESS) {
       // Reset form fields on success
       setName('');
       setEmail('');
     }
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setStatus(FormStatus.NORMAL);
     }, 10000);
   };
