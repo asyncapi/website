@@ -1,7 +1,7 @@
 ---
 title: Add new AsyncAPI tool to website
 description: Learn how to add your tool to the AsyncAPI website using the .asyncapi-tool file.
-weight: 20
+weight: 30
 ---
 
 ## Introduction
@@ -90,7 +90,7 @@ filters:
 
 ## Manual addition of tools
 
-If you don't want to create the `.asyncapi-tool` file in your repository or your tool's codebase doesn't exist in Github, the [AsyncAPI website repository](https://github.com/asyncapi/website) contains a [`tools-manual.json`](https://github.com/asyncapi/website/blob/master/config/tools-manual.json) file that adds your tool to our website's [Tools Dashboard](/tools).
+If you don't want to create the `.asyncapi-tool` file in your repository or your tool's codebase doesn't exist in Github, the [AsyncAPI website repository](https://github.com/asyncapi/website) contains a [`tools-manual.json`](https://github.com/asyncapi/website/blob/master/config/tools-manual.json) file that adds your tool to our website's [Tools Dashboard](https://www.asyncapi.com/tools).
 
 Inside this [`tools-manual.json`](https://github.com/asyncapi/website/blob/master/config/tools-manual.json) file, you must choose the desired category for your tool and add your tool as an **element** inside that particular category **object**.
 

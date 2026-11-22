@@ -45,7 +45,7 @@ A Working Group must discuss ideas and solutions in public and communicate, thro
 
 ### Meetings
 
-It is recommended that the Working Group schedule meetings using the methods described at [MEETINGS_ORGANIZATION.md](https://www.asyncapi.com/docs/community/060-meetings-and-communication).
+It is recommended that the Working Group schedule meetings using the methods described at [MEETINGS_ORGANIZATION.md](https://www.asyncapi.com/docs/community/060-meetings-and-communication/MEETINGS_ORGANIZATION).
 
 Working Groups should be listed on the [AsyncAPI website](https://www.asyncapi.com), along with their description, goals, members, and anything the Working Group wants to include.
 

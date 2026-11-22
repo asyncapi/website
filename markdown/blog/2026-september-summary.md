@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: Community Builder and Open Source Fanatic!
 excerpt: 'AsyncAPI community and project updates for September 2026'
-featured: true
 ---
 
 September brought activity and life back to the community after the summer holiday break as we welcomed new Governance Board members and started discussions about the community's financial state and how to sustain it moving forward. We also attended another edition of the AsyncAPI Conference; let's unpack what happened over the month.

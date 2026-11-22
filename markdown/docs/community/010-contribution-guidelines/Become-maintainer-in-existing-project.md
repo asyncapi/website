@@ -23,12 +23,12 @@ Here's how to select an issue to contribute to:
 
 **Step 2: Open a Pull Request**
 
-To open a pull request successfully, follow our [Git workflows contributors guide](git-workflow).
+To open a pull request successfully, follow our [Git workflows contributors guide](https://www.asyncapi.com/docs/community/010-contribution-guidelines/git-workflow).
 
 Use the following steps to open your pull request:
 1. Configure a fork
 2. Work on it locally 
-3. Write an appropriate PR title using the [conventional commits specification](../010-contribution-guidelines/conventional-commits)
+3. Write an appropriate PR title using the [conventional commits specification](https://www.asyncapi.com/docs/community/010-contribution-guidelines/conventional-commits)
 4. Test your PR against GitHub checks to ensure they all pass
 
 **Step 3: Get Pull Request Merged**

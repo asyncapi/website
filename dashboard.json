@@ -1,26 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 31.589204762418465
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSPEgqQ",
       "isPR": false,
       "isAssigned": true,
@@ -32,24 +12,33 @@
         {
           "name": "gitvote",
           "color": "ededed"
-        },
-        {
-          "name": "gitvote/open",
-          "color": "ededed"
         }
       ],
-      "score": 25.27136380993477
+      "score": 34.74812523866031
     },
     {
-      "id": "PR_kwDOCHlHJM7srbNz",
-      "isPR": true,
+      "id": "I_kwDOBW5R_c6VGYzo",
+      "isPR": false,
       "isAssigned": true,
-      "title": "feat: add slack support to JS Client",
-      "author": "batchu5",
-      "resourcePath": "/asyncapi/generator/pull/2142",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.78438025996442
+      "title": "[FEATURE] Performance + Accessibility Improvement of website",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/issues/3186",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        },
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 26.420062164931807
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
@@ -60,50 +49,89 @@
       "resourcePath": "/asyncapi/generator/pull/2211",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.922856493716644
+      "score": 16.943300736206268
     },
     {
-      "id": "I_kwDOFdFGUs8AAAABCc6TlA",
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
       "isPR": false,
       "isAssigned": false,
-      "title": "Record and release training video based on VIDEO_6_SCRIPT.md",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/training/issues/65",
-      "repo": "asyncapi/training",
-      "labels": [
-        {
-          "name": "microgrant",
-          "color": "708090"
-        }
-      ],
-      "score": 12.348507316218127
-    },
-    {
-      "id": "I_kwDOCoBobc6fqNYx",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
-      "author": "BenjaminSchwendner",
-      "resourcePath": "/asyncapi/parser-js/issues/1065",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ],
-      "score": 12.061332727468868
-    },
-    {
-      "id": "PR_kwDOFLhIt87cYXTP",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: add Coderabbit config for community documentation",
-      "author": "bandantonio",
-      "resourcePath": "/asyncapi/community/pull/3552",
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
       "repo": "asyncapi/community",
       "labels": [],
+      "score": 16.36895155870775
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
+      "author": "devxdh",
+      "resourcePath": "/asyncapi/generator/pull/2293",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 15.507427792459973
+    },
+    {
+      "id": "PR_kwDOCHlHJM7srbNz",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: add slack support to JS Client",
+      "author": "batchu5",
+      "resourcePath": "/asyncapi/generator/pull/2142",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABPHwzlQ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add bake-in-template skill",
+      "author": "Adi-204",
+      "resourcePath": "/asyncapi/generator/pull/2323",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "ci: harden Netlify docs preview workflows against pwn request",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/2212",
+      "repo": "asyncapi/generator",
+      "labels": [],
       "score": 11.48698354997035
+    },
+    {
+      "id": "I_kwDOCHlHJM61Y1X2",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 9.18958683997628
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABN5wqtg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: allow Python WebSocket clients to reconnect after close",
+      "author": "SHUBHANSHU602",
+      "resourcePath": "/asyncapi/generator/pull/2316",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 9.18958683997628
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -115,17 +143,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.040888484979245
     },
     {
       "id": "PR_kwDOBW5R_c75L5uF",
@@ -142,41 +159,6 @@
         }
       ],
       "score": 8.040888484979245
-    },
-    {
-      "id": "I_kwDOBW5R_c7uh0fo",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "[FEATURE] Introduce AI-facing documentation",
-      "author": "sammy200-ui",
-      "resourcePath": "/asyncapi/website/issues/5205",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "triaged",
-          "color": "0052cc"
-        }
-      ],
-      "score": 7.7537138962299865
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "fix: resolve pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 7.179364718731469
     }
   ],
   "goodFirstIssues": [

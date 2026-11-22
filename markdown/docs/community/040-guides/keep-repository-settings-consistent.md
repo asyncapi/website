@@ -1,6 +1,6 @@
 ---
 title: Keep Repository Settings Consistent
-weight: 10
+weight: 20
 ---
 
 All repositories in `asyncapi` organizations should be similar in structure, settings, and restrictions. Follow these guidelines to adjust settings of a new repository created in one of these organizations.

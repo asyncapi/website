@@ -17,7 +17,7 @@ weight: 40
 
 **`isVotedInLast3Months`** shows whether the member cast at least one vote in the three months preceding the most recent vote close date. A value of `false` does **not** automatically trigger removal.
 
-**Inactivity removal rule ([AsyncAPI charter](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/CHARTER.md)):**
+**Inactivity removal rule ([AsyncAPI charter](https://www.asyncapi.com/docs/community/020-governance-and-policies/CHARTER)):**
 A TSC member is automatically moved to emeritus only when they have missed **at least 2 consecutive votes whose close dates are 3 or more calendar months apart**. This means a member can show `isVotedInLast3Months: false` and still remain active — for example, if their recent missed votes all happened within a short window (less than 3 months between the first and last missed vote).
 
 ## Vote index

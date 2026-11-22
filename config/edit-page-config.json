@@ -70,5 +70,9 @@
   {
     "value": "community/maintainership-guide",
     "href": "https://github.com/asyncapi/community/tree/master/docs/maintainership-guide"
+  },
+  {
+    "value": "community/051-maintainership-guide",
+    "href": "https://github.com/asyncapi/community/tree/master/docs/051-maintainership-guide"
   }
 ]
