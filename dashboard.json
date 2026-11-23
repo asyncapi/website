@@ -14,7 +14,7 @@
           "color": "ededed"
         }
       ],
-      "score": 34.74812523866031
+      "score": 36.183998182406604
     },
     {
       "id": "I_kwDOBW5R_c6VGYzo",
@@ -41,6 +41,17 @@
       "score": 26.420062164931807
     },
     {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.943300736206268
+    },
+    {
       "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
       "isPR": true,
       "isAssigned": true,
@@ -50,17 +61,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 16.943300736206268
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
     },
     {
       "id": "PR_kwDOCHlHJM8AAAABLmbelw",
@@ -134,6 +134,17 @@
       "score": 9.18958683997628
     },
     {
+      "id": "PR_kwDOCVQpZM8AAAABQ8n3OA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: decouple and improve the no-parser support from the parser dependencies",
+      "author": "Ishita-190",
+      "resourcePath": "/asyncapi/asyncapi-react/pull/1387",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 8.902412251227021
+    },
+    {
       "id": "I_kwDOFLhIt874rNRL",
       "isPR": false,
       "isAssigned": true,
@@ -143,22 +154,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOBW5R_c75L5uF",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: resolve page selection issue in the \"Go to page\" dropdown on desktop",
-      "author": "swarupasaroogumma",
-      "resourcePath": "/asyncapi/website/pull/5678",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "waiting-for-author",
-          "color": "BDDB3C"
-        }
-      ],
-      "score": 8.040888484979245
     }
   ],
   "goodFirstIssues": [
