@@ -52,28 +52,6 @@
       "score": 16.943300736206268
     },
     {
-      "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore: define permissions in workflows  and pin actions to SHA",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2211",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABLmbelw",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "test(kafka): add microcks acceptance test suite for quarkus kafka client",
-      "author": "devxdh",
-      "resourcePath": "/asyncapi/generator/pull/2293",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 15.507427792459973
-    },
-    {
       "id": "PR_kwDOCHlHJM7srbNz",
       "isPR": true,
       "isAssigned": true,
@@ -83,28 +61,6 @@
       "repo": "asyncapi/generator",
       "labels": [],
       "score": 14.358729437462937
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABPHwzlQ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: add bake-in-template skill",
-      "author": "Adi-204",
-      "resourcePath": "/asyncapi/generator/pull/2323",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "ci: harden Netlify docs preview workflows against pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 11.48698354997035
     },
     {
       "id": "I_kwDOCHlHJM61Y1X2",
@@ -145,6 +101,17 @@
       "score": 8.615237662477762
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABNXUvKA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: resolve server variable defaults",
+      "author": "Khush7Chauhan",
+      "resourcePath": "/asyncapi/generator/pull/2312",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 8.615237662477762
+    },
+    {
       "id": "PR_kwDOBW5R_c75L5uF",
       "isPR": true,
       "isAssigned": false,
@@ -159,6 +126,53 @@
         }
       ],
       "score": 8.040888484979245
+    },
+    {
+      "id": "I_kwDOBW5R_c8AAAABX70TNQ",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Implement remaining pages and prepare the website for dark theme by default",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/website/issues/5844",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        },
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 6.89219012998221
+    },
+    {
+      "id": "I_kwDOCoBobc5p7LyT",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "\"messageId\" must be unique across all the messages.",
+      "author": "wiegell",
+      "resourcePath": "/asyncapi/parser-js/issues/793",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 6.605015541232952
+    },
+    {
+      "id": "PR_kwDOCHlHJM8AAAABMw3umw",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: prevent repeated JavaScript connections from leaking sockets",
+      "author": "SHUBHANSHU602",
+      "resourcePath": "/asyncapi/generator/pull/2304",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 6.605015541232952
     }
   ],
   "goodFirstIssues": [
