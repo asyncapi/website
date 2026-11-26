@@ -22,7 +22,7 @@ servers:
         default: develop.kafka.arcadia-editions.example:9092
     bindings:
       kafka:
-        schemaRegistryUrl: '{schemaRegistryUrl}'
+        schemaRegistryUrl: https://develop.schema-registry.arcadia-editions.example
         schemaRegistryVendor: confluent
 channels:
   order-created-event-v1:
@@ -148,7 +148,23 @@ channels:
               - name: unavailableItems
                 type:
                   type: array
-                  items: StockUnavailableItem
+                  items:
+                    type: record
+                    name: StockUnavailableItem
+                    namespace: com.arcadiaeditions.orders.checkout.events.avro
+                    fields:
+                      - name: sku
+                        type:
+                          - 'null'
+                          - string
+                      - name: requestedQuantity
+                        type:
+                          - 'null'
+                          - int
+                      - name: availableQuantity
+                        type:
+                          - 'null'
+                          - int
                   java-class: java.util.List
     bindings:
       kafka:
@@ -220,10 +236,54 @@ channels:
               - name: items
                 type:
                   type: array
-                  items: OrderConfirmedItem
+                  items:
+                    type: record
+                    name: OrderConfirmedItem
+                    namespace: com.arcadiaeditions.orders.checkout.events.avro
+                    fields:
+                      - name: sku
+                        type:
+                          - 'null'
+                          - string
+                      - name: quantity
+                        type:
+                          - 'null'
+                          - int
                   java-class: java.util.List
               - name: shippingAddress
-                type: OrderConfirmedShippingAddress
+                type:
+                  type: record
+                  name: OrderConfirmedShippingAddress
+                  namespace: com.arcadiaeditions.orders.checkout.events.avro
+                  fields:
+                    - name: name
+                      type:
+                        - 'null'
+                        - string
+                    - name: line1
+                      type:
+                        - 'null'
+                        - string
+                    - name: line2
+                      type:
+                        - 'null'
+                        - string
+                    - name: city
+                      type:
+                        - 'null'
+                        - string
+                    - name: region
+                      type:
+                        - 'null'
+                        - string
+                    - name: postalCode
+                      type:
+                        - 'null'
+                        - string
+                    - name: country
+                      type:
+                        - 'null'
+                        - string
     bindings:
       kafka:
         partitions: 3
@@ -475,7 +535,23 @@ components:
             - name: unavailableItems
               type:
                 type: array
-                items: StockUnavailableItem
+                items:
+                  type: record
+                  name: StockUnavailableItem
+                  namespace: com.arcadiaeditions.orders.checkout.events.avro
+                  fields:
+                    - name: sku
+                      type:
+                        - 'null'
+                        - string
+                    - name: requestedQuantity
+                      type:
+                        - 'null'
+                        - int
+                    - name: availableQuantity
+                      type:
+                        - 'null'
+                        - int
                 java-class: java.util.List
     OrderConfirmedEvent:
       name: OrderConfirmedEvent
@@ -517,10 +593,54 @@ components:
             - name: items
               type:
                 type: array
-                items: OrderConfirmedItem
+                items:
+                  type: record
+                  name: OrderConfirmedItem
+                  namespace: com.arcadiaeditions.orders.checkout.events.avro
+                  fields:
+                    - name: sku
+                      type:
+                        - 'null'
+                        - string
+                    - name: quantity
+                      type:
+                        - 'null'
+                        - int
                 java-class: java.util.List
             - name: shippingAddress
-              type: OrderConfirmedShippingAddress
+              type:
+                type: record
+                name: OrderConfirmedShippingAddress
+                namespace: com.arcadiaeditions.orders.checkout.events.avro
+                fields:
+                  - name: name
+                    type:
+                      - 'null'
+                      - string
+                  - name: line1
+                    type:
+                      - 'null'
+                      - string
+                  - name: line2
+                    type:
+                      - 'null'
+                      - string
+                  - name: city
+                    type:
+                      - 'null'
+                      - string
+                  - name: region
+                    type:
+                      - 'null'
+                      - string
+                  - name: postalCode
+                    type:
+                      - 'null'
+                      - string
+                  - name: country
+                    type:
+                      - 'null'
+                      - string
     OrderCancelledEvent:
       name: OrderCancelledEvent
       title: ''
