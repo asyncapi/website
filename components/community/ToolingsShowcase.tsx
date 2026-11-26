@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -29,19 +29,45 @@ const toolsData: Record<string, ToolData> = communityToolingsShowcase;
 export default function ToolingsShowcase() {
   const [selectedTool, setSelectedTool] = useState<string>('java-asyncapi');
   const [isShuffling, setIsShuffling] = useState<boolean>(false);
+  const shuffleTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingTool = useRef<string | null>(null);
 
   const currentTool = toolsData[selectedTool];
 
-  const handleToolChange = (toolName: string) => {
-    if (toolName === selectedTool) return;
+  useEffect(() => {
+    return () => {
+      if (shuffleTimeout.current) clearTimeout(shuffleTimeout.current);
+    };
+  }, []);
 
-    // Start shuffle animation
+  const handleToolChange = (toolName: string) => {
+    if (toolName === selectedTool) {
+      // Clicking the tool that is currently displayed cancels a pending switch to another tool.
+      if (shuffleTimeout.current) {
+        clearTimeout(shuffleTimeout.current);
+        shuffleTimeout.current = null;
+        pendingTool.current = null;
+        setIsShuffling(false);
+      }
+
+      return;
+    }
+
+    // Ignore repeated clicks on the tool that is already pending.
+    if (toolName === pendingTool.current) return;
+
+    if (shuffleTimeout.current) clearTimeout(shuffleTimeout.current);
+
+    // Start shuffle animation and remember which tool is being switched to
+    pendingTool.current = toolName;
     setIsShuffling(true);
 
     // Change tool after shuffle animation starts
-    setTimeout(() => {
+    shuffleTimeout.current = setTimeout(() => {
       setSelectedTool(toolName);
       setIsShuffling(false);
+      pendingTool.current = null;
+      shuffleTimeout.current = null;
     }, 300);
   };
 
