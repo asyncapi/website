@@ -63,6 +63,17 @@
       "score": 14.358729437462937
     },
     {
+      "id": "PR_kwDOCHlHJM8AAAABNXUvKA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: resolve server variable defaults",
+      "author": "Khush7Chauhan",
+      "resourcePath": "/asyncapi/generator/pull/2312",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 9.763936017474798
+    },
+    {
       "id": "I_kwDOCHlHJM61Y1X2",
       "isPR": false,
       "isAssigned": true,
@@ -97,17 +108,6 @@
       "author": "princerajpoot20",
       "resourcePath": "/asyncapi/community/issues/3495",
       "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABNXUvKA",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: resolve server variable defaults",
-      "author": "Khush7Chauhan",
-      "resourcePath": "/asyncapi/generator/pull/2312",
-      "repo": "asyncapi/generator",
       "labels": [],
       "score": 8.615237662477762
     },
