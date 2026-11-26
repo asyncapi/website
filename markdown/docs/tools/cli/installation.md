@@ -152,7 +152,7 @@ All the AsyncAPI CLI versions can be found [here](https://chocolatey.org/package
 
 Just install the appropriate installer and simply follow the default installation steps to complete the installation process.
 
-Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
+Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows. Current releases require Node.js 24 and no longer provide a 32-bit Windows installer.
 
 
 ## Linux
