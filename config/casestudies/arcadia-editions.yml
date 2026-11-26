@@ -1,0 +1,247 @@
+id: arcadiaeditions
+company:
+  name: Arcadia Editions
+  description: |
+    Arcadia Editions is a fictional company, built in the open to show AsyncAPI governance built to last. Everything in this case study is public on GitHub, so you can clone it, check every claim and reuse it.
+
+    In the story, Arcadia Editions is a specialty retailer of limited-edition board games. Its Place Order flow spans five services: checkout, inventory, payments, fulfillment, and notifications, making it a natural fit for an event-driven architecture.
+  customers: "Fictional. An open source reference architecture"
+  industry: Ecommerce
+  website: https://github.com/arcadia-editions
+  logo: /img/casestudies/arcadia-editions/logo.webp
+  contact:
+    - name: Ivan Garcia Sainz-Aja
+      link: https://ivangsa.com
+
+challenges: |
+  Like any company running an event-driven architecture at scale, Arcadia has bounded contexts owned by different teams: Orders Checkout, Catalog Inventory, Payments Processing, Fulfillment Shipping and Notifications. They talk through Kafka topics. The Place Order flow alone crosses five services, with stock reservations, payment holds, retries and compensations.
+
+  Arcadia was built to reproduce the governance problems these architectures run into after a few years:
+
+  - **Message brokers are part of your API.** If you configure the broker and the API from different sources, they will eventually drift. The AsyncAPI file says the retention is seven days, but the Terraform in another repository, or the Confluent console, says one day. People stop reading the API and start asking someone.
+  - **Code generation alone doesn't stop application drift.** A common pattern is to download a copy of the AsyncAPI file, generate the DTOs once, commit them and edit them by hand, while producers, listener signatures and header names are written by hand. The code becomes a second source of truth, and a renamed operation or field in the contract goes unnoticed until it fails at runtime.
+  - **Understanding one API is easy, but nobody sees the whole picture.** Reading one API is easy, but reading every API across dozens of repositories to find who reads from which topic is not.
+  - **Governance by policy fades.** It starts with a good wiki page, naming rules and a review board. Two or three years later nobody remembers them, and governance only works while somebody is checking.
+
+solution: |
+  Arcadia replaces policy and enforcement with automation. It starts from the idea that the broker is part of the API: partitions, retention and schema compatibility shape how producers and consumers are designed, so they belong in the contract. Its governance rests on three principles:
+
+  1. **The APIs are the source of truth, and everything else is derived from them.** The application code, the Kafka topics, the schemas, the permissions and the documentation are generated from the AsyncAPI and Avro files. Nobody edits the derived artifacts by hand.
+  2. **API and platform stay in sync automatically, without much policy or enforcement.** Keeping them aligned is a side effect of the teams' normal work.
+  3. **One architecture manifest gathers what is spread across repositories, without repeating it.** The manifest indexes every domain, service and contract, and the release pipeline keeps it up to date.
+
+  These principles are explained in [AsyncAPI Governance Built to Last](https://ivangsa.com/articles/arcadia/014-async-api-governance-built-to-last).
+
+  ### API drift has two faces
+
+  API drift is the progressive divergence between the declared contract and the system that implements and operates it. In an event-driven architecture it has two faces, and Arcadia derives both sides from the same AsyncAPI file:
+
+  | | Derived from AsyncAPI | Drift detector | Tool |
+  | --- | --- | --- | --- |
+  | Application drift | A complete, non-editable Java SDK: models, headers, typed producers and typed listeners | The compiler | [ZenWave AsyncAPI Generator](https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-generator/) |
+  | Platform drift | Terraform for Kafka topics, Schema Registry subjects and ACLs | `terraform plan` | [ZenWave AsyncAPI Ops](https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-ops/) |
+
+  In both cases the contract changes first, and everything downstream has to acknowledge that change before it reaches a running system.
+
+  On the application side, generating code is not enough. Three rules keep the code derived from the contract:
+
+  - **Generated code is non-editable.** Editing it is not a supported step of the workflow: a fix goes into the AsyncAPI file and the generator replaces its output.
+  - **Generate the complete SDK.** Models, headers, validation, typed producers, typed listener interfaces and the implementation that connects them to the broker. Every API-facing piece that is written by hand can drift.
+  - **Read the contract from its canonical location.** A git tag, a Maven artifact, Apicurio or Artifactory, never a local copy.
+
+  With these rules, when a contract changes in an incompatible way, the build fails in the handwritten code that still assumes the old contract. See the talk [Stop API Drift: Generate Java from AsyncAPI](https://youtu.be/AwZoXxyQj9o).
+
+  ### Treat your APIs as products
+
+  Every service has its own `*-api` repository with its contracts. Thin GitHub Actions callers delegate to the shared [api-product-workflows](https://github.com/arcadia-editions/api-product-workflows):
+
+  - **CI** lints and validates every changed contract on each pull request.
+  - **Releases** version the contracts and publish them as Maven packages, so consumers depend on a released contract, not on a copy. Ideally we would also publish to Apicurio or Artifactory, but that is out of scope for a demo organization.
+  - **Provisioning** generates Terraform from the AsyncAPI files. Merging to `develop` provisions the development cluster, and each release packs that Terraform so the same files are promoted to pre and prod.
+
+  ### Public contract and client contract
+
+  AsyncAPI v3 is application-centric ([spec](https://www.asyncapi.com/docs/reference/specification/v3.0.0#introduction)): each definition file describes what this application does (its `send` and `receive` operations), not what others can do with it. This does not prevent using multiple files to capture different aspects of the same service.
+
+  Each service has two AsyncAPI files:
+
+  - `asyncapi.yml` is the **public surface**: the topics the service owns and the messages it publishes.
+  - `asyncapi-client.yml` is **internal**: the channels the service consumes, as `$ref`s to the producers' public contracts. It is not published to consumers, but it is documented and versioned because provisioning needs it. The read ACLs, the retry topics and the dead letter topics of each consumer are generated from it.
+
+  If a service doesn't declare that it consumes a topic, it doesn't get permission to read it. So the list of consumers of every topic is always written down, in the client contracts.
+
+  ### The architecture manifest and its uses
+
+  Reading one API is easy, but reading every API across dozens of repositories to find who reads from which topic is not.
+
+  [`zenwave-architecture.yml`](https://github.com/arcadia-editions/arcadia-editions-architecture/blob/main/zenwave-architecture.yml) is the index of every domain, service and contract. Teams do not maintain it by hand. Every API release sends a dispatch to the architecture repository, and a workflow updates the released versions and the consumers of each contract.
+
+  A manifest that stays accurate without anyone looking after it is useful beyond being one central YAML file:
+
+  - Its first use was the ZenWave EventCatalog generator, which builds the [Arcadia Event Catalog](https://arcadia-editions.github.io/arcadia-event-catalog/), a public website showing the producers and consumers of every event.
+  - Its second use is [ZenWave Platform for VSCode](https://www.zenwave360.io/zenwave-platform/), an open source extension that loads the manifest so you can navigate between services, contracts and consumers and open every artifact from your editor.
+  - More uses will follow, because the manifest answers questions you cannot answer by browsing repositories.
+
+  ### Authoring contracts without writing YAML
+
+  Teams can write the AsyncAPI and Avro files by hand. They can also author the domain model in ZDL, an IDL for domain models, and generate AsyncAPI and Avro from it. Either way, the governed artifact is the AsyncAPI file. See [Generate OpenAPI and AsyncAPI from ZDL](https://ivangsa.com/articles/arcadia/009-dsl-modeling-for-apis-generate-openapi-and-asyncapi-from-zdl).
+
+technical:
+  languages:
+    - Java
+  frameworks:
+    - Spring Boot
+    - Spring Cloud Stream (Kafka binder)
+    - Spring Kafka
+  protocols:
+    - Kafka
+  brokers: Confluent Cloud (Kafka and Schema Registry)
+  testing: |
+    The first tests are the drift feedback loops, and they run on every pull request:
+
+    - **Lint and validation.** The AsyncAPI CLI validates every contract, and Spectral applies the naming and style rules. The linting is moving to OpenLint.
+    - **The compiler.** The generated SDK is never edited, so when a contract changes, the build fails in the handwritten code that still assumes the old contract.
+    - **`terraform plan`.** Each change to a contract shows exactly which topics, schemas and ACLs it changes in the platform before anything is applied.
+
+    At the service level, each microservice is tested in two ways:
+
+    - **Unit tests with an in-memory broker.** Together with the SDK, the generator writes an in-memory implementation of every producer interface, which captures each message, payload and headers, per operation. Tests call the service without Spring and check which events it published, in milliseconds. These in-memory producers are generated from the same contract as the real ones, so they also break when the contract changes.
+    - **Integration tests with Testcontainers and Docker Compose.** The whole Spring Boot application runs against PostgreSQL, Kafka and Schema Registry, as declared in the service's `docker-compose.yml`. If those services are already running locally they are reused; otherwise Testcontainers starts them. Events go through Kafka and Schema Registry with the same serializers as in production.
+  architecture: |
+    Five bounded contexts take part in the [Place Order flow](https://github.com/arcadia-editions/arcadia-editions-architecture/blob/main/business-flows/place-order-flow.zfl), which was discovered with Event Storming and modeled in ZFL. Stock is reserved before payment, because in a scarcity-driven drop inventory is the binding constraint. Every failure path ends in compensation: the payment authorization is voided, the stock goes back to the pool and the order is cancelled.
+
+    The services communicate through domain events on Kafka. Each topic is owned by one service and declared in that service's public `asyncapi.yml`, with its partitions, replicas, retention and schema compatibility. Consumers declare what they read in their `asyncapi-client.yml`, by reference to the producer's channel:
+
+    ```yaml
+    # orders-checkout-api/asyncapi-client.yml (excerpt)
+    channels:
+      payment-authorized-event-v1:
+        $ref: https://raw.githubusercontent.com/arcadia-editions/payments-processing-api/main/asyncapi.yml#/channels/payment-authorized-event-v1
+
+    operations:
+      onPaymentAuthorizedEvent:
+        action: receive
+        channel:
+          $ref: "#/channels/payment-authorized-event-v1"
+        bindings:
+          kafka:
+            x-error-topics:
+              addressTemplate: "${groupId}.__.${channel.address}.${suffix}"
+              retryTopics: 3
+              retrySuffixes: [retry-5s, retry-30s, retry-5m]
+              retry:
+                $ref: https://raw.githubusercontent.com/arcadia-editions/api-contract-commons/refs/heads/main/asyncapi-error-topics.yml#/components/error-topics/retry/silver
+              dlq:
+                $ref: https://raw.githubusercontent.com/arcadia-editions/api-contract-commons/refs/heads/main/asyncapi-error-topics.yml#/components/error-topics/dlq/compliance
+    ```
+
+    Shared sections live in [api-contract-commons](https://github.com/arcadia-editions/api-contract-commons): environment servers, common headers, message traits, and retry and dead letter tiers such as `silver` and `compliance`. The contracts reference them instead of copying them.
+
+    The five Spring Boot microservices of the Place Order flow are public and generate their SDK from both contracts: [orders-checkout](https://github.com/arcadia-editions/orders-checkout-service-java), [catalog-inventory](https://github.com/arcadia-editions/catalog-inventory-service-java), [payments-processing](https://github.com/arcadia-editions/payments-processing-service-java), [fulfillment-shipping](https://github.com/arcadia-editions/fulfillment-shipping-service-java) and [notifications-consumer](https://github.com/arcadia-editions/notifications-consumer-service-java). [arcadia-editions-microservices-compose](https://github.com/arcadia-editions/arcadia-editions-microservices-compose) runs them together with PostgreSQL, Kafka and Schema Registry.
+
+    A modulith implementation of the whole domain also exists, in Spring Modulith with [Java](https://github.com/arcadia-editions/arcadia-editions-modulith-service-java) and [Kotlin](https://github.com/arcadia-editions/arcadia-editions-modulith-service-kotlin), but its events are internal, so it does not use Kafka or AsyncAPI.
+  codegen: |
+    Each service generates its SDK during the build with the [ZenWave SDK Maven plugin](https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-generator/), in two executions: one for its `asyncapi.yml` and one for its `asyncapi-client.yml`. Both use the `provider` role, because `asyncapi-client.yml` is already written from the service's point of view (`action: receive`). The SDK is complete: Avro models, headers, typed producers, typed listener interfaces and the Spring implementation that connects them to Kafka. The generated code lives in `target`, so every build deletes it and writes it again, and nobody can edit it. The SDK is Java only, and Kotlin services use it directly.
+
+    The generator has two sets of templates, chosen per service: `SpringCloudStream` (the default) generates producers on top of `StreamBridge` and consumers as `Consumer<Message<T>>` beans, and `SpringKafka` generates producers on top of `KafkaTemplate` and consumers as `@KafkaListener` methods. The generated interfaces are the same with both, so the handwritten code doesn't change. Arcadia uses both on purpose: Orders Checkout uses Spring Cloud Stream and Payments Processing uses Spring Kafka. Connection settings such as `acks`, idempotence, serializers, client id or consumer group stay in `application.yml`, because AsyncAPI can't express them or they are application-wide.
+
+    An SDK can also be published as one versioned artifact per API version. Arcadia generates it at build time, so each service can choose its own options, such as date types or a transactional outbox.
+
+    The SDK lives outside the hexagon, in one package per contract: `<basePackage>.asyncapi.provider` and `<basePackage>.asyncapi.client`. The Avro classes follow the namespace of their schema. The core and the adapters use the SDK and the SDK depends on neither, a boundary that ArchUnit will check. The full configuration is explained in [Arcadia Editions: An AsyncAPI Governance Case Study](https://ivangsa.com/articles/arcadia/015-arcadia-editions-asyncapi-governance-case-study).
+
+    The build reads the contract from its canonical location, never from a local copy. That location is either the released Maven artifact of the `*-api` repository or an HTTP URL, which can be authenticated: a GitHub raw URL, Apicurio, or similar. The Arcadia services use GitHub raw URLs and keep the credential settings in the configuration, commented out, for reference.
+
+    The platform is generated the same way. ZenWave AsyncAPI Ops reads the public and client contracts of a service and writes Terraform for its topics, Schema Registry subjects and compatibility, ACLs, and retry and dead letter topics. Nobody edits that Terraform by hand.
+
+schemas:
+  description: Avro 1.9, referenced from AsyncAPI messages with `schemaFormat` and `$ref` to `.avsc` files.
+  storage: The `.avsc` files live in each service's `*-api` repository next to its AsyncAPI files, and they are released with them as part of the same Maven package.
+  registry: Confluent Schema Registry, provisioned by Terraform generated from the AsyncAPI files.
+  versioning: |
+    Contracts follow semantic versioning and are released from the `*-api` repository with a git tag and a Maven package. A service's `asyncapi.yml`, `asyncapi-client.yml` and Avro schemas are released together as one bundle, and the architecture manifest records each released version.
+
+    The major version is part of the channel name and the topic address, for example `orders-checkout.order-created.event.avro.v1`.
+  validation: |
+    Schema compatibility is declared in the contract, through a message trait with the Kafka binding:
+
+    ```yaml
+    KafkaSchemaCompatibility:
+      bindings:
+        kafka:
+          bindingVersion: '0.5.0'
+          schemaIdLocation: 'payload'
+          schemaLookupStrategy: 'TopicNameStrategy'
+          x-schemaCompatibility: 'FORWARD'
+    ```
+
+    The provisioning applies that compatibility level to the subject in Schema Registry, and Schema Registry rejects incompatible schemas. The declared level also tells the teams who deploys first: with `FORWARD` the producer can go first, and with `BACKWARD` the consumers have to go first.
+
+asyncapi:
+  usecase: |
+    AsyncAPI is the single source of truth for Arcadia's event-driven architecture. From the AsyncAPI files Arcadia:
+
+    - documents the public surface and the internal consumption of every service
+    - validates and lints every contract in CI
+    - releases the contracts as versioned Maven packages
+    - generates the complete Java SDK of each service
+    - generates the Terraform for Kafka topics, schemas, ACLs, and retry and dead letter topics
+    - keeps the architecture manifest up to date, which feeds the Event Catalog and ZenWave Platform for VSCode
+  versions:
+    - '3.1.0'
+  storage: |
+    Each service has its own `{domain}-{service}-api` repository on GitHub with `asyncapi.yml`, `asyncapi-client.yml` and the Avro schemas. Shared sections are in [api-contract-commons](https://github.com/arcadia-editions/api-contract-commons) and are referenced by URL. Released versions are published as Maven packages.
+  editing: |
+    Contracts are edited in VSCode. [AsyncAPI Preview](https://marketplace.visualstudio.com/items?itemName=asyncapi.asyncapi-preview) renders and validates them, and [ZenWave Platform for VSCode](https://www.zenwave360.io/zenwave-platform/) loads the architecture manifest so you can navigate between services, contracts and consumers. Teams can also author the domain model in ZDL and generate the AsyncAPI and Avro files from it.
+  maintainers: |
+    Each service team owns its `*-api` repository and its contracts. The shared workflows, the common sections and the architecture manifest tooling live in their own repositories in the same organization.
+  audience:
+    internal: true
+    external: false
+  extensions: |
+    Arcadia uses extensions to keep the platform settings in the contract, so the Terraform can be generated from it:
+
+    - `x-env-server-overrides` in the channel's Kafka binding overrides partitions, replicas and topic configuration per environment:
+
+      ```yaml
+      bindings:
+        kafka:
+          partitions: 3
+          replicas: 3
+          topicConfiguration:
+            cleanup.policy: [ "delete" ]
+            retention.ms: 604800000
+          x-env-server-overrides:
+            develop:
+              partitions: 1
+              replicas: 1
+      ```
+
+    - `x-principal` in the operation's Kafka binding names the service account that gets the read or write ACL.
+    - `x-error-topics` in the client contract declares the retry and dead letter topics of each consumer, with tiers shared from api-contract-commons.
+    - `x-schemaCompatibility` in the message's Kafka binding sets the Schema Registry compatibility level.
+  documentation: |
+    The architecture manifest feeds the ZenWave EventCatalog generator, which publishes the [Arcadia Event Catalog](https://arcadia-editions.github.io/arcadia-event-catalog/) with every domain, service, event and consumer. The site is rebuilt automatically after each API release. Each API repository also has a `SUMMARY.md`, an `EVENT_CATALOG.md` and a `CHANGELOG.md` that the catalog picks up.
+  bindings: |
+    Kafka bindings describe the topics: partitions, replicas and topic configuration on the channel; `clientId`, `groupId` and the principal on the operation; and the schema lookup strategy and compatibility on the message. They are the input for the Terraform generation.
+  tools: |
+    - [AsyncAPI CLI](https://github.com/asyncapi/cli) to validate the contracts in CI
+    - [AsyncAPI Preview for VSCode](https://marketplace.visualstudio.com/items?itemName=asyncapi.asyncapi-preview) to edit and render them
+    - [Spectral](https://github.com/stoplightio/spectral) for linting, moving to OpenLint
+    - [ZenWave AsyncAPI Generator](https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-generator/) for the complete Java SDK
+    - [ZenWave AsyncAPI Ops](https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-ops/) for the Terraform for Kafka and Schema Registry
+    - [ZenWave Platform for VSCode](https://www.zenwave360.io/zenwave-platform/) to navigate the architecture manifest
+    - [EventCatalog](https://www.eventcatalog.dev/), generated from the architecture manifest
+    - GitHub Actions and Terraform with Confluent Cloud
+  fullExample: resources/casestudies/arcadia-editions/asyncapi.yaml
+additionalResources: |
+  Everything is public:
+
+  - [Arcadia Editions: An AsyncAPI Governance Case Study](https://ivangsa.com/articles/arcadia/015-arcadia-editions-asyncapi-governance-case-study), the companion article, with how to set up provisioning and SDK generation in your own services
+  - The five microservices, such as [orders-checkout-service-java](https://github.com/arcadia-editions/orders-checkout-service-java) (Spring Cloud Stream) and [payments-processing-service-java](https://github.com/arcadia-editions/payments-processing-service-java) (Spring Kafka): clone one and run `mvn compile` to see the SDK generated from both contracts
+  - [arcadia-editions-microservices-compose](https://github.com/arcadia-editions/arcadia-editions-microservices-compose) to run the whole Place Order flow locally
+  - [The arcadia-editions GitHub organization](https://github.com/arcadia-editions), starting with [arcadia-editions-architecture](https://github.com/arcadia-editions/arcadia-editions-architecture)
+  - [Run Kafka provisioning on your laptop](https://github.com/arcadia-editions/api-product-workflows/blob/main/docs/run-kafka-provisioning-locally.md), from the `orders-checkout-api` contracts to Confluent Cloud
+  - [The Arcadia Event Catalog](https://arcadia-editions.github.io/arcadia-event-catalog/)
+  - Talk: [Stop API Drift: Generate Java from AsyncAPI](https://youtu.be/AwZoXxyQj9o)
+  - Talk: [Stop API Drift: Provision Kafka from AsyncAPI](https://youtu.be/S8Sknrdl1jM)
+  - The article series on [ivangsa.com](https://ivangsa.com), from [Meet Arcadia Editions](https://ivangsa.com/articles/arcadia/001-meet-arcadia-editions) to [Generate OpenAPI and AsyncAPI from ZDL](https://ivangsa.com/articles/arcadia/009-dsl-modeling-for-apis-generate-openapi-and-asyncapi-from-zdl), [Treat Your Domain Models and APIs as Products](https://ivangsa.com/articles/arcadia/010-treat-your-service-apis-as-products), [The Architecture Manifest](https://ivangsa.com/articles/arcadia/011-master-yaml-architecture-manifest), [The Architecture Manifest Meets EventCatalog](https://ivangsa.com/articles/arcadia/012-arcadia-architecture-manifest-meets-event-catalog), [Provisioning Infrastructure with Terraform from AsyncAPI](https://ivangsa.com/articles/arcadia/013-infrastructure-provisioning-asyncapi-terraform) and [AsyncAPI Governance Built to Last](https://ivangsa.com/articles/arcadia/014-async-api-governance-built-to-last)

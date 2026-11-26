@@ -1,0 +1,711 @@
+asyncapi: 3.1.0
+id: urn:com.arcadiaeditions:orders:checkout:asyncapi
+info:
+  title: Arcadia Editions - Orders Checkout
+  version: 0.0.0
+  tags:
+    - name: Default
+    - name: OrdersCheckout
+defaultContentType: application/json
+servers:
+  develop:
+    host: '{bootstrapServers}'
+    protocol: kafka-secure
+    protocolVersion: 3.x
+    description: Shared development Kafka cluster.
+    security:
+      - type: plain
+        description: Kafka API key and secret used with SASL/PLAIN over TLS.
+    variables:
+      bootstrapServers:
+        description: Kafka bootstrap server list for the develop environment.
+        default: develop.kafka.arcadia-editions.example:9092
+    bindings:
+      kafka:
+        schemaRegistryUrl: https://develop.schema-registry.arcadia-editions.example
+        schemaRegistryVendor: confluent
+channels:
+  order-created-event-v1:
+    address: orders-checkout.order-created.event.avro.v1
+    x-visibility: global
+    messages:
+      OrderCreatedEvent:
+        name: OrderCreatedEvent
+        title: ''
+        summary: ''
+        traits:
+          - headers:
+              type: object
+              properties: {}
+          - bindings:
+              kafka:
+                bindingVersion: 0.5.0
+                schemaIdLocation: payload
+                schemaLookupStrategy: TopicNameStrategy
+                x-schemaCompatibility: FORWARD
+        payload:
+          schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+          schema:
+            type: record
+            name: OrderCreated
+            namespace: com.arcadiaeditions.orders.checkout.events.avro
+            fields:
+              - name: orderId
+                type:
+                  - 'null'
+                  - string
+              - name: version
+                type:
+                  - 'null'
+                  - int
+              - name: customerId
+                type:
+                  - 'null'
+                  - string
+              - name: customerEmail
+                type:
+                  - 'null'
+                  - string
+              - name: paymentMethodId
+                type:
+                  - 'null'
+                  - string
+                doc: ''
+              - name: amount
+                type:
+                  - 'null'
+                  - double
+                doc: >-
+                  Order total (Order.totalAmount), named to match
+                  AuthorizePaymentInput.
+              - name: currency
+                type:
+                  - 'null'
+                  - string
+    bindings:
+      kafka:
+        partitions: 3
+        replicas: 3
+        topicConfiguration:
+          cleanup.policy:
+            - delete
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        x-env-server-overrides:
+          develop:
+            partitions: 1
+            replicas: 1
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 6048000000
+          staging:
+            partitions: 3
+            replicas: 2
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+  stock-unavailable-event-v1:
+    address: orders-checkout.stock-unavailable.event.avro.v1
+    x-visibility: global
+    messages:
+      StockUnavailableEvent:
+        name: StockUnavailableEvent
+        title: ''
+        summary: ''
+        traits:
+          - headers:
+              type: object
+              properties: {}
+          - bindings:
+              kafka:
+                bindingVersion: 0.5.0
+                schemaIdLocation: payload
+                schemaLookupStrategy: TopicNameStrategy
+                x-schemaCompatibility: FORWARD
+        payload:
+          schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+          schema:
+            type: record
+            name: StockUnavailable
+            namespace: com.arcadiaeditions.orders.checkout.events.avro
+            fields:
+              - name: orderId
+                type:
+                  - 'null'
+                  - string
+              - name: customerId
+                type:
+                  - 'null'
+                  - string
+              - name: customerEmail
+                type:
+                  - 'null'
+                  - string
+              - name: unavailableItems
+                type:
+                  type: array
+                  items:
+                    type: record
+                    name: StockUnavailableItem
+                    namespace: com.arcadiaeditions.orders.checkout.events.avro
+                    fields:
+                      - name: sku
+                        type:
+                          - 'null'
+                          - string
+                      - name: requestedQuantity
+                        type:
+                          - 'null'
+                          - int
+                      - name: availableQuantity
+                        type:
+                          - 'null'
+                          - int
+                  java-class: java.util.List
+    bindings:
+      kafka:
+        partitions: 3
+        replicas: 3
+        topicConfiguration:
+          cleanup.policy:
+            - delete
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        x-env-server-overrides:
+          develop:
+            partitions: 1
+            replicas: 1
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+          staging:
+            partitions: 3
+            replicas: 2
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+  order-confirmed-event-v1:
+    address: orders-checkout.order-confirmed.event.avro.v1
+    x-visibility: global
+    messages:
+      OrderConfirmedEvent:
+        name: OrderConfirmedEvent
+        title: ''
+        summary: ''
+        traits:
+          - headers:
+              type: object
+              properties: {}
+          - bindings:
+              kafka:
+                bindingVersion: 0.5.0
+                schemaIdLocation: payload
+                schemaLookupStrategy: TopicNameStrategy
+                x-schemaCompatibility: FORWARD
+        payload:
+          schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+          schema:
+            type: record
+            name: OrderConfirmed
+            namespace: com.arcadiaeditions.orders.checkout.events.avro
+            fields:
+              - name: orderId
+                type:
+                  - 'null'
+                  - string
+              - name: version
+                type:
+                  - 'null'
+                  - int
+              - name: customerId
+                type:
+                  - 'null'
+                  - string
+              - name: confirmedAt
+                type:
+                  - 'null'
+                  - string
+              - name: items
+                type:
+                  type: array
+                  items:
+                    type: record
+                    name: OrderConfirmedItem
+                    namespace: com.arcadiaeditions.orders.checkout.events.avro
+                    fields:
+                      - name: sku
+                        type:
+                          - 'null'
+                          - string
+                      - name: quantity
+                        type:
+                          - 'null'
+                          - int
+                  java-class: java.util.List
+              - name: shippingAddress
+                type:
+                  type: record
+                  name: OrderConfirmedShippingAddress
+                  namespace: com.arcadiaeditions.orders.checkout.events.avro
+                  fields:
+                    - name: name
+                      type:
+                        - 'null'
+                        - string
+                    - name: line1
+                      type:
+                        - 'null'
+                        - string
+                    - name: line2
+                      type:
+                        - 'null'
+                        - string
+                    - name: city
+                      type:
+                        - 'null'
+                        - string
+                    - name: region
+                      type:
+                        - 'null'
+                        - string
+                    - name: postalCode
+                      type:
+                        - 'null'
+                        - string
+                    - name: country
+                      type:
+                        - 'null'
+                        - string
+    bindings:
+      kafka:
+        partitions: 3
+        replicas: 3
+        topicConfiguration:
+          cleanup.policy:
+            - delete
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        x-env-server-overrides:
+          develop:
+            partitions: 1
+            replicas: 1
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+          staging:
+            partitions: 3
+            replicas: 2
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+  order-cancelled-event-v1:
+    address: orders-checkout.order-cancelled.event.avro.v1
+    x-visibility: global
+    messages:
+      OrderCancelledEvent:
+        name: OrderCancelledEvent
+        title: ''
+        summary: ''
+        traits:
+          - headers:
+              type: object
+              properties: {}
+          - bindings:
+              kafka:
+                bindingVersion: 0.5.0
+                schemaIdLocation: payload
+                schemaLookupStrategy: TopicNameStrategy
+                x-schemaCompatibility: FORWARD
+        payload:
+          schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+          schema:
+            type: record
+            name: OrderCancelled
+            namespace: com.arcadiaeditions.orders.checkout.events.avro
+            fields:
+              - name: orderId
+                type:
+                  - 'null'
+                  - string
+              - name: version
+                type:
+                  - 'null'
+                  - int
+              - name: customerId
+                type:
+                  - 'null'
+                  - string
+              - name: customerEmail
+                type:
+                  - 'null'
+                  - string
+                doc: ''
+              - name: reason
+                type:
+                  - 'null'
+                  - string
+                doc: Order.cancellationReason
+              - name: cancelledAt
+                type:
+                  - 'null'
+                  - string
+    bindings:
+      kafka:
+        partitions: 3
+        replicas: 3
+        topicConfiguration:
+          cleanup.policy:
+            - delete
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        x-env-server-overrides:
+          develop:
+            partitions: 1
+            replicas: 1
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+          staging:
+            partitions: 3
+            replicas: 2
+            topicConfiguration:
+              cleanup.policy:
+                - delete
+              retention.ms: 604800
+operations:
+  onOrderCreated:
+    action: send
+    tags:
+      - name: OrdersCheckout
+    channel:
+      $ref: '#/channels/order-created-event-v1'
+    traits:
+      - bindings:
+          kafka:
+            clientId:
+              const: orders_checkout
+            groupId:
+              const: orders_checkout
+            x-principal: orders_checkout
+  onStockUnavailable:
+    action: send
+    tags:
+      - name: OrdersCheckout
+    channel:
+      $ref: '#/channels/stock-unavailable-event-v1'
+    traits:
+      - bindings:
+          kafka:
+            clientId:
+              const: orders_checkout
+            groupId:
+              const: orders_checkout
+            x-principal: orders_checkout
+  onOrderConfirmed:
+    action: send
+    tags:
+      - name: OrdersCheckout
+    channel:
+      $ref: '#/channels/order-confirmed-event-v1'
+    traits:
+      - bindings:
+          kafka:
+            clientId:
+              const: orders_checkout
+            groupId:
+              const: orders_checkout
+            x-principal: orders_checkout
+  onOrderCancelled:
+    action: send
+    tags:
+      - name: OrdersCheckout
+    channel:
+      $ref: '#/channels/order-cancelled-event-v1'
+    traits:
+      - bindings:
+          kafka:
+            clientId:
+              const: orders_checkout
+            groupId:
+              const: orders_checkout
+            x-principal: orders_checkout
+components:
+  messages:
+    OrderCreatedEvent:
+      name: OrderCreatedEvent
+      title: ''
+      summary: ''
+      traits:
+        - headers:
+            type: object
+            properties: {}
+        - bindings:
+            kafka:
+              bindingVersion: 0.5.0
+              schemaIdLocation: payload
+              schemaLookupStrategy: TopicNameStrategy
+              x-schemaCompatibility: FORWARD
+      payload:
+        schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+        schema:
+          type: record
+          name: OrderCreated
+          namespace: com.arcadiaeditions.orders.checkout.events.avro
+          fields:
+            - name: orderId
+              type:
+                - 'null'
+                - string
+            - name: version
+              type:
+                - 'null'
+                - int
+            - name: customerId
+              type:
+                - 'null'
+                - string
+            - name: customerEmail
+              type:
+                - 'null'
+                - string
+            - name: paymentMethodId
+              type:
+                - 'null'
+                - string
+              doc: ''
+            - name: amount
+              type:
+                - 'null'
+                - double
+              doc: >-
+                Order total (Order.totalAmount), named to match
+                AuthorizePaymentInput.
+            - name: currency
+              type:
+                - 'null'
+                - string
+    StockUnavailableEvent:
+      name: StockUnavailableEvent
+      title: ''
+      summary: ''
+      traits:
+        - headers:
+            type: object
+            properties: {}
+        - bindings:
+            kafka:
+              bindingVersion: 0.5.0
+              schemaIdLocation: payload
+              schemaLookupStrategy: TopicNameStrategy
+              x-schemaCompatibility: FORWARD
+      payload:
+        schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+        schema:
+          type: record
+          name: StockUnavailable
+          namespace: com.arcadiaeditions.orders.checkout.events.avro
+          fields:
+            - name: orderId
+              type:
+                - 'null'
+                - string
+            - name: customerId
+              type:
+                - 'null'
+                - string
+            - name: customerEmail
+              type:
+                - 'null'
+                - string
+            - name: unavailableItems
+              type:
+                type: array
+                items:
+                  type: record
+                  name: StockUnavailableItem
+                  namespace: com.arcadiaeditions.orders.checkout.events.avro
+                  fields:
+                    - name: sku
+                      type:
+                        - 'null'
+                        - string
+                    - name: requestedQuantity
+                      type:
+                        - 'null'
+                        - int
+                    - name: availableQuantity
+                      type:
+                        - 'null'
+                        - int
+                java-class: java.util.List
+    OrderConfirmedEvent:
+      name: OrderConfirmedEvent
+      title: ''
+      summary: ''
+      traits:
+        - headers:
+            type: object
+            properties: {}
+        - bindings:
+            kafka:
+              bindingVersion: 0.5.0
+              schemaIdLocation: payload
+              schemaLookupStrategy: TopicNameStrategy
+              x-schemaCompatibility: FORWARD
+      payload:
+        schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+        schema:
+          type: record
+          name: OrderConfirmed
+          namespace: com.arcadiaeditions.orders.checkout.events.avro
+          fields:
+            - name: orderId
+              type:
+                - 'null'
+                - string
+            - name: version
+              type:
+                - 'null'
+                - int
+            - name: customerId
+              type:
+                - 'null'
+                - string
+            - name: confirmedAt
+              type:
+                - 'null'
+                - string
+            - name: items
+              type:
+                type: array
+                items:
+                  type: record
+                  name: OrderConfirmedItem
+                  namespace: com.arcadiaeditions.orders.checkout.events.avro
+                  fields:
+                    - name: sku
+                      type:
+                        - 'null'
+                        - string
+                    - name: quantity
+                      type:
+                        - 'null'
+                        - int
+                java-class: java.util.List
+            - name: shippingAddress
+              type:
+                type: record
+                name: OrderConfirmedShippingAddress
+                namespace: com.arcadiaeditions.orders.checkout.events.avro
+                fields:
+                  - name: name
+                    type:
+                      - 'null'
+                      - string
+                  - name: line1
+                    type:
+                      - 'null'
+                      - string
+                  - name: line2
+                    type:
+                      - 'null'
+                      - string
+                  - name: city
+                    type:
+                      - 'null'
+                      - string
+                  - name: region
+                    type:
+                      - 'null'
+                      - string
+                  - name: postalCode
+                    type:
+                      - 'null'
+                      - string
+                  - name: country
+                    type:
+                      - 'null'
+                      - string
+    OrderCancelledEvent:
+      name: OrderCancelledEvent
+      title: ''
+      summary: ''
+      traits:
+        - headers:
+            type: object
+            properties: {}
+        - bindings:
+            kafka:
+              bindingVersion: 0.5.0
+              schemaIdLocation: payload
+              schemaLookupStrategy: TopicNameStrategy
+              x-schemaCompatibility: FORWARD
+      payload:
+        schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+        schema:
+          type: record
+          name: OrderCancelled
+          namespace: com.arcadiaeditions.orders.checkout.events.avro
+          fields:
+            - name: orderId
+              type:
+                - 'null'
+                - string
+            - name: version
+              type:
+                - 'null'
+                - int
+            - name: customerId
+              type:
+                - 'null'
+                - string
+            - name: customerEmail
+              type:
+                - 'null'
+                - string
+              doc: ''
+            - name: reason
+              type:
+                - 'null'
+                - string
+              doc: Order.cancellationReason
+            - name: cancelledAt
+              type:
+                - 'null'
+                - string
+  messageTraits:
+    CommonHeaders:
+      headers:
+        type: object
+        properties: {}
+    KafkaSchemaCompatibility:
+      bindings:
+        kafka:
+          bindingVersion: 0.5.0
+          schemaIdLocation: payload
+          schemaLookupStrategy: TopicNameStrategy
+          x-schemaCompatibility: FORWARD
+  operationTraits:
+    clientIdAndPrincipal:
+      bindings:
+        kafka:
+          clientId:
+            const: orders_checkout
+          groupId:
+            const: orders_checkout
+          x-principal: orders_checkout
