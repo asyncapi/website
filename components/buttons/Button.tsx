@@ -90,6 +90,41 @@ export default function Button({
     );
   }
 
+  const isExternal =
+    typeof props.href === 'string' &&
+    (target === '_blank' ||
+      props.href.startsWith('http://') ||
+      props.href.startsWith('https://') ||
+      props.href.startsWith('mailto:') ||
+      props.href.startsWith('tel:') ||
+      props.href === '/slack-invite' ||
+      props.href.startsWith('/slack-invite'));
+
+  if (isExternal) {
+    return (
+      <a
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        href={props.href}
+        target={target}
+        rel={props.rel || (target === '_blank' ? 'noopener noreferrer' : undefined)}
+        className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
+        data-testid='Button-link'
+      >
+        {icon && iconPosition === ButtonIconPosition.LEFT && (
+          <span className='mr-2 inline-block' data-testid='Button-icon-left'>
+            {icon}
+          </span>
+        )}
+        <span className='inline-block'>{text}</span>
+        {icon && iconPosition === ButtonIconPosition.RIGHT && (
+          <span className='ml-2 inline-block' data-testid='Button-icon-right'>
+            {icon}
+          </span>
+        )}
+      </a>
+    );
+  }
+
   return (
     <Link
       {...props}
@@ -98,9 +133,17 @@ export default function Button({
       className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
       data-testid='Button-link'
     >
-      {icon && iconPosition === ButtonIconPosition.LEFT && <span className='mr-2 inline-block'>{icon}</span>}
+      {icon && iconPosition === ButtonIconPosition.LEFT && (
+        <span className='mr-2 inline-block' data-testid='Button-icon-left'>
+          {icon}
+        </span>
+      )}
       <span className='inline-block'>{text}</span>
-      {icon && iconPosition === ButtonIconPosition.RIGHT && <span className='ml-2 inline-block'>{icon}</span>}
+      {icon && iconPosition === ButtonIconPosition.RIGHT && (
+        <span className='ml-2 inline-block' data-testid='Button-icon-right'>
+          {icon}
+        </span>
+      )}
     </Link>
   );
 }
