@@ -1,26 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 31.589204762418465
-    },
-    {
       "id": "I_kwDOFLhIt88AAAABSPEgqQ",
       "isPR": false,
       "isAssigned": true,
@@ -32,13 +12,44 @@
         {
           "name": "gitvote",
           "color": "ededed"
-        },
-        {
-          "name": "gitvote/open",
-          "color": "ededed"
         }
       ],
-      "score": 29.578982641173653
+      "score": 37.04552194865438
+    },
+    {
+      "id": "I_kwDOBW5R_c6VGYzo",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[FEATURE] Performance + Accessibility Improvement of website",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/issues/3186",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        },
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 26.420062164931807
+    },
+    {
+      "id": "I_kwDOFLhIt88AAAABSgjN-g",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Sustaining the Community Forward - Planning for 2027",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/community/issues/3634",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 16.943300736206268
     },
     {
       "id": "PR_kwDOCHlHJM7srbNz",
@@ -49,34 +60,45 @@
       "resourcePath": "/asyncapi/generator/pull/2142",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 13.78438025996442
+      "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDOCHlHJM8AAAABAm3ykA",
+      "id": "PR_kwDOCHlHJM8AAAABNXUvKA",
       "isPR": true,
-      "isAssigned": true,
-      "title": "chore: define permissions in workflows  and pin actions to SHA",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2211",
+      "isAssigned": false,
+      "title": "fix: resolve server variable defaults",
+      "author": "Khush7Chauhan",
+      "resourcePath": "/asyncapi/generator/pull/2312",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 12.922856493716644
+      "score": 9.763936017474798
     },
     {
-      "id": "I_kwDOCoBobc6fqNYx",
+      "id": "I_kwDOCHlHJM61Y1X2",
       "isPR": false,
       "isAssigned": true,
-      "title": "[BUG] `@asyncapi/multi-parser` still depending on vulnerable version of `jsonpath-plus`",
-      "author": "BenjaminSchwendner",
-      "resourcePath": "/asyncapi/parser-js/issues/1065",
-      "repo": "asyncapi/parser-js",
+      "title": "explore how to handle `reply` operation in code generation",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/generator/issues/1547",
+      "repo": "asyncapi/generator",
       "labels": [
         {
-          "name": "bug",
-          "color": "d73a4a"
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ],
-      "score": 12.061332727468868
+      "score": 9.18958683997628
+    },
+    {
+      "id": "PR_kwDOCVQpZM8AAAABQ8n3OA",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: decouple and improve the no-parser support from the parser dependencies",
+      "author": "Ishita-190",
+      "resourcePath": "/asyncapi/asyncapi-react/pull/1387",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 8.902412251227021
     },
     {
       "id": "I_kwDOFLhIt874rNRL",
@@ -88,28 +110,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 8.615237662477762
-    },
-    {
-      "id": "PR_kwDOCHlHJM8AAAABAm34jA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "ci: harden Netlify docs preview workflows against pwn request",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/2212",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 8.328063073728504
-    },
-    {
-      "id": "I_kwDOFLhIt88AAAABSgjN-g",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Sustaining the Community Forward - Planning for 2027",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/community/issues/3634",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 8.040888484979245
     },
     {
       "id": "PR_kwDOBW5R_c75L5uF",
@@ -128,6 +128,26 @@
       "score": 8.040888484979245
     },
     {
+      "id": "I_kwDOBW5R_c8AAAABX70TNQ",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Implement remaining pages and prepare the website for dark theme by default",
+      "author": "princerajpoot20",
+      "resourcePath": "/asyncapi/website/issues/5844",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "triaged",
+          "color": "0052cc"
+        },
+        {
+          "name": "microgrant",
+          "color": "708090"
+        }
+      ],
+      "score": 6.89219012998221
+    },
+    {
       "id": "I_kwDOCoBobc5p7LyT",
       "isPR": false,
       "isAssigned": false,
@@ -144,24 +164,13 @@
       "score": 6.605015541232952
     },
     {
-      "id": "I_kwDOCVQpZM6zcoZ7",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Schemas in AsyncAPI 3.0.0 file not fully rendered (only example1 parsed correctly)",
-      "author": "juanmbco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/1154",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 6.605015541232952
-    },
-    {
-      "id": "PR_kwDOCVQpZM8AAAABNKtpMA",
+      "id": "PR_kwDOCHlHJM8AAAABMw3umw",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: make AsyncAPI React component LLM-native (Markdown export + operation examples)",
-      "author": "MauryaQbit",
-      "resourcePath": "/asyncapi/asyncapi-react/pull/1385",
-      "repo": "asyncapi/asyncapi-react",
+      "title": "fix: prevent repeated JavaScript connections from leaking sockets",
+      "author": "SHUBHANSHU602",
+      "resourcePath": "/asyncapi/generator/pull/2304",
+      "repo": "asyncapi/generator",
       "labels": [],
       "score": 6.605015541232952
     }
