@@ -16,6 +16,9 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   output: 'export',
+  images: {
+    unoptimized: true
+  },
   serverExternalPackages: ['langium', '@mermaid-js/parser'],
   webpack(config, { isServer }) {
     if (!isServer) {

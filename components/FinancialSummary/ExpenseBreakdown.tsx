@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
@@ -33,9 +34,11 @@ export default function ExpenseBreakdown() {
                 <a href={expense.link} target='_blank' rel='noopener noreferrer'>
                   <div className='text-darkGunMetal dark:text-dark-text'>
                     <div className='flex flex-col items-center'>
-                      <img
+                      <Image
                         src={expense.imageUrl}
                         alt={expense.title}
+                        width={80}
+                        height={80}
                         className='m-1 h-auto w-1/5 rounded-md object-cover'
                       />
                       <h2 className='my-2 text-center text-2xl font-semibold text-darkGunMetal dark:text-white'>
