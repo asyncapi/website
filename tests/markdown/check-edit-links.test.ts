@@ -64,6 +64,68 @@ describe('URL Checker Tests', () => {
 
       expect(result).toBe(null);
     });
+
+    it('should return null for explorer markdown files', () => {
+      const result = determineEditLink(
+        'reference/specification/v3.1.0-explorer',
+        'markdown/docs/reference/specification/v3.1.0-explorer.md',
+        editOptions
+      );
+
+      expect(result).toBe(null);
+    });
+
+    it('should link directly to file href when target href is a file (e.g., specification)', () => {
+      const result = determineEditLink(
+        'reference/specification/v3.1.0',
+        'markdown/docs/reference/specification/v3.1.0.md',
+        editOptions
+      );
+
+      expect(result).toBe('https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md');
+    });
+
+    it('should generate folder-based edit link for standard bindings without .md extension', () => {
+      const result = determineEditLink(
+        'reference/bindings/amqp',
+        'markdown/docs/reference/bindings/amqp.md',
+        editOptions
+      );
+
+      expect(result).toBe('https://github.com/asyncapi/bindings/tree/master/amqp');
+    });
+
+    it('should handle versioned SNS bindings in bindings directory', () => {
+      const result300 = determineEditLink(
+        'reference/bindings/3.0.0',
+        'markdown/docs/reference/bindings/3.0.0.md',
+        editOptions
+      );
+      const result2xx = determineEditLink(
+        'reference/bindings/2.x.x',
+        'markdown/docs/reference/bindings/2.x.x.md',
+        editOptions
+      );
+
+      expect(result300).toBe('https://github.com/asyncapi/bindings/tree/master/sns/3.0.0');
+      expect(result2xx).toBe('https://github.com/asyncapi/bindings/tree/master/sns/2.x.x');
+    });
+
+    it('should handle index.md and scripts.md in bindings directory', () => {
+      const resultIndex = determineEditLink(
+        'reference/bindings/index',
+        'markdown/docs/reference/bindings/index.md',
+        editOptions
+      );
+      const resultScripts = determineEditLink(
+        'reference/bindings/scripts',
+        'markdown/docs/reference/bindings/scripts.md',
+        editOptions
+      );
+
+      expect(resultIndex).toBe('https://github.com/asyncapi/bindings/tree/master');
+      expect(resultScripts).toBe('https://github.com/asyncapi/bindings/tree/master');
+    });
   });
 
   describe('generatePaths', () => {
