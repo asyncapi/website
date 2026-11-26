@@ -7,6 +7,7 @@ import type { IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
+import SocialShareButtons from '../buttons/SocialShareButtons';
 import AnnouncementHero from '../campaigns/AnnouncementHero';
 import ErrorBoundary from '../error/ErrorBoundary';
 import Head from '../Head';
@@ -82,6 +83,7 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
                   </div>
                 </div>
               </div>
+              <SocialShareButtons title={post.title} slug={post.slug} className='mt-6' />
             </header>
             <article className='mb-32'>
               <Head title={post.title} description={post.excerpt} image={post.cover} canonical={post.canonical} />

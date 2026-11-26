@@ -53,4 +53,11 @@ describe('Blog Page Tests', () => {
     blog.clickFirstVisiblePost();
     blog.verifyPostDetailPageLoaded();
   });
+
+  it('Verification of social share buttons on a post detail page', () => {
+    blog.verifyFilteredPostsVisible();
+    blog.clickFirstVisiblePost();
+    blog.verifyPostDetailPageLoaded();
+    blog.verifyShareButtons();
+  });
 });
