@@ -2,7 +2,7 @@ const determineEditLinkData = [
   {
     urlPath: 'docs/concepts/application',
     filePath: 'markdown/docs/concepts/application.md',
-    editLink: 'https://github.com/asyncapi/website/blob/master/markdown/docs/docs/concepts/application.md'
+    editLink: 'https://github.com/asyncapi/website/blob/master/markdown/docs/concepts/application.md'
   },
   {
     urlPath: 'concepts/application',

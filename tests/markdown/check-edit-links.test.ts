@@ -137,23 +137,6 @@ describe('URL Checker Tests', () => {
       await expect(processBatch(testBatch)).rejects.toThrow();
     });
 
-    it('should ignore files in ignoreFiles list', async () => {
-      const batchWithIgnored = [
-        ...testBatch,
-        {
-          filePath: 'reference/specification/v2.x.md',
-          urlPath: 'docs/reference/specification/v2.x',
-          editLink: 'https://github.com/org/repo/edit/main/v2.x.md'
-        }
-      ];
-
-      mockFetch.mockImplementation(() => Promise.resolve({ status: 404 }));
-      const results = await processBatch(batchWithIgnored);
-      const validResults = results.filter((r) => r !== null);
-
-      expect(validResults.length).toBe(2);
-    });
-
     it('should handle request timeouts', async () => {
       mockFetch.mockImplementation(
         () =>

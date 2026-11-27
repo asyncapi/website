@@ -1,7 +1,23 @@
 [
   {
     "value": "reference/bindings/",
-    "href": "https://github.com/asyncapi/bindings/tree/master"
+    "href": "https://github.com/asyncapi/bindings/blob/master/{page}/README.md"
+  },
+  {
+    "value": "reference/bindings/2.x.x",
+    "href": "https://github.com/asyncapi/bindings/blob/master/sns/2.x.x/README.md"
+  },
+  {
+    "value": "reference/bindings/3.0.0",
+    "href": "https://github.com/asyncapi/bindings/blob/master/sns/3.0.0/README.md"
+  },
+  {
+    "value": "reference/bindings/index",
+    "href": "https://github.com/asyncapi/website/blob/master/markdown/docs/reference/bindings/index.md"
+  },
+  {
+    "value": "reference/bindings/scripts",
+    "href": "https://github.com/asyncapi/website/blob/master/markdown/docs/reference/bindings/scripts.md"
   },
   {
     "value": "/tools/generator",
@@ -22,6 +38,10 @@
   {
     "value": "reference/extensions/",
     "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
+  },
+  {
+    "value": "reference/extensions/index",
+    "href": "https://github.com/asyncapi/website/blob/master/markdown/docs/reference/extensions/index.md"
   },
   {
     "value": "community/onboarding-guide",
